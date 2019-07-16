@@ -1,0 +1,20 @@
+.Selection a {
+  opacity: 0;
+  animation: fillIn 0.5s linear 0.5s 1 forwards;
+}
+
+/* .Selection a:nth-child(1) { animation-delay: 1s }
+.Selection a:nth-child(2) { animation-delay: 1.5s }
+.Selection a:nth-child(3) { animation-delay: 2s }
+.Selection a:nth-child(4) { animation-delay: 2.5s }
+.Selection a:nth-child(5) { animation-delay: 3s }
+.Selection a:nth-child(6) { animation-delay: 3.5s } */
+
+@keyframes fillIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,31 @@
+.AppSelectionItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #7bb5f7c0;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Muli', sans-serif;
+  transition: background-color ease 0.3s;
+  color: black;
+  padding: 1rem;
+}
+
+.AppSelectionItem:focus {
+  outline: 0 !important;
+}
+
+.AppSelectionItem:enabled:hover,
+.AppSelectionItem:active {
+  background: #599ae4;
+  text-decoration: none;
+  color: black;
+}
+
+.AppSelectionItem:disabled {
+  cursor: not-allowed;
+  background: #ccc;
+  opacity: 0.8;
+}

@@ -1,0 +1,16 @@
+.Dropdown {
+  position: absolute;
+  right: 0;
+  top: 82px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background: white;
+  border-top: 0;
+  border-radius: 16px;
+  z-index: 100;
+}
+
+.DropdownHide {
+  display: none;
+}

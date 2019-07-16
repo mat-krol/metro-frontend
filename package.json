@@ -5,7 +5,14 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-icons": "^3.7.0",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.4",
+    "redux-leaves": "^0.3.5",
+    "redux-saga": "^1.0.5",
+    "redux-starter-kit": "^0.5.1"
   },
   "scripts": {
     "start": "react-scripts start",

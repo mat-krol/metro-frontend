@@ -1,0 +1,11 @@
+.AppKeypadItem {
+  background: #eee;
+  border-radius: 10px;
+  padding: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.AppKeypadItemEmpty {
+  background: transparent;
+}

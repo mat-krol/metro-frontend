@@ -1,0 +1,23 @@
+.AppModuleSection {
+  padding: 1rem;
+  height: 50vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.AppModuleSectionScrollable {
+  height: 60vh;
+  position: relative;
+  padding-bottom: 2rem;
+  overflow-y: auto;
+}
+
+.AppModuleSectionLab {
+  height: 40vh;
+  background: linear-gradient(#00000040, #000000c0), url('../../../../assets/background/lab2.jpg') center no-repeat / cover;
+  color: white;
+}
+
+.AppModuleSectionWhite {
+  background: white;
+}

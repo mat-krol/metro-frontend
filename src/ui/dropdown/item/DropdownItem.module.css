@@ -1,0 +1,22 @@
+.DropdownItem {
+  width: 100%;
+  background: transparent;
+  padding: 16px;
+  color: black;
+  border: 0;
+  border-radius: 0 0 16px 16px;
+  transition: background-color 0.3s ease;
+  z-index: 201;
+}
+
+.DropdownItem:hover,
+.DropdownItem:active {
+  background-color: #f2f4fc;
+  cursor: pointer;
+}
+
+.DropdownItem:disabled {
+  background-color: #eee;
+  color: #888;
+  cursor: not-allowed;
+}

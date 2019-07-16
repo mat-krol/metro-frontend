@@ -1,0 +1,45 @@
+.AppQuestion {
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 2rem auto 2rem;
+  align-items: center;
+  font-size: 2rem;
+  max-width: 320px;
+}
+
+.AppQuestionPrompt {
+  display: flex;
+  justify-self: center;
+}
+
+.AppQuestionPrompt span {
+  margin: 0 4px;
+}
+
+.AppQuestionAnswer {
+  height: 40px;
+  padding: 0 8px;
+  margin: 0 4px;
+  border: 1px solid black;
+  min-width: 40px;
+}
+
+.AppQuestionIcon {
+  width: 2rem;
+  height: 2rem;
+  padding: 4px 0;
+}
+
+.AppQuestionCorrect {
+  width: 2rem;
+  height: 2rem;
+  padding: 4px 0;
+  color: #60dd74
+}
+
+.AppQuestionIncorrect {
+  width: 2rem;
+  height: 2rem;
+  padding: 4px 0;
+  color: #ce202e
+}

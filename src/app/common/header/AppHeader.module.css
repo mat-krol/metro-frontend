@@ -1,0 +1,40 @@
+.AppHeader,
+.AppHeaderSelect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100vw;
+  background: #7bb5f7;
+  background: #599ae4;
+  font-size: 1.2rem;
+
+  padding: 1rem;
+  box-sizing: border-box;
+  color: white;
+}
+
+.AppHeader {
+  display: grid;
+  grid-template-columns: 40px auto 30px;
+  grid-gap: 8px;
+  align-content: center;
+  align-items: center;
+  justify-items: start;
+}
+  
+.AppHeaderSelect {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.AppHeaderSelectStars {
+  display: flex;
+  align-items: center;
+}
+
+.AppHeaderSelectStars span {
+  margin-right: 4px;
+}
