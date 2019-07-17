@@ -6,13 +6,15 @@ import classes from './App.module.css'
 import Intro from './modules/intro';
 import IntroSplash from './modules/intro/splash';
 import Quiz from './modules/quiz';
+import Game from './modules/game';
 
 function App() {
   return (
     <div className={classes.App}>
       <Switch>
         <Route path={ROUTES.Intro} component={Intro} />
-        <Route path={ROUTES.Quiz} component={Quiz} />
+        {/* <Route path={ROUTES.Quiz} component={Quiz} /> */}
+        <Route path={ROUTES.Game} component={Game} />
         <Route path="/" component={IntroSplash} />
       </Switch>
     </div>

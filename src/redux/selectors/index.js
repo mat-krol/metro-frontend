@@ -1,6 +1,8 @@
 import { createSelector } from 'reselect';
 import _ from 'lodash';
 
+export const getMap = state => state.map
+
 export const getQuestionId = state => state.quiz.question.id
 export const getQuestionDisabled = state => state.quiz.question.disabled
 export const getQuestionUserAnswer = state => state.quiz.question.user.answer

@@ -1,0 +1,46 @@
+.Area {
+  /* position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -50vw;
+  margin-top: -50vh;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  z-index: 99; */
+}
+
+.AreaShow {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease 0.1s, visibility 0s ease 0s;
+}
+
+.AreaHide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease 0.1s, visibility 0s ease 0.5s;
+}
+
+.AreaSharp {
+  transition: none;
+}
+
+
+.AreaBlack {
+  background-color: black;
+}
+
+.AreaWhite {
+  background-color: white;
+}
+
+.AreaBlue {
+  background-color: #599ae4;
+  background-color: #2e3192;
+}
+
+.AreaTransparent {
+  background-color: #ffffff00;
+}
