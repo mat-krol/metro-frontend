@@ -4,7 +4,8 @@ import { ROUTES } from '../../../constants/routes';
 
 import AppModule from '../../../common/module';
 import Backdrop from '../../../../ui/backdrop/Backdrop';
-import logo from '../../../../assets/icon-white.png'
+import logo from '../../../../assets/logo.png'
+import text from '../../../../assets/text.png'
 
 function IntroSplash() {
 
@@ -45,8 +46,9 @@ function IntroSplash() {
       <AppModule type="splash">
         <Backdrop show={showBackdropBlue} color="blue" />
         <Backdrop show={showBackdropWhite} color="white" />
-        <img src={logo} alt="logo" style={{ width: "115px", marginBottom: "1rem"}} />
-        <h1 style={{ color: "white", marginBottom: "4rem" }}>Arithmetic</h1>
+        <img src={logo} alt="logo" style={{ width: "115px", marginBottom: "2rem"}} />
+        <img src={text} alt="text" style={{ width: "250px"}} />
+        {/* <h1 style={{ color: "white", marginBottom: "4rem" }}>Arithmetic</h1> */}
       </AppModule>
     )
   }
