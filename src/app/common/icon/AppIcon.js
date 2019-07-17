@@ -1,6 +1,6 @@
 import React from 'react';
 
-import icon from '../../../assets/icon-white.png'
+import icon from '../../../assets/logo.png'
 import classes from './AppIcon.module.css';
 
 function AppIcon(props) {

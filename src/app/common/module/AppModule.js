@@ -22,6 +22,7 @@ function AppModule(props) {
 const className = props => {
   const arr = [classes.AppModule]
   props.type === "splash" && arr.push(classes.AppModuleSplash);
+  props.type === "select" && arr.push(classes.AppModuleSelect);
   props.header && arr.push(classes.AppModuleMargin);
   return arr.join(' ')
 }

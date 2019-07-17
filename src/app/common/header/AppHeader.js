@@ -24,7 +24,7 @@ function AppHeader(props) {
   if (props.select) {
     return (
       <div className={classes.AppHeaderSelect}>
-        <AppIcon height={22} style={{ justifySelf: "start" }} />
+        <AppIcon height={24} style={{ justifySelf: "start" }} />
         <div className={classes.AppHeaderSelectStars}>
           <span>{stars}</span>
           <FaStar style={{ color: "#FFD700" }} />

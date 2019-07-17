@@ -1,0 +1,12 @@
+.AppBanner {
+  width: 100vw;
+  background: linear-gradient(90deg, #2e3192 50%, #1e6bc2 50%, #2e3192);
+  background: #2e3192;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: -1rem -1rem 2rem;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
