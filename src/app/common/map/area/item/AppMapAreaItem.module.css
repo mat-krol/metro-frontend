@@ -1,0 +1,15 @@
+.AppMapAreaItemS {
+  fill: hsl(0, 0%, 95%);
+}
+
+.AppMapAreaItemM {
+  fill: hsl(0, 0%, 90%);
+}
+
+.AppMapAreaItemL {
+  fill: hsl(0, 0%, 85%);
+}
+
+.AppMapAreaItemXL {
+  fill: hsl(0, 0%, 80%);
+}

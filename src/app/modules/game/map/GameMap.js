@@ -10,16 +10,22 @@ import AppMap from '../../../common/map/AppMap';
 
 function GameMap() {
   const dispatch = useDispatch()
-  const map = useSelector(selectors.getMapAreas)
   const line = useSelector(selectors.getMapLine)
 
-  const updateLine = arr => {
-    dispatch(actions.map.line.create.concat(arr))
+  const updateLine = (id, arr) => {
+    const point = {
+      [id]: {
+        id: id,
+        x: arr[0],
+        y: arr[1]
+      }
+    }
+    dispatch(actions.map.line.create.assign(point))
   }
 
   return (
     <AppModule >
-      <AppMap map={map} onClick={updateLine} line={line} />
+      <AppMap onClick={updateLine} line={line} />
     </AppModule>
   )
 }

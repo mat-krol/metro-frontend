@@ -3,7 +3,7 @@ export const initialState = {
     stars: 7
   },
   map: {
-    line: [],
+    line: {},
     areas: {
       0: {
         id: 0,
