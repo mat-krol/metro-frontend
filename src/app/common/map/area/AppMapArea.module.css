@@ -26,3 +26,11 @@
 .AppMapAreaXL {
   fill: #bbb;
 }
+
+.AppMapCircle {
+  visibility: hidden;
+}
+
+.AppMapCircleShow {
+  visibility: visible;
+}
