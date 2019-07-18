@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { actions } from '../../../../redux/leaves'
+// import { actions } from '../../../../redux/leaves'
 import * as selectors from '../../../../redux/selectors'
+import { updateLineLength } from '../../../../redux/sagas'
 
 import AppModule from '../../../common/module';
 import AppMap from '../../../common/map/AppMap';
@@ -9,6 +10,9 @@ import AppMap from '../../../common/map/AppMap';
 function GameMap() {
   const dispatch = useDispatch()
   const line = useSelector(selectors.getMapLine)
+  const stations = useSelector(selectors.getUpgradeStations)
+  const length = useSelector(selectors.getUpgradeLineLength)
+  
 
   const updateLine = (id, arr) => {
     var position = Object.keys(line).length;
@@ -19,11 +23,14 @@ function GameMap() {
         y: arr[1]
       }
     }
-    dispatch(actions.map.line.create.assign(point))
+    dispatch(updateLineLength.trigger(point))
   }
 
   return (
     <AppModule >
+      <p>{length} km - ¢{length * 50} mln</p>
+      <p>{stations} stations - ¢{stations * 10} mln</p>
+      <p>Total: ¢{length * 50 + stations * 10} mln</p>
       <AppMap onClick={updateLine} line={line} />
     </AppModule>
   )

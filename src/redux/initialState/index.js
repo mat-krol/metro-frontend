@@ -2,6 +2,11 @@ export const initialState = {
   user: {
     stars: 7
   },
+  upgrade: {
+    line: {
+      length: null
+    },
+  },
   map: {
     line: {},
     areas: {

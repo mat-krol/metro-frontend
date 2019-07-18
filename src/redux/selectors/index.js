@@ -3,6 +3,17 @@ import _ from 'lodash';
 
 export const getMapAreas = state => state.map.areas
 export const getMapLine = state => state.map.line
+export const getUpgradeLineLength = state => state.upgrade.line.length
+
+export const getUpgradeLineCost = createSelector(
+  getUpgradeLineLength,
+  length => length * 50
+)
+
+export const getUpgradeStations = createSelector(
+  getMapLine,
+  line => Object.keys(line).length
+)
 
 export const getQuestionId = state => state.quiz.question.id
 export const getQuestionDisabled = state => state.quiz.question.disabled

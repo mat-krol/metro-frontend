@@ -3,7 +3,15 @@ import { actions } from '../leaves'
 import { makeActionCreator } from 'redux-leaves';
 import * as selectors from '../selectors';
 // import { getQuestionGivenAnswer, getQuestionUserAnswer, getQuestionUserCorrectness, getQuizRoundTiers, getQuizRoundScore } from '../selectors'
-import { checkCorrect } from './utils'
+import { checkCorrect, evaluateLineLength } from './utils'
+
+export function* updateLineLength(action) {
+  const point = action.payload
+  yield put(actions.map.line.create.assign(point))
+  const line = yield select(selectors.getMapLine)
+  const length = yield call(evaluateLineLength, line)
+  yield put(actions.upgrade.line.length.create.update(length))
+}
 
 export function* updateAnswerAndCheckCorrectness(action) {
   const key = action.payload
@@ -81,8 +89,12 @@ finishQuiz.trigger = makeActionCreator(finishQuiz.TRIGGER)
 startQuiz.TRIGGER = "sagas: startQuiz (TRIGGER)"
 startQuiz.trigger = makeActionCreator(startQuiz.TRIGGER)
 
+updateLineLength.TRIGGER = "sagas: updateLineLength (TRIGGER)"
+updateLineLength.trigger = makeActionCreator(updateLineLength.TRIGGER)
+
 
 const sagas = [
+  takeLeading(updateLineLength.TRIGGER, updateLineLength),
   takeLeading(startQuiz.TRIGGER, startQuiz),
   takeLeading(finishQuiz.TRIGGER, finishQuiz),
   takeLeading(updateAnswerAndCheckCorrectness.TRIGGER, updateAnswerAndCheckCorrectness)
