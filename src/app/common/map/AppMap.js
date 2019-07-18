@@ -2,10 +2,10 @@ import React from 'react';
 
 import classes from './AppMap.module.css';
 import AppMapArea from './area/AppMapArea';
-import { obtainLine } from '../../../helpers/utils';
 import AppMapCircle from './circle/AppMapCircle';
+import AppMapLine from './line/AppMapLine';
 
-function AppMap({ onClick, line }) {
+function AppMap({ onClick }) {
   return (
     <svg viewBox="0 0 600 600" className={classes.AppMap}>
       <defs>
@@ -15,8 +15,8 @@ function AppMap({ onClick, line }) {
       </defs>
       <g clipPath="url(#app_map)">
         <AppMapArea onClick={onClick} />
+        <AppMapLine />
         <AppMapCircle />
-        <path d={obtainLine(line)} fill="none" vectorEffect="non-scaling-stroke" strokeWidth="3" stroke="#22b3fa" strokeLinejoin="miter" strokeLinecap="square" strokeMiterlimit="3"/>
       </g>
     </svg>
   )

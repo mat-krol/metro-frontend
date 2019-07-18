@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export const calculateCenter = string => {
   const items = string.replace(/[a-z]/gi, '').replace( /\s\s+/g, ' ' ).split(" ").slice(1, -1).map(x => parseFloat(x))
   var res = [], size = 2;
@@ -23,18 +25,16 @@ const applyFormula = array => {
   return [final_c_x, final_c_y]
 }
 
-export const obtainLine = array => {
-  if (array.length < 4 ) {
+export const obtainLine = object => {
+  const length = Object.keys(object).length
+  if (length < 2 ) {
     return ""
   } else {
     let res = ""
-    for (var i = 0; i < array.length; i = i+2) {
-      console.log(res)
-      const add = i === 0 ? `M ${array[i]} ${array[i+1]} ` : `L ${array[i]} ${array[i+1]} `
-      console.log(add)
+    _.forEach(object, (value, key) => {
+      const add = key === "0" ? `M ${value.x} ${value.y} ` : `L ${value.x} ${value.y} `
       res = res + add
-      console.log(res)
-    }
+    })
     return res
   } 
 }

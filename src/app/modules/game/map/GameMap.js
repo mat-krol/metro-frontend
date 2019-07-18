@@ -1,9 +1,7 @@
 import React from 'react';
-// import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { actions } from '../../../../redux/leaves'
 import * as selectors from '../../../../redux/selectors'
-import { useSelector, useDispatch } from 'react-redux';
-// import { updateAnswerAndCheckCorrectness } from '../../../../redux/sagas'
 
 import AppModule from '../../../common/module';
 import AppMap from '../../../common/map/AppMap';
@@ -13,8 +11,9 @@ function GameMap() {
   const line = useSelector(selectors.getMapLine)
 
   const updateLine = (id, arr) => {
+    var position = Object.keys(line).length;
     const point = {
-      [id]: {
+      [position]: {
         id: id,
         x: arr[0],
         y: arr[1]
