@@ -9,6 +9,8 @@ function AppMapArea(props) {
 
   const handleToggle = () => {
     setShowCircle(!showCircle)
+    props.onClick([x, y])
+    console.log(props.d, x, y)
   }
 
   return (
