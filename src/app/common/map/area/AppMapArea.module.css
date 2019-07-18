@@ -1,4 +1,4 @@
-.Area {
+.AppMapArea {
   /* position: fixed;
   top: 50%;
   left: 50%;
@@ -11,18 +11,18 @@
   z-index: 99; */
 }
 
-.AreaS {
+.AppMapAreaS {
   fill: #eee;
 }
 
-.AreaM {
+.AppMapAreaM {
   fill: #ddd;
 }
 
-.AreaL {
+.AppMapAreaL {
   fill: #ccc;
 }
 
-.AreaXL {
+.AppMapAreaXL {
   fill: #bbb;
 }

@@ -5,17 +5,17 @@ export const initialState = {
   map: {
     0: {
       id: 0,
-      population: 0,
+      population: 5,
       d: " M 410.109 270.349 L 385.482 242.442 L 341.826 278.488 L 376.527 338.953 L 410.109 270.349 Z "
     },
     1: {
       id: 1,
-      population: 0,
+      population: 10,
       d: " M 288.094 299.419 L 341.826 278.488 L 376.527 338.953 L 316.079 384.302 L 293.691 338.953 L 288.094 299.419 Z "
     },
     2: {
       id: 2,
-      population: 0,
+      population: 5,
       d: " M 271.303 125 L 206.378 183.14 L 258.99 227.326 L 316.079 227.326 L 304.885 170.349 L 271.303 125 Z "
     },
     3: {
@@ -55,7 +55,7 @@ export const initialState = {
     },
     10: {
       id: 10,
-      population: 0,
+      population: 10,
       d: " M 316.079 227.326 L 258.99 227.326 L 288.094 299.419 L 341.826 278.488 L 316.079 227.326 Z "
     },
     11: {
@@ -80,7 +80,7 @@ export const initialState = {
     },
     15: {
       id: 15,
-      population: 0,
+      population: 5,
       d: " M 206.378 183.14 L 200.781 299.419 L 288.094 299.419 L 258.99 227.326 L 206.378 183.14 Z "
     },
     16: {
@@ -105,7 +105,7 @@ export const initialState = {
     },
     20: {
       id: 20,
-      population: 0,
+      population: 5,
       d: " M 445.93 59.884 L 376.527 134.302 L 427.93 170.349 L 471.677 227.326 L 569.065 170.349 L 515.93 104.07 L 445.93 59.884 Z "
     },
     21: {
@@ -165,7 +165,7 @@ export const initialState = {
     },
     32: {
       id: 32,
-      population: 0,
+      population: 5,
       d: " M 16 450 L 69.811 514 L 102.274 498.256 L 92.199 421 L 16 450 Z "
     },
   },

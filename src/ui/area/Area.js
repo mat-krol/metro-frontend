@@ -6,7 +6,7 @@ function Area(props) {
   return (
     <path
       d={props.d}
-      key={props.id}
+      id={props.id}
       className={className(props)}
       fill="rgb(243,243,243)"
       vectorEffect="non-scaling-stroke"
@@ -20,6 +20,10 @@ function Area(props) {
 
 const className = props => {
   const arr = [classes.Area]
+  props.population < 5 && arr.push(classes.AreaS)
+  props.population >= 5 && props.population < 10 && arr.push(classes.AreaM)
+  props.population >= 10 && props.population < 15 && arr.push(classes.AreaL)
+  props.population >= 15 && arr.push(classes.AreaXL)
   // props.sharp && arr.push(classes.AreaSharp);
   // props.color === "blue" && arr.push(classes.AreaBlue)
   // props.color === "black" && arr.push(classes.AreaBlack)
