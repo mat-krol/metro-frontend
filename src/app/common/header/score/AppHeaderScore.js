@@ -6,7 +6,7 @@ function AppHeaderScore({ duration, finishQuiz }) {
   return (
     <div className={classes.AppHeaderScore}>
       <MdSentimentNeutral />
-      2.8
+      <span>2.8</span>
     </div>
   )
 }

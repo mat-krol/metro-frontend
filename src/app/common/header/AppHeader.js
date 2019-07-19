@@ -6,6 +6,7 @@ import React from 'react';
 
 // import { finishQuiz } from '../../../redux/sagas'
 
+import src from '../../../assets/logo.png'
 import classes from './AppHeader.module.css';
 import AppHeaderScore from './score/AppHeaderScore';
 import AppHeaderDate from './date/AppHeaderDate';
@@ -17,6 +18,7 @@ import AppHeaderDate from './date/AppHeaderDate';
 function AppHeader(props) {
   return (
     <div className={classes.AppHeader}>
+        <img alt="logo" src={src} height="36px" />
         <AppHeaderScore />
         <AppHeaderDate />
     </div>

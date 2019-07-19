@@ -1,19 +1,26 @@
 .AppHeaderScore {
   position: absolute;
-  left: calc(50vw - 62px);
-  width: 120px;
+  left: calc(50vw - 32px);
+  width: 60px;
   height: 60px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* box-sizing: border-box; */
-  border-radius: 0 0 60px 60px;
+  justify-self: center;
+  box-sizing: border-box;
+  border-radius: 0 0 36px 36px;
   background: white;
-  border: 2px solid orange;
-  border-top: 0;
+  color: black;
+  /* border: 2px solid orange; */
+  /* border-top: 0; */
 }
 
 .AppHeaderScore svg {
-  margin-right: 8px;
   color: orange;
+  font-size: 36px;
+}
+
+.AppHeaderScore span {
+  font-size: 10px;
 }

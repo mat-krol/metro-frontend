@@ -1,14 +1,14 @@
 import React from 'react';
 import { ROUTES } from '../../../constants/routes';
 
-import AppBanner from '../../../common/banner/AppBanner';
+import logo from '../../../../assets/icon-white.png'
 import AppModule from '../../../common/module';
 import Selection from '../../../../ui/selection/Selection';
 
 function IntroSelect() {
   return (
-    <AppModule type="select">
-      <AppBanner />
+    <AppModule type="select" header>
+      <img src={logo} alt="logo" style={{ width: "115px", marginBottom: "2rem"}} />
       <Selection list={list} />
     </AppModule>
   )

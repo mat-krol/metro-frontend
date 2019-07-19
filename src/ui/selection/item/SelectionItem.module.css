@@ -6,10 +6,11 @@
   padding: 1rem;
   width: 280px;
   background: #22b3fa;
-  color: white;
+  background: white;
+  color: #2e3192;
+  border: 2px solid #2e3192;
   font-weight: 700;
-  border: 0;
-  border-radius: 20px;
+  border-radius: 36px;
   text-decoration: none;
   cursor: pointer;
   transition: background-color ease 0.3s;
