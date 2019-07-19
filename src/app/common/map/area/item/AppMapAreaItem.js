@@ -1,13 +1,14 @@
 import React from 'react';
 
 import classes from './AppMapAreaItem.module.css';
-import { calculateCenter } from '../../../../../helpers/utils';
+// import { calculateCenter } from '../../../../../helpers/utils';
 
 function AppMapAreaItem(props) {
-  const [x, y] = calculateCenter(props.d)
+  // const [x, y] = calculateCenter(props.d)
+  // console.log(x, y, props.center)
 
   const handleToggle = () => {
-    props.onClick(props.id, [x, y])
+    props.onClick(props.id, props.center)
   }
 
   return (

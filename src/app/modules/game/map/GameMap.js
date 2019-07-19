@@ -20,7 +20,8 @@ function GameMap() {
       [position]: {
         id: id,
         x: arr[0],
-        y: arr[1]
+        y: arr[1],
+        key: position
       }
     }
     dispatch(updateLineLength.trigger(point))

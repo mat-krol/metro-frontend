@@ -11,7 +11,7 @@ function AppMapCircle() {
   return (
     <>
       {_.map(line, item => (
-        <AppMapCircleItem key={item.id} {...item} />
+        <AppMapCircleItem {...item} />
       ))}
     </>
   )
