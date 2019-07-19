@@ -7,6 +7,13 @@ export const initialState = {
       length: null
     },
   },
+  mode: {
+    build: false,
+    expand: false,
+    upgrade: false,
+    invest: false,
+    wait: false,
+  },
   map: {
     line: {},
     areas: {
