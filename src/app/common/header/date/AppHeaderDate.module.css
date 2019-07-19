@@ -1,0 +1,39 @@
+/* .AppHeaderDate {
+  position: absolute;
+  left: calc(50vw - 60px);
+  width: 120px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 0 0 60px 60px;
+  background: white;
+  border: 2px solid orange;
+  border-top: 0;
+  font-size: 1.2rem;
+  font-size: 18px;
+}
+
+.AppHeaderScore svg {
+  margin-right: 8px;
+  color: orange;
+} */
+
+.AppHeaderDate {
+  display: flex;
+  align-items: center;
+}
+
+.AppHeaderDateIcon {
+  background: #2e3192;
+  color: white;
+  border-radius: 16px;
+  height: 16px;
+  width: 16px;
+  font-size: 10px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

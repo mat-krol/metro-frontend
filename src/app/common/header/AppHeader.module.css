@@ -7,16 +7,15 @@
   width: 100vw;
   background: #7bb5f7;
   background: #599ae4;
-  font-size: 1.2rem;
-
+  background: #eee;
   padding: 1rem;
   box-sizing: border-box;
-  color: white;
+  /* color: white; */
 }
 
 .AppHeader {
   display: grid;
-  grid-template-columns: 40px auto 30px;
+  grid-template-columns: auto 120px auto;
   grid-gap: 8px;
   align-content: center;
   align-items: center;
