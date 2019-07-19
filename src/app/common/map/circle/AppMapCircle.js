@@ -7,6 +7,8 @@ import AppMapCircleItem from './item/AppMapCircleItem';
 
 function AppMapCircle() {
   const line = useSelector(selectors.getMapLine)
+  const points = useSelector(selectors.getMapPoints)
+  console.log(points)
 
   return (
     <>

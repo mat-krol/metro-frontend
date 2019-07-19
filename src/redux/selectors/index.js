@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 export const getMapAreas = state => state.map.areas
 export const getMapLine = state => state.map.line
+export const getMapLines = state => state.map.lines
 export const getUpgradeLineLength = state => state.upgrade.line.length
 
 export const getUpgradeLineCost = createSelector(
@@ -13,6 +14,16 @@ export const getUpgradeLineCost = createSelector(
 export const getUpgradeStations = createSelector(
   getMapLine,
   line => Object.keys(line).length
+)
+
+export const getMapPoints = createSelector(
+  getMapLines,
+  list => (
+    _.reduce(list, (result, value, key) => {
+      result.push(value.points)
+      return result;
+    }, [])
+  )
 )
 
 export const getView = state => state.view

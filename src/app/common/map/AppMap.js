@@ -7,7 +7,7 @@ import AppMapLine from './line/AppMapLine';
 
 function AppMap({ onClick }) {
   return (
-    <svg viewBox="0 0 600 600" className={classes.AppMap}>
+    <svg viewBox="0 0 600 600" className={classes.AppMap} preserveAspectRatio="xMidYMin meet">
       <AppMapArea onClick={onClick} />
       <AppMapLine />
       <AppMapCircle />

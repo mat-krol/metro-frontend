@@ -38,7 +38,6 @@ function GameHome() {
     <AppModule header >
       <AppHeader />
       <AppMap />
-      <span style={{ fontSize: "0.8rem" }}>View</span>
       <Selection horizontal list={list} />
     </AppModule>
   )

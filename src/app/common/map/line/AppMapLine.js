@@ -1,22 +1,19 @@
 import React from 'react';
+import _ from 'lodash';
 import { useSelector } from 'react-redux';
-import { obtainLine } from '../../../../helpers/utils';
-import * as selectors from '../../../../redux/selectors';
+import * as selectors from '../../../../redux/selectors'
+
+import AppMapLineItem from './item/AppMapLineItem';
 
 function AppMapLine() {
-  const line = useSelector(selectors.getMapLine)
+  const lines = useSelector(selectors.getMapLines)
 
   return (
-    <path
-      d={obtainLine(line)}
-      fill="none"
-      vectorEffect="non-scaling-stroke"
-      strokeWidth="3"
-      stroke="#22b3fa"
-      strokeLinejoin="miter"
-      strokeLinecap="square"
-      strokeMiterlimit="3"
-    />
+    <>
+      {_.map(lines, item => (
+        <AppMapLineItem {...item} />
+      ))}
+    </>
   )
 }
 

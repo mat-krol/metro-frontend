@@ -10,6 +10,7 @@ import src from '../../../assets/logo.png'
 import classes from './AppHeader.module.css';
 import AppHeaderScore from './score/AppHeaderScore';
 import AppHeaderDate from './date/AppHeaderDate';
+import AppIcon from '../icon/AppIcon';
 // import AppHeaderTimer from './timer/AppHeaderTimer';
 // import ProgressBar from '../../../ui/progress/bar/ProgressBar';
 // import AppIcon from '../icon/AppIcon';
@@ -18,7 +19,7 @@ import AppHeaderDate from './date/AppHeaderDate';
 function AppHeader(props) {
   return (
     <div className={classes.AppHeader}>
-        <img alt="logo" src={src} height="36px" />
+        <AppIcon height="36px" />
         <AppHeaderScore />
         <AppHeaderDate />
     </div>

@@ -6,7 +6,7 @@ import classes from './AppIcon.module.css';
 function AppIcon(props) {
   return (
     <div className={classes.AppIcon} style={{ ...props.style }}>
-      <img src={icon} alt="Arithmetic" height={props.height} className={classes.AppIconImage}  />
+      <img src={icon} alt="Logo" height={props.height} className={classes.AppIconImage}  />
     </div>
   )
 }

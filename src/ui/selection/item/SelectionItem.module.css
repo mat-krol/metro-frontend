@@ -6,7 +6,7 @@
   padding: 1rem;
   margin: 1rem 0.5rem;
   padding: 8px;
-  width: 100%;
+  width: calc(100% - 16px);
   /* width: 280px; */
   background: #22b3fa;
   background: white;
