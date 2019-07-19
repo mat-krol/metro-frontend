@@ -9,6 +9,7 @@ function Selection(props) {
     <div className={classes.Selection} style={{ display: "flex", flexDirection: props.horizontal ? "row" : "column", justifyContent: "center" }}>
       {_.map(props.list, item => (
         <SelectionItem
+          horizontal={props.horizontal}
           key={item.text || item.key}
           disabled={item.disabled}
           icon={item.icon}

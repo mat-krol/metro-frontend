@@ -15,6 +15,23 @@ export const getUpgradeStations = createSelector(
   line => Object.keys(line).length
 )
 
+export const getView = state => state.view
+
+export const getCurrentViewPopulation = createSelector(
+  getView,
+  view => view === 2
+)
+
+export const getCurrentViewSatisfaction = createSelector(
+  getView,
+  view => view === 1
+)
+
+export const getCurrentViewPlain = createSelector(
+  getView,
+  view => view === 0
+)
+
 export const getQuestionId = state => state.quiz.question.id
 export const getQuestionDisabled = state => state.quiz.question.disabled
 export const getQuestionUserAnswer = state => state.quiz.question.user.answer

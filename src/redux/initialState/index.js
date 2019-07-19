@@ -7,6 +7,7 @@ export const initialState = {
       length: null
     },
   },
+  view: 0,
   mode: {
     build: false,
     expand: false,
@@ -16,10 +17,9 @@ export const initialState = {
   },
   map: {
     line: {},
-    
-        areas: {
-          0: {
-            id: 0,
+    areas: {
+      0: {
+        id: 0,
         center: [377.1185970028766, 285.53421872198913],
         satisfaction: 3,
         population: 5,
@@ -28,21 +28,21 @@ export const initialState = {
       1: {
         id: 1,
         center: [328.41601500114325, 328.152455677901],
-        satisfaction: 3,
+        satisfaction: 4,
         population: 10,
         d: "M 288.094 299.419 L 341.826 278.488 L 376.527 338.953 L 316.079 384.302 L 293.691 338.953 L 288.094 299.419 Z"
       },
       2: {
         id: 2,
         center: [267.3043635314838, 184.56426594084508],
-        satisfaction: 3,
+        satisfaction: 1,
         population: 5,
         d: "M 271.303 125 L 206.378 183.14 L 258.99 227.326 L 316.079 227.326 L 304.885 170.349 L 271.303 125 Z"
       },
       3: {
         id: 3,
         center: [364.49614783627254, 429.4766487246713],
-        satisfaction: 3,
+        satisfaction: 4,
         population: 0,
         d: "M 417.945 487.791 L 396.677 384.302 L 376.527 338.953 L 316.079 384.302 L 327.274 472.674 L 332.871 504.07 L 417.945 487.791 Z"
       },
@@ -77,21 +77,21 @@ export const initialState = {
       8: {
         id: 8,
         center: [148.34558356591157, 539.5465832601959],
-        satisfaction: 3,
+        satisfaction: 2,
         population: 0,
         d: "M 60.856 509.884 L 119.065 575 L 206.378 595.93 L 206.378 498.256 L 191.826 504.07 L 92.199 498.256 L 60.856 509.884 Z"
       },
       9: {
         id: 9,
         center: [220.1415040733611, 120.05054232151662],
-        satisfaction: 3,
+        satisfaction: 2,
         population: 0,
         d: "M 191.826 104.07 L 178.393 163.372 L 206.378 183.14 L 271.303 125 L 216.93 42.07 L 191.826 104.07 Z"
       },
       10: {
         id: 10,
         center: [299.98341355586166, 258.9306346799095],
-        satisfaction: 3,
+        satisfaction: 2,
         population: 10,
         d: "M 316.079 227.326 L 258.99 227.326 L 288.094 299.419 L 341.826 278.488 L 316.079 227.326 Z"
       },
@@ -147,7 +147,7 @@ export const initialState = {
       18: {
         id: 18,
         center: [348.963114558733, 247.54523350644263],
-        satisfaction: 3,
+        satisfaction: 1,
         population: 0,
         d: "M 357.497 227.326 L 316.079 227.326 L 341.826 278.488 L 385.482 248.256 L 357.497 227.326 Z"
       },
@@ -245,7 +245,7 @@ export const initialState = {
       32: {
         id: 32,
         center: [67.76010085444237, 466.3781816093527],
-        satisfaction: 3,
+        satisfaction: 1,
         population: 5,
         d: "M 16 450 L 69.811 514 L 102.274 498.256 L 92.199 421 L 16 450 Z"
       },

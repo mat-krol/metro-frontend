@@ -6,6 +6,7 @@
   padding: 1rem;
   margin: 1rem 0.5rem;
   padding: 8px;
+  width: 100%;
   /* width: 280px; */
   background: #22b3fa;
   background: white;
@@ -15,6 +16,7 @@
   border-radius: 36px;
   text-decoration: none;
   cursor: pointer;
+  box-sizing: border-box;
   transition: background-color ease 0.3s;
 }
 
@@ -25,6 +27,7 @@
 .SelectionItem:enabled:hover,
 .SelectionItem:active {
   background: #599ae4;
+  background: #2e319220;
   text-decoration: none;
 }
 

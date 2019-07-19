@@ -13,3 +13,19 @@
 .AppMapAreaItemXL {
   fill: hsl(0, 0%, 80%);
 }
+
+.AppMapAreaItem2 {
+  fill: #ffa50080;
+}
+
+.AppMapAreaItem3 {
+  fill: #ffe60080;
+}
+
+.AppMapAreaItem4 {
+  fill: #9acd3280;
+}
+
+.AppMapAreaItem5 {
+  fill: #03a03280;
+}

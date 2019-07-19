@@ -29,10 +29,18 @@ function AppMapAreaItem(props) {
 
 const className = props => {
   const arr = [classes.AppMapAreaItem]
-  props.population < 5 && arr.push(classes.AppMapAreaItemS)
-  props.population >= 5 && props.population < 10 && arr.push(classes.AppMapAreaItemM)
-  props.population >= 10 && props.population < 15 && arr.push(classes.AppMapAreaItemL)
-  props.population >= 15 && arr.push(classes.AppMapAreaItemXL)
+  if (props.showPop) {
+    props.population < 5 && arr.push(classes.AppMapAreaItemS)
+    props.population >= 5 && props.population < 10 && arr.push(classes.AppMapAreaItemM)
+    props.population >= 10 && props.population < 15 && arr.push(classes.AppMapAreaItemL)
+    props.population >= 15 && arr.push(classes.AppMapAreaItemXL)
+  }
+  if (props.showSat) {
+    props.satisfaction < 2 && arr.push(classes.AppMapAreaItem2)
+    props.satisfaction >= 2 && props.satisfaction < 3 && arr.push(classes.AppMapAreaItem3)
+    props.satisfaction >= 3 && props.satisfaction < 4 && arr.push(classes.AppMapAreaItem4)
+    props.satisfaction >= 4 && arr.push(classes.AppMapAreaItem5)
+  }
   return arr.join(' ')
 }
 
