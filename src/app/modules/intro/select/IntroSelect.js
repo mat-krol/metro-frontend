@@ -15,7 +15,8 @@ function IntroSelect() {
 }
 
 const list = [
-  { to: ROUTES.GameHome, text: "Game Start" },
+  { to: ROUTES.GameHome, text: "Resume" },
+  { to: ROUTES.GameHome, text: "Restart" },
   { to: ROUTES.GameHome, text: "Settings" },
   { to: ROUTES.GameHome, text: "Log out" }
 ]

@@ -1,7 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { obtainLine } from '../../../../../helpers/utils';
-import * as selectors from '../../../../../redux/selectors';
 
 function AppMapLineItem({color, points}) {
   // const line = useSelector(selectors.getMapLine)

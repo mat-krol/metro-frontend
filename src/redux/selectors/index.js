@@ -18,12 +18,15 @@ export const getUpgradeStations = createSelector(
 
 export const getMapPoints = createSelector(
   getMapLines,
-  list => (
-    _.reduce(list, (result, value, key) => {
-      result.push(value.points)
-      return result;
-    }, [])
-  )
+  list => {
+    let result = _.flatMap(list, 'points');
+    return result
+    // _.reduce(list, (result, value, key) => {
+    //   result=[value.points, ...result]
+    //   // result = _.pluck(objArray, 'foo');
+    //   return result;
+    // }, [])
+  }
 )
 
 export const getView = state => state.view

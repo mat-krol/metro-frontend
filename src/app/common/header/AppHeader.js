@@ -6,7 +6,7 @@ import React from 'react';
 
 // import { finishQuiz } from '../../../redux/sagas'
 
-import src from '../../../assets/logo.png'
+// import src from '../../../assets/logo.png'
 import classes from './AppHeader.module.css';
 import AppHeaderScore from './score/AppHeaderScore';
 import AppHeaderDate from './date/AppHeaderDate';

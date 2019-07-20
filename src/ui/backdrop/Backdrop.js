@@ -13,6 +13,7 @@ const className = props => {
   props.sharp && arr.push(classes.BackdropSharp);
   props.color === "blue" && arr.push(classes.BackdropBlue)
   props.color === "black" && arr.push(classes.BackdropBlack)
+  props.color === "deepblack" && arr.push(classes.BackdropDeepBlack)
   props.color === "white" && arr.push(classes.BackdropWhite)
   props.color === "transparent" && arr.push(classes.BackdropTransparent);
   props.show ? arr.push(classes.BackdropShow) : arr.push(classes.BackdropHide);
