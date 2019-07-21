@@ -9,7 +9,6 @@
   text-decoration: none;
   cursor: pointer;
   box-sizing: border-box;
-  transition: background-color ease 0.3s;
   border: 0;
 }
 
@@ -24,6 +23,7 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  transition: background-color ease 0.3s;
 }
 
 *:focus {
@@ -32,8 +32,11 @@
 
 .OptionItem:enabled:hover,
 .OptionItem:active {
-  background: #2e319220;
   text-decoration: none;
+}
+
+.OptionItem:enabled:hover .OptionItemIcon {
+  background: #2e319220;
 }
 
 .OptionItem:disabled {

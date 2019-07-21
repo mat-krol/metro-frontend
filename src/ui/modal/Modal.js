@@ -9,9 +9,12 @@ function Modal(props) {
     return (
       <>
         <div className={classes.ModalHolder}>
-          <div className={classes.ModalExit}>
-            <FaTimes onClick={props.onExit} />
-          </div>
+          {
+            props.onExit
+            && <div className={classes.ModalExit}>
+                <FaTimes onClick={props.onExit} />
+              </div>
+            }
           {props.children}
         </div>
         <Backdrop show onClick={props.onExit} color="black" />

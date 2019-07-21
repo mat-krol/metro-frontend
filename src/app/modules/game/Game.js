@@ -2,6 +2,7 @@ import React from 'react';
 // import { useSelector } from 'react-redux';
 // import * as selectors from '../../../redux/selectors'
 
+import GameBuild from './build';
 import GameHome from './home';
 import GameMap from './map';
 
@@ -18,6 +19,7 @@ function Game() {
   // }
   return (
     <Switch>
+      <Route path={ROUTES.GameBuild} component={GameBuild} />
       <Route path={ROUTES.GameHome} component={GameHome} />
       <Route path={ROUTES.GameMap} component={GameMap} />
     </Switch>

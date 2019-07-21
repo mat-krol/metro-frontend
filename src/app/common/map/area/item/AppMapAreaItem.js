@@ -5,7 +5,6 @@ import classes from './AppMapAreaItem.module.css';
 
 function AppMapAreaItem(props) {
   // const [x, y] = calculateCenter(props.d)
-  // console.log(x, y, props.center)
 
   const handleToggle = () => {
     props.onClick(props.id, props.center)

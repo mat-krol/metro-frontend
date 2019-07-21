@@ -6,6 +6,23 @@ export const getMapLine = state => state.map.line
 export const getMapLines = state => state.map.lines
 export const getUpgradeLineLength = state => state.upgrade.line.length
 
+export const getModeBuildColors = state => state.mode.build.colors
+export const getModeBuildLine = state => state.mode.build.line
+export const getModeBuildLinePoints = state => state.mode.build.line.points
+export const getModeBuildLineLength = state => state.mode.build.line.length
+export const getModeBuildLineColor = state => state.mode.build.line.color
+
+export const getModeBuildLineStations = createSelector(
+  getModeBuildLinePoints,
+  points => Object.keys(points).length
+)
+
+export const getModeBuildLineCost = createSelector(
+  getModeBuildLineStations,
+  getModeBuildLineLength,
+  (stations, length) => Math.floor(stations * 20 + length * 100)
+)
+
 export const getUpgradeLineCost = createSelector(
   getUpgradeLineLength,
   length => length * 50
@@ -19,7 +36,8 @@ export const getUpgradeStations = createSelector(
 export const getMapPoints = createSelector(
   getMapLines,
   list => {
-    let result = _.flatMap(list, 'points');
+    let result = _.map(list, 'points');
+    // let final = _.assign.apply(_, result)
     return result
     // _.reduce(list, (result, value, key) => {
     //   result=[value.points, ...result]
@@ -103,7 +121,6 @@ export const getNoQuestionsLeft = createSelector(
 export const getReachedThreeStars = createSelector(
   getQuizRoundStars,
   stars => {
-    console.log(stars, stars === 3)
     return (stars === 3)
   }
 )
@@ -112,7 +129,6 @@ export const getShouldFinishQuiz = createSelector(
   getReachedThreeStars,
   getNoQuestionsLeft,
   (stars, questions) => {
-    console.log(stars, questions)
     return (stars || questions)
   }
 )

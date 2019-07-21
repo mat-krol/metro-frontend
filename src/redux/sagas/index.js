@@ -7,97 +7,122 @@ import { checkCorrect, evaluateLineLength } from './utils'
 
 export function* updateLineLength(action) {
   const point = action.payload
-  yield put(actions.map.line.create.assign(point))
-  const line = yield select(selectors.getMapLine)
+  yield put(actions.mode.build.line.points.create.assign(point))
+  const line = yield select(selectors.getModeBuildLinePoints)
   const length = yield call(evaluateLineLength, line)
-  yield put(actions.upgrade.line.length.create.update(length))
+  yield put(actions.mode.build.line.length.create.update(length))
 }
 
-export function* updateAnswerAndCheckCorrectness(action) {
-  const key = action.payload
-  yield call(updateAnswer, key)
-  yield call(updateCorrectness)
-  const correctness = yield select(selectors.getQuestionUserCorrectness)
-  if (correctness !== 0) yield call(shouldDisplayNextQuestion, correctness)
+export function* finishModeBuild() {
+  const line = yield select(selectors.getModeBuildLine)
+  const lines = yield select(selectors.getMapLines)
+  var length = Object.keys(lines).length;
+  yield put(actions.map.lines.create.assign({[length]: line}))
+  yield put(actions.mode.build.create.reset())
 }
 
-export function* startQuiz(action) {
-  const id = action.payload
-  yield put(actions.quiz.ongoing.create.on())
-  yield put(actions.quiz.round.id.create.update(id))
-  const quizRound = yield select(selectors.getQuizRoundById)
-  yield put(actions.quiz.round.create.update(quizRound))
+export function* startModeBuild() {
+  const lines = yield select(selectors.getMapLines)
+  var length = Object.keys(lines).length;
+  yield put(actions.mode.build.ongoing.create.on())
+  yield put(actions.mode.build.line.id.create.update(length))
+  yield put(actions.mode.build.line.key.create.update(length))
+  const colors = yield select(selectors.getModeBuildColors)
+  yield put(actions.mode.build.line.color.create.update(colors[length]))
 }
 
-export function* finishQuiz(action) {
-  yield call(updateStars)
-  yield put(actions.quiz.create.reset())
-  yield put(actions.quiz.ongoing.create.off())
-}
+// export function* updateAnswerAndCheckCorrectness(action) {
+//   const key = action.payload
+//   yield call(updateAnswer, key)
+//   yield call(updateCorrectness)
+//   const correctness = yield select(selectors.getQuestionUserCorrectness)
+//   if (correctness !== 0) yield call(shouldDisplayNextQuestion, correctness)
+// }
 
-function* updateAnswer(key) {
-  const answer = yield select(selectors.getQuestionUserAnswer)
-  const newAnswer = answer.concat(key)
-  yield put(actions.quiz.question.user.answer.create.update(newAnswer))
-}
+// export function* startQuiz(action) {
+//   const id = action.payload
+//   yield put(actions.quiz.ongoing.create.on())
+//   yield put(actions.quiz.round.id.create.update(id))
+//   const quizRound = yield select(selectors.getQuizRoundById)
+//   yield put(actions.quiz.round.create.update(quizRound))
+// }
 
-function* updateStars() {
-  const stars = yield select(selectors.getQuizRoundStars)
-  const oldStars = yield select(selectors.getQuizListStarsById)
-  const id = yield select(selectors.getQuizRoundId)
-  if(stars > oldStars) yield put(actions.list[id].stars.create.update(stars))
-}
+// export function* finishQuiz(action) {
+//   yield call(updateStars)
+//   yield put(actions.quiz.create.reset())
+//   yield put(actions.quiz.ongoing.create.off())
+// }
 
-function* updateCorrectness() {
-  const answer = yield select(selectors.getQuestionUserAnswer)
-  const solution = yield select(selectors.getQuestionGivenAnswer)
-  const correctness = yield call(checkCorrect, answer, solution)
-  yield put(actions.quiz.question.user.correctness.create.update(correctness))
-}
+// function* updateAnswer(key) {
+//   const answer = yield select(selectors.getQuestionUserAnswer)
+//   const newAnswer = answer.concat(key)
+//   yield put(actions.quiz.question.user.answer.create.update(newAnswer))
+// }
 
-function* shouldDisplayNextQuestion(correctness) {
-  if (correctness === 1) yield call(questionCorrect)
-  yield put(actions.quiz.question.disabled.create.on())
-  yield delay(500)
-  const shouldFinishQuiz = yield select(selectors.getShouldFinishQuiz)
-  if (shouldFinishQuiz) yield call(finishQuiz)
-  else yield call(nextQuestion)
-}
+// function* updateStars() {
+//   const stars = yield select(selectors.getQuizRoundStars)
+//   const oldStars = yield select(selectors.getQuizListStarsById)
+//   const id = yield select(selectors.getQuizRoundId)
+//   if(stars > oldStars) yield put(actions.list[id].stars.create.update(stars))
+// }
 
-function* nextQuestion() {
-  yield put(actions.quiz.question.user.create.reset())
-  yield put(actions.quiz.question.id.create.increment())
-  yield put(actions.quiz.question.disabled.create.off())
-}
+// function* updateCorrectness() {
+//   const answer = yield select(selectors.getQuestionUserAnswer)
+//   const solution = yield select(selectors.getQuestionGivenAnswer)
+//   const correctness = yield call(checkCorrect, answer, solution)
+//   yield put(actions.quiz.question.user.correctness.create.update(correctness))
+// }
 
-function* questionCorrect() {
-  yield put(actions.quiz.round.score.create.increment())
-  const tiers = yield select(selectors.getQuizRoundTiers)
-  const score = yield select(selectors.getQuizRoundScore)
-  if (score < tiers[0]) yield put(actions.quiz.round.stars.create.update(0))
-  else if (score < tiers[1]) yield put(actions.quiz.round.stars.create.update(1))
-  else if (score < tiers[2]) yield put(actions.quiz.round.stars.create.update(2))
-  else yield put(actions.quiz.round.stars.create.update(3))
-}
+// function* shouldDisplayNextQuestion(correctness) {
+//   if (correctness === 1) yield call(questionCorrect)
+//   yield put(actions.quiz.question.disabled.create.on())
+//   yield delay(500)
+//   const shouldFinishQuiz = yield select(selectors.getShouldFinishQuiz)
+//   if (shouldFinishQuiz) yield call(finishQuiz)
+//   else yield call(nextQuestion)
+// }
 
-updateAnswerAndCheckCorrectness.TRIGGER = "sagas: updateAnswerAndCheckCorrectness (TRIGGER)"
-updateAnswerAndCheckCorrectness.trigger = makeActionCreator(updateAnswerAndCheckCorrectness.TRIGGER)
+// function* nextQuestion() {
+//   yield put(actions.quiz.question.user.create.reset())
+//   yield put(actions.quiz.question.id.create.increment())
+//   yield put(actions.quiz.question.disabled.create.off())
+// }
 
-finishQuiz.TRIGGER = "sagas: finishQuiz (TRIGGER)"
-finishQuiz.trigger = makeActionCreator(finishQuiz.TRIGGER)
+// function* questionCorrect() {
+//   yield put(actions.quiz.round.score.create.increment())
+//   const tiers = yield select(selectors.getQuizRoundTiers)
+//   const score = yield select(selectors.getQuizRoundScore)
+//   if (score < tiers[0]) yield put(actions.quiz.round.stars.create.update(0))
+//   else if (score < tiers[1]) yield put(actions.quiz.round.stars.create.update(1))
+//   else if (score < tiers[2]) yield put(actions.quiz.round.stars.create.update(2))
+//   else yield put(actions.quiz.round.stars.create.update(3))
+// }
 
-startQuiz.TRIGGER = "sagas: startQuiz (TRIGGER)"
-startQuiz.trigger = makeActionCreator(startQuiz.TRIGGER)
+// updateAnswerAndCheckCorrectness.TRIGGER = "sagas: updateAnswerAndCheckCorrectness (TRIGGER)"
+// updateAnswerAndCheckCorrectness.trigger = makeActionCreator(updateAnswerAndCheckCorrectness.TRIGGER)
+
+// finishQuiz.TRIGGER = "sagas: finishQuiz (TRIGGER)"
+// finishQuiz.trigger = makeActionCreator(finishQuiz.TRIGGER)
+
+// startQuiz.TRIGGER = "sagas: startQuiz (TRIGGER)"
+// startQuiz.trigger = makeActionCreator(startQuiz.TRIGGER)
 
 updateLineLength.TRIGGER = "sagas: updateLineLength (TRIGGER)"
 updateLineLength.trigger = makeActionCreator(updateLineLength.TRIGGER)
 
+finishModeBuild.TRIGGER = "sagas: finishModeBuild (TRIGGER)"
+finishModeBuild.trigger = makeActionCreator(finishModeBuild.TRIGGER)
+
+startModeBuild.TRIGGER = "sagas: startModeBuild (TRIGGER)"
+startModeBuild.trigger = makeActionCreator(startModeBuild.TRIGGER)
 
 const sagas = [
+  takeLeading(startModeBuild.TRIGGER, startModeBuild),
+  takeLeading(finishModeBuild.TRIGGER, finishModeBuild),
   takeLeading(updateLineLength.TRIGGER, updateLineLength),
-  takeLeading(startQuiz.TRIGGER, startQuiz),
-  takeLeading(finishQuiz.TRIGGER, finishQuiz),
-  takeLeading(updateAnswerAndCheckCorrectness.TRIGGER, updateAnswerAndCheckCorrectness)
+  // takeLeading(startQuiz.TRIGGER, startQuiz),
+  // takeLeading(finishQuiz.TRIGGER, finishQuiz),
+  // takeLeading(updateAnswerAndCheckCorrectness.TRIGGER, updateAnswerAndCheckCorrectness)
 ]
 
 export default function* rootSaga() {

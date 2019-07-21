@@ -6,14 +6,14 @@ import * as selectors from '../../../../redux/selectors'
 import AppMapCircleItem from './item/AppMapCircleItem';
 
 function AppMapCircle() {
-  const line = useSelector(selectors.getMapLine)
-  const points = useSelector(selectors.getMapPoints)
-  console.log(points)
+  const lines = useSelector(selectors.getMapLines)
 
   return (
     <>
-      {_.map(line, item => (
-        <AppMapCircleItem {...item} />
+      {_.map(lines, item => (
+        _.map(item.points, item => (
+          <AppMapCircleItem {...item} />
+        ))
       ))}
     </>
   )

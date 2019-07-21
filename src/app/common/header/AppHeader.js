@@ -18,7 +18,7 @@ import AppIcon from '../icon/AppIcon';
 
 function AppHeader(props) {
   return (
-    <div className={classes.AppHeader}>
+    <div className={className(props)}>
         <AppIcon height="36px" />
         <AppHeaderScore />
         <AppHeaderDate />
@@ -53,6 +53,12 @@ function AppHeader(props) {
   //   )
   // } else {
 
+}
+
+const className = props => {
+  const arr = [classes.AppHeader]
+  props.type === "build" && arr.push(classes.AppHeaderBuild)
+  return arr.join(' ')
 }
 
 export default AppHeader;

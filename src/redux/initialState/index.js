@@ -8,15 +8,42 @@ export const initialState = {
     },
   },
   view: 0,
+  game: {
+    
+  },
   mode: {
-    build: false,
-    expand: false,
-    upgrade: false,
-    invest: false,
-    wait: false,
+    build: {
+      ongoing: false,
+      colors: {
+        0: "#2e3192",
+        1: "#bf0000",
+        2: "#0e8f4c",
+        3: "#ffcc00",
+        4: "#22b3fa",
+        5: "#ff992d"
+      },
+      line: {
+        id: null,
+        key: null,
+        length: 0,
+        color: null,
+        points: {}
+      }
+    },
+    expand: {
+      ongoing: false,
+    },
+    upgrade: {
+      ongoing: false,
+    },
+    invest: {
+      ongoing: false,
+    },
+    wait: {
+      ongoing: false,
+    },
   },
   map: {
-    line: {},
     lines: {
       0: {
         id: 0,
@@ -25,6 +52,7 @@ export const initialState = {
         points: {
           0: {
             id: 20,
+            initial: true,
             x: 472.60836683206213,
             y: 143.51690143298032,
             key: 0,
@@ -74,6 +102,7 @@ export const initialState = {
         points: {
           0: {
             id: 28,
+            initial: true,
             x: 277.70385649649614,
             y: 64.4034867136583,
             key: 0,

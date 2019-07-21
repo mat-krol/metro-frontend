@@ -32,7 +32,7 @@ export const obtainLine = object => {
   } else {
     let res = ""
     _.forEach(object, (value, key) => {
-      const add = key === "0" ? `M ${value.x} ${value.y} ` : `L ${value.x} ${value.y} `
+      const add = value.initial === true ? `M ${value.x} ${value.y} ` : `L ${value.x} ${value.y} `
       res = res + add
     })
     return res
