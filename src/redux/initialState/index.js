@@ -20,7 +20,10 @@ export const initialState = {
         2: "#0e8f4c",
         3: "#ffcc00",
         4: "#22b3fa",
-        5: "#ff992d"
+        5: "#ff992d",
+        6: "#000000",
+        7: "#8B4513",
+        8: "#e59aaa",
       },
       line: {
         id: null,
