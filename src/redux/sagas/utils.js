@@ -34,3 +34,10 @@ export const evaluateLineLength = line => {
   })
   return Math.round( length / 6 ) / 10
 }
+
+export const checkForDuplicate = (line, props) => {
+  if (!_.isEmpty(line)) {
+    return line[props.key - 1].id === props.id
+  }
+  return false
+}

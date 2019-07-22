@@ -7,7 +7,7 @@ function AppMapAreaItem(props) {
   // const [x, y] = calculateCenter(props.d)
 
   const handleToggle = () => {
-    props.onClick(props.id, props.center)
+    props.onClick && props.onClick(props.id, props.center)
   }
 
   return (

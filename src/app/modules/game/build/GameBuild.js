@@ -3,7 +3,7 @@ import _ from 'lodash';
 // import { actions } from '../../../../redux/leaves';
 import { useDispatch, useSelector } from 'react-redux';
 import * as selectors from '../../../../redux/selectors'
-import { updateLineLength, finishModeBuild } from '../../../../redux/sagas'
+import { updateModeBuild, finishModeBuild } from '../../../../redux/sagas'
 
 import AppHeader from '../../../common/header/AppHeader';
 import AppMap from '../../../common/map/AppMap';
@@ -24,15 +24,15 @@ function GameBuild() {
   const updateLine = (id, arr) => {
     var position = Object.keys(points).length;
     const point = {
-      [position]: {
+      // [position]: {
         initial: position === 0,
         id: id,
         x: arr[0],
         y: arr[1],
         key: position
-      }
+      // }
     }
-    dispatch(updateLineLength.trigger(point))
+    dispatch(updateModeBuild.trigger(point))
   }
 
   const finishBuild = () => {

@@ -1,16 +1,20 @@
+import _ from 'lodash';
 import { put, call, delay, select, all, takeLeading } from 'redux-saga/effects'
 import { actions } from '../leaves'
 import { makeActionCreator } from 'redux-leaves';
 import * as selectors from '../selectors';
 // import { getQuestionGivenAnswer, getQuestionUserAnswer, getQuestionUserCorrectness, getQuizRoundTiers, getQuizRoundScore } from '../selectors'
-import { checkCorrect, evaluateLineLength } from './utils'
+import { checkCorrect, evaluateLineLength, checkForDuplicate } from './utils'
 
-export function* updateLineLength(action) {
-  const point = action.payload
-  yield put(actions.mode.build.line.points.create.assign(point))
+export function* updateModeBuild(action) {
+  const props = action.payload
+  const point = {[props.key]: props}
   const line = yield select(selectors.getModeBuildLinePoints)
-  const length = yield call(evaluateLineLength, line)
-  yield put(actions.mode.build.line.length.create.update(length))
+  // const length = yield call(evaluateLineLength, line)
+  const duplicate = yield call(checkForDuplicate, line, props)
+  console.log(duplicate)
+  yield put(actions.mode.build.line.points.create.assign(point))
+  // yield put(actions.mode.build.line.length.create.update(length))
 }
 
 export function* finishModeBuild() {
@@ -107,8 +111,8 @@ export function* startModeBuild() {
 // startQuiz.TRIGGER = "sagas: startQuiz (TRIGGER)"
 // startQuiz.trigger = makeActionCreator(startQuiz.TRIGGER)
 
-updateLineLength.TRIGGER = "sagas: updateLineLength (TRIGGER)"
-updateLineLength.trigger = makeActionCreator(updateLineLength.TRIGGER)
+updateModeBuild.TRIGGER = "sagas: updateModeBuild (TRIGGER)"
+updateModeBuild.trigger = makeActionCreator(updateModeBuild.TRIGGER)
 
 finishModeBuild.TRIGGER = "sagas: finishModeBuild (TRIGGER)"
 finishModeBuild.trigger = makeActionCreator(finishModeBuild.TRIGGER)
@@ -119,7 +123,7 @@ startModeBuild.trigger = makeActionCreator(startModeBuild.TRIGGER)
 const sagas = [
   takeLeading(startModeBuild.TRIGGER, startModeBuild),
   takeLeading(finishModeBuild.TRIGGER, finishModeBuild),
-  takeLeading(updateLineLength.TRIGGER, updateLineLength),
+  takeLeading(updateModeBuild.TRIGGER, updateModeBuild),
   // takeLeading(startQuiz.TRIGGER, startQuiz),
   // takeLeading(finishQuiz.TRIGGER, finishQuiz),
   // takeLeading(updateAnswerAndCheckCorrectness.TRIGGER, updateAnswerAndCheckCorrectness)

@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // import { actions } from '../../../../redux/leaves'
 import * as selectors from '../../../../redux/selectors'
-import { updateLineLength } from '../../../../redux/sagas'
+import { updateModeBuild } from '../../../../redux/sagas'
 
 import AppModule from '../../../common/module';
 import AppMap from '../../../common/map/AppMap';
@@ -24,7 +24,7 @@ function GameMap() {
         key: position
       }
     }
-    dispatch(updateLineLength.trigger(point))
+    dispatch(updateModeBuild.trigger(point))
   }
 
   return (
