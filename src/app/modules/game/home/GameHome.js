@@ -18,6 +18,11 @@ function GameHome() {
     }, 3000);
   }, [])
 
+  var tomorrow = new Date();
+  console.log(tomorrow)
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  console.log(tomorrow)
+
   const dispatch = useDispatch()
 
   const updateViewPlain = () => {

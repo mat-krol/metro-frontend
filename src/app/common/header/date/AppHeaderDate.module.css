@@ -23,3 +23,15 @@
   align-items: center;
   margin: 4px 0;
 }
+
+@media only screen and (min-width: 600px) {
+  .AppHeaderDate {
+    flex-direction: row;
+    font-size: 1rem;
+  }
+
+  .AppHeaderDateItem {
+    margin: 0;
+    margin-left: 1rem;
+  }
+}
