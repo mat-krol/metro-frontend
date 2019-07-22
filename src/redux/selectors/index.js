@@ -8,6 +8,7 @@ export const getMapLines = state => state.map.lines
 export const getUpgradeLineLength = state => state.upgrade.line.length
 
 export const getGameBudget = state => state.game.budget
+export const getGameModal = state => state.game.modal
 
 export const getModeBuildColors = state => state.mode.build.colors
 export const getModeBuildLine = state => state.mode.build.line

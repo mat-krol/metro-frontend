@@ -1,9 +1,21 @@
 // import _ from 'lodash';
-import { put, call, select, all, takeLeading } from 'redux-saga/effects'
+import { put, call, delay, select, all, takeLeading } from 'redux-saga/effects'
 import { actions } from '../leaves'
 import { makeActionCreator } from 'redux-leaves';
 import * as selectors from '../selectors';
 import { evaluateLineLength, checkForDuplicate, removeDuplicate } from './utils'
+
+export function* startGameRound() {
+  yield put(actions.game.budget.create.increment(10))
+  yield delay(2000)
+  yield put(actions.game.budget.create.increment(20))
+  yield delay(1000)
+  yield put(actions.game.budget.create.increment(30))
+  yield delay(500)
+  yield put(actions.game.budget.create.increment(40))
+  yield delay(500)
+  yield put(actions.game.modal.create.on())
+}
 
 export function* updateModeBuild(action) {
   const props = action.payload
@@ -21,19 +33,27 @@ export function* updateModeBuild(action) {
 export function* finishModeBuild() {
   const line = yield select(selectors.getModeBuildLine)
   const lines = yield select(selectors.getMapLines)
+  const cost = yield select(selectors.getModeBuildLineCost)
   var length = Object.keys(lines).length;
   yield put(actions.map.lines.create.assign({[length]: line}))
+  yield put(actions.game.budget.create.increment(cost * -1))
   yield put(actions.mode.build.create.reset())
 }
 
 export function* startModeBuild() {
   const lines = yield select(selectors.getMapLines)
   var length = Object.keys(lines).length;
+  yield put(actions.game.modal.create.off())
   yield put(actions.mode.build.ongoing.create.on())
   yield put(actions.mode.build.line.id.create.update(length))
   yield put(actions.mode.build.line.key.create.update(length))
   const colors = yield select(selectors.getModeBuildColors)
   yield put(actions.mode.build.line.color.create.update(colors[length]))
+}
+
+export function* startModeWait() {
+  yield put(actions.game.modal.create.off())
+  yield call(startGameRound)
 }
 
 function* updateLineLength() {
@@ -127,7 +147,15 @@ finishModeBuild.trigger = makeActionCreator(finishModeBuild.TRIGGER)
 startModeBuild.TRIGGER = "sagas: startModeBuild (TRIGGER)"
 startModeBuild.trigger = makeActionCreator(startModeBuild.TRIGGER)
 
+startModeWait.TRIGGER = "sagas: startModeWait (TRIGGER)"
+startModeWait.trigger = makeActionCreator(startModeWait.TRIGGER)
+
+startGameRound.TRIGGER = "sagas: startGameRound (TRIGGER)"
+startGameRound.trigger = makeActionCreator(startGameRound.TRIGGER)
+
 const sagas = [
+  takeLeading(startGameRound.TRIGGER, startGameRound),
+  takeLeading(startModeWait.TRIGGER, startModeWait),
   takeLeading(startModeBuild.TRIGGER, startModeBuild),
   takeLeading(finishModeBuild.TRIGGER, finishModeBuild),
   takeLeading(updateModeBuild.TRIGGER, updateModeBuild),

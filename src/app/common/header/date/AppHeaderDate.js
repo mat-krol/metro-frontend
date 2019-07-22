@@ -1,9 +1,14 @@
 import React from 'react';
 import classes from './AppHeaderDate.module.css'
 import { FaCalendar, FaCoins } from 'react-icons/fa'
+import { useSelector } from 'react-redux';
+import * as selectors from '../../../../redux/selectors'
 
 function AppHeaderDate() {
-  return (
+  const budget = useSelector(selectors.getGameBudget)
+  // const stations = useSelector(selectors.getModeBuildLineStations)
+
+    return (
     <div className={classes.AppHeaderDate}>
       <div className={classes.AppHeaderDateItem}>
         <div className={classes.AppHeaderDateIcon}>
@@ -15,7 +20,7 @@ function AppHeaderDate() {
         <div className={classes.AppHeaderDateIcon}>
           <FaCoins />
         </div>
-        <span>500 mln</span>
+        <span>{budget} mln</span>
       </div>
     </div>
   )

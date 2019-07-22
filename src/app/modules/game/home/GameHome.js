@@ -1,7 +1,9 @@
 import React from 'react';
 import { MdSentimentSatisfied, MdRadioButtonUnchecked, MdPeople } from 'react-icons/md'
 import { actions } from '../../../../redux/leaves'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import * as selectors from '../../../../redux/selectors'
+import { startGameRound } from '../../../../redux/sagas'
 
 import AppHeader from '../../../common/header/AppHeader';
 import AppMap from '../../../common/map/AppMap';
@@ -10,20 +12,17 @@ import AppModule from '../../../common/module';
 import Option from '../../../../ui/option/Option';
 
 function GameHome() {
-  const [show, setShow] = React.useState(false)
+  const dispatch = useDispatch()
+  const show = useSelector(selectors.getGameModal)
 
   React.useEffect(() => {
-    setTimeout(() => {
-      setShow(true)
-    }, 3000);
-  }, [])
+    dispatch(startGameRound.trigger())
+  }, [dispatch])
 
-  var tomorrow = new Date();
-  console.log(tomorrow)
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  console.log(tomorrow)
-
-  const dispatch = useDispatch()
+  // var tomorrow = new Date();
+  // console.log(tomorrow)
+  // tomorrow.setDate(tomorrow.getDate() + 1);
+  // console.log(tomorrow)
 
   const updateViewPlain = () => {
     dispatch(actions.view.create.update(0))
@@ -48,7 +47,6 @@ function GameHome() {
       <AppHeader />
       <AppMap />
       <Option horizontal list={list} />
-      {/* <Selection horizontal list={list} /> */}
       <AppModal show={show} />
     </AppModule>
   )
