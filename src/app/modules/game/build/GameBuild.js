@@ -12,14 +12,13 @@ import AppMapLineItem from '../../../common/map/line/item/AppMapLineItem';
 import Button from '../../../../ui/button/Button';
 import { ROUTES } from '../../../constants/routes';
 import AppMapCircleItem from '../../../common/map/circle/item/AppMapCircleItem';
+import AppCost from '../../../common/cost/AppCost';
 
 function GameBuild() {
   const dispatch = useDispatch()
   const points = useSelector(selectors.getModeBuildLinePoints)
   const color = useSelector(selectors.getModeBuildLineColor)
-  const length = useSelector(selectors.getModeBuildLineLength)
-  const stations = useSelector(selectors.getModeBuildLineStations)
-  const cost = useSelector(selectors.getModeBuildLineCost)
+
 
   const updateLine = (id, arr) => {
     var position = Object.keys(points).length;
@@ -48,9 +47,10 @@ function GameBuild() {
           <AppMapCircleItem {...item} />
         ))}
       </AppMap>
-      <p>{stations} cost {stations * 20} mln</p>
-      <p>{length} km cost {length * 100} mln</p>
-      <p>Total is {cost} mln</p>
+      {/* <p>{stations} cost {Math.floor(stations * 20)} mln</p>
+      <p>{length} km cost {Math.floor(length * 100)} mln</p>
+      <p>Total is {cost} mln</p> */}
+      <AppCost />
       <Button text="Save" to={ROUTES.GameHome} onClick={finishBuild} />
     </AppModule>
   )

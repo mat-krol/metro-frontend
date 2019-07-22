@@ -19,14 +19,13 @@ const checkSubstring = (answer, solution) => {
 
 export const evaluateLineLength = line => {
   let length = 0
-  _.forEach(line, (value, key) => {
-    if (key === "0") return length
+  _.forEach(line, value => {
+    if (value.key === 0) return length
     else {
-      const numKey = parseFloat(key)
-      const x0 = parseFloat(line[numKey - 1].x)
-      const y0 = parseFloat(line[numKey - 1].y)
-      const x1 = parseFloat(value.x)
-      const y1 = parseFloat(value.y)
+      const x0 = line[value.key - 1].x
+      const y0 = line[value.key - 1].y
+      const x1 = value.x
+      const y1 = value.y
       const segment = Math.sqrt((x1 - x0) ** 2 + (y1 - y0) ** 2)
       length += segment
       return length

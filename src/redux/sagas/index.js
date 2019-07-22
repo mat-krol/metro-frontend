@@ -9,7 +9,6 @@ import { checkCorrect, evaluateLineLength, checkForDuplicate, removeDuplicate } 
 export function* updateModeBuild(action) {
   const props = action.payload
   const line = yield select(selectors.getModeBuildLinePoints)
-  // const length = yield call(evaluateLineLength, line)
   const duplicate = yield call(checkForDuplicate, line, props)
   if (duplicate === 1) {
     const result = yield call(removeDuplicate, line)
@@ -18,7 +17,7 @@ export function* updateModeBuild(action) {
   } else if (duplicate == 0) {
     yield put(actions.mode.build.line.points.create.concat(props))
   }
-  // yield put(actions.mode.build.line.length.create.update(length))
+  yield call(updateLineLength)
 }
 
 export function* finishModeBuild() {
@@ -37,6 +36,12 @@ export function* startModeBuild() {
   yield put(actions.mode.build.line.key.create.update(length))
   const colors = yield select(selectors.getModeBuildColors)
   yield put(actions.mode.build.line.color.create.update(colors[length]))
+}
+
+function* updateLineLength() {
+  const line = yield select(selectors.getModeBuildLinePoints)
+  const length = yield call(evaluateLineLength, line)
+  yield put(actions.mode.build.line.length.create.update(length))
 }
 
 // export function* updateAnswerAndCheckCorrectness(action) {
