@@ -9,7 +9,8 @@ export const initialState = {
   },
   view: 0,
   game: {
-    
+    date: "1 May 2019",
+    budget: "500",
   },
   mode: {
     build: {

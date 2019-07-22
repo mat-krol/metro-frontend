@@ -12,6 +12,7 @@
   background: white;
   border-radius: 5px;
   text-align: center;
+  box-sizing: border-box;
   z-index: 5001;
 }
 

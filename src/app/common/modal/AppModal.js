@@ -7,7 +7,7 @@ import { startModeBuild } from '../../../redux/sagas'
 import Modal from '../../../ui/modal/Modal';
 import Option from '../../../ui/option/Option';
 
-function AppModal(props) {
+function AppModal({ show }) {
   const dispatch = useDispatch()
 
   const startBuild = () => {
@@ -24,7 +24,7 @@ function AppModal(props) {
 
   return (
     <>
-      <Modal show>
+      <Modal show={show}>
         <h1>One month has passed!</h1>
         <p>What would you like to do now?</p>
         <Option list={list} horizontal />

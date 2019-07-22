@@ -10,6 +10,14 @@ import AppModule from '../../../common/module';
 import Option from '../../../../ui/option/Option';
 
 function GameHome() {
+  const [show, setShow] = React.useState(false)
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setShow(true)
+    }, 3000);
+  }, [])
+
   const dispatch = useDispatch()
 
   const updateViewPlain = () => {
@@ -36,7 +44,7 @@ function GameHome() {
       <AppMap />
       <Option horizontal list={list} />
       {/* <Selection horizontal list={list} /> */}
-      <AppModal />
+      <AppModal show={show} />
     </AppModule>
   )
 }
