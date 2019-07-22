@@ -18,18 +18,17 @@ function GameBuild() {
   const dispatch = useDispatch()
   const points = useSelector(selectors.getModeBuildLinePoints)
   const color = useSelector(selectors.getModeBuildLineColor)
-
+  const budget = useSelector(selectors.getGameBudget)
+  const cost = useSelector(selectors.getModeBuildLineCost)
 
   const updateLine = (id, arr) => {
     var position = Object.keys(points).length;
     const point = {
-      // [position]: {
-        initial: position === 0,
-        id: id,
-        x: arr[0],
-        y: arr[1],
-        key: position
-      // }
+      initial: position === 0,
+      id: id,
+      x: arr[0],
+      y: arr[1],
+      key: position
     }
     dispatch(updateModeBuild.trigger(point))
   }
@@ -47,11 +46,9 @@ function GameBuild() {
           <AppMapCircleItem {...item} />
         ))}
       </AppMap>
-      {/* <p>{stations} cost {Math.floor(stations * 20)} mln</p>
-      <p>{length} km cost {Math.floor(length * 100)} mln</p>
-      <p>Total is {cost} mln</p> */}
       <AppCost />
-      <Button text="Save" to={ROUTES.GameHome} onClick={finishBuild} />
+      <Button text="Save" to={ROUTES.GameHome} onClick={finishBuild} disabled={cost > budget} />
+      {cost > budget && <p>You've gone above budget!</p>}
     </AppModule>
   )
 }

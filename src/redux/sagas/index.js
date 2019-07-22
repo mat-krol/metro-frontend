@@ -1,10 +1,9 @@
-import _ from 'lodash';
-import { put, call, delay, select, all, takeLeading } from 'redux-saga/effects'
+// import _ from 'lodash';
+import { put, call, select, all, takeLeading } from 'redux-saga/effects'
 import { actions } from '../leaves'
 import { makeActionCreator } from 'redux-leaves';
 import * as selectors from '../selectors';
-// import { getQuestionGivenAnswer, getQuestionUserAnswer, getQuestionUserCorrectness, getQuizRoundTiers, getQuizRoundScore } from '../selectors'
-import { checkCorrect, evaluateLineLength, checkForDuplicate, removeDuplicate } from './utils'
+import { evaluateLineLength, checkForDuplicate, removeDuplicate } from './utils'
 
 export function* updateModeBuild(action) {
   const props = action.payload
@@ -13,8 +12,7 @@ export function* updateModeBuild(action) {
   if (duplicate === 1) {
     const result = yield call(removeDuplicate, line)
     yield put(actions.mode.build.line.points.create.update(result))
-    // yield put(actions.mode.build.line.points.create.filter(item => item.key !== props.key))
-  } else if (duplicate == 0) {
+  } else if (duplicate === 0) {
     yield put(actions.mode.build.line.points.create.concat(props))
   }
   yield call(updateLineLength)

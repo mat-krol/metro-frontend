@@ -45,6 +45,8 @@
 
 .Button:disabled {
   cursor: not-allowed;
-  color: #ccc;
+  background: #eee;
+  border: 2px solid #bbb;
+  color: #bbb;
   opacity: 0.5;
 }

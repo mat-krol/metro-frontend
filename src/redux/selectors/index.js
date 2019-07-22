@@ -4,7 +4,10 @@ import _ from 'lodash';
 export const getMapAreas = state => state.map.areas
 export const getMapLine = state => state.map.line
 export const getMapLines = state => state.map.lines
+
 export const getUpgradeLineLength = state => state.upgrade.line.length
+
+export const getGameBudget = state => state.game.budget
 
 export const getModeBuildColors = state => state.mode.build.colors
 export const getModeBuildLine = state => state.mode.build.line
