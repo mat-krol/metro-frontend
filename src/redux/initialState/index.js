@@ -31,7 +31,7 @@ export const initialState = {
         key: null,
         length: 0,
         color: null,
-        points: {}
+        points: []
       }
     },
     expand: {

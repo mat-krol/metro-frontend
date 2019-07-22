@@ -37,7 +37,17 @@ export const evaluateLineLength = line => {
 
 export const checkForDuplicate = (line, props) => {
   if (!_.isEmpty(line)) {
-    return line[props.key - 1].id === props.id
+    // 0 - id doesn't appear in the line
+    // -1 - id appears somewhere in the line
+    // 1 - id is in the last point
+    let result = 0
+    if (_.some(line, ['id', props.id])) result = -1
+    if (line[props.key - 1].id === props.id) result = 1
+    return result
   }
-  return false
+  return 0
+}
+
+export const removeDuplicate = line => {
+  return line.slice(0, -1)
 }
