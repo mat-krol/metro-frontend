@@ -15,20 +15,15 @@ export const getGamePopulation = state => state.game.population
 export const getGameView = state => state.game.view
 export const getGameColors = state => state.game.colors
 
-export const getModeExpandModal = state => state.mode.expand.modal
-export const getModeExpandLine = state => state.mode.expand.line
-export const getModeExpandLinePoints = state => state.mode.expand.line.points
-export const getModeExpandLineLength = state => state.mode.expand.line.length
-export const getModeExpandLineColor = state => state.mode.expand.line.color
-
 export const getModeBuildModal = state => state.mode.build.modal
 export const getModeBuildLine = state => state.mode.build.line
 export const getModeBuildLinePoints = state => state.mode.build.line.points
-export const getModeBuildLineLength = state => state.mode.build.line.length
+export const getModeBuildLineBranchPoints = state => state.mode.build.line.branch[0].points
+export const getModeBuildLineLength = state => state.mode.build.line.branch[0].length
 export const getModeBuildLineColor = state => state.mode.build.line.color
 
 export const getModeBuildLineStations = createSelector(
-  getModeBuildLinePoints,
+  getModeBuildLineBranchPoints,
   points => Object.keys(points).length
 )
 
@@ -37,18 +32,6 @@ export const getModeBuildLineCost = createSelector(
   getModeBuildLineLength,
   (stations, length) => Math.floor(stations * 20 + length * 100)
 )
-
-export const getModeExpandLineStations = createSelector(
-  getModeExpandLinePoints,
-  points => Object.keys(points).length
-)
-
-export const getModeExpandLineCost = createSelector(
-  getModeExpandLineStations,
-  getModeExpandLineLength,
-  (stations, length) => Math.floor(stations * 20 + length * 100)
-)
-
 
 export const getCurrentViewPopulation = createSelector(
   getGameView,

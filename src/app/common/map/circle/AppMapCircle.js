@@ -10,9 +10,11 @@ function AppMapCircle() {
 
   return (
     <>
-      {_.map(lines, item => (
-        _.map(item.points, item => (
-          <AppMapCircleItem {...item} />
+      {_.map(lines, line => (
+        _.map(line.branch, branch => (
+          _.map(branch.points, item => (
+            <AppMapCircleItem {...item} />
+          ))
         ))
       ))}
     </>

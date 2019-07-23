@@ -9,7 +9,6 @@ import Option from '../../../../ui/option/Option';
 function AppModalExpand({ show }) {
   const dispatch = useDispatch()
   const lines = useSelector(selectors.getMapLines)
-  console.log(lines)
 
   const selectLine = id => {
     dispatch(continueModeExpand.trigger(id))

@@ -10,8 +10,10 @@ function AppMapLine() {
 
   return (
     <>
-      {_.map(lines, item => (
-        <AppMapLineItem {...item} />
+      {_.map(lines, line => (
+        _.map(line.branch, item => (
+          <AppMapLineItem {...item} color={line.color} key={item.length} />
+        ))
       ))}
     </>
   )

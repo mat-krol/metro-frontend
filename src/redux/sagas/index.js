@@ -19,18 +19,28 @@ export function* startGameRound() {
 
 export function* updateModeBuild(action) {
   const props = action.payload
-  const line = yield select(selectors.getModeBuildLinePoints)
+  const line = yield select(selectors.getModeBuildLineBranchPoints)
   const duplicate = yield call(checkForDuplicate, line, props)
   if (duplicate === 1) {
     const result = yield call(removeDuplicate, line)
-    yield put(actions.mode.build.line.points.create.update(result))
+    yield put(actions.mode.build.line.branch[0].points.create.update(result))
   } else if (duplicate === 0) {
-    yield put(actions.mode.build.line.points.create.concat(props))
+    yield put(actions.mode.build.line.branch[0].points.create.concat(props))
   }
   yield call(updateLineLength)
 }
 
 export function* finishModeBuild() {
+  const line = yield select(selectors.getModeBuildLine)
+  const lines = yield select(selectors.getMapLines)
+  const cost = yield select(selectors.getModeBuildLineCost)
+  var length = Object.keys(lines).length;
+  yield put(actions.map.lines.create.assign({[length]: line}))
+  yield put(actions.game.budget.create.increment(cost * -1))
+  yield put(actions.mode.build.create.reset())
+}
+
+export function* finishModeExpand() {
   const line = yield select(selectors.getModeBuildLine)
   const lines = yield select(selectors.getMapLines)
   const cost = yield select(selectors.getModeBuildLineCost)
@@ -49,10 +59,6 @@ export function* startModeBuild() {
   yield put(actions.mode.build.line.key.create.update(length))
   const colors = yield select(selectors.getGameColors)
   yield put(actions.mode.build.line.color.create.update(colors[length]))
-}
-
-export function updateModeExpand() {
-  
 }
 
 export function* startModeExpand() {
@@ -83,9 +89,9 @@ export function* startModeWait() {
 }
 
 function* updateLineLength() {
-  const line = yield select(selectors.getModeBuildLinePoints)
+  const line = yield select(selectors.getModeBuildLineBranchPoints)
   const length = yield call(evaluateLineLength, line)
-  yield put(actions.mode.build.line.length.create.update(length))
+  yield put(actions.mode.build.line.branch[0].length.create.update(length))
 }
 
 // export function* updateAnswerAndCheckCorrectness(action) {

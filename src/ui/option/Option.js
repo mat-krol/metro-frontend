@@ -5,7 +5,6 @@ import classes from './Option.module.css';
 import OptionItem from './item/OptionItem';
 
 function Option(props) {
-  console.log(props)
   return (
     <div className={classes.Option} style={{ display: "flex", flexDirection: props.horizontal ? "row" : "column", justifyContent: "center" }}>
       {_.map(props.list, item => (

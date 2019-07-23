@@ -17,7 +17,7 @@ import AppModalExpand from '../../../common/modal/expand/AppModalExpand';
 
 function GameBuild() {
   const dispatch = useDispatch()
-  const points = useSelector(selectors.getModeBuildLinePoints)
+  const points = useSelector(selectors.getModeBuildLineBranchPoints)
   const color = useSelector(selectors.getModeBuildLineColor)
   const budget = useSelector(selectors.getGameBudget)
   const cost = useSelector(selectors.getModeBuildLineCost)
@@ -40,7 +40,7 @@ function GameBuild() {
   }
 
   const resetPoints = () => {
-    dispatch(actions.mode.build.line.points.create.reset())
+    dispatch(actions.mode.build.line.branch[0].create.reset())
   }
 
   return (
