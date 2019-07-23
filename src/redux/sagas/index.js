@@ -6,26 +6,55 @@ import * as selectors from '../selectors';
 import { evaluateLineLength, checkForDuplicate, removeDuplicate } from './utils'
 
 export function* startGameRound() {
-  yield put(actions.game.budget.create.increment(10))
-  yield delay(2000)
-  yield put(actions.game.budget.create.increment(20))
-  yield delay(1000)
-  yield put(actions.game.budget.create.increment(30))
-  yield delay(500)
-  yield put(actions.game.budget.create.increment(40))
+  // yield put(actions.game.budget.create.increment(20))
+  // yield delay(2000)
+  // yield put(actions.game.budget.create.increment(10))
+  // yield delay(1000)
+  // yield put(actions.game.budget.create.increment(30))
+  // yield delay(500)
+  yield put(actions.game.budget.create.increment(1000))
   yield delay(500)
   yield put(actions.game.modal.create.on())
 }
 
 export function* updateModeBuild(action) {
   const props = action.payload
+  yield call(updateMode, props, 'build')
+  // const line = yield select(selectors.getModeBuildLinePoints)
+  // const duplicate = yield call(checkForDuplicate, line, props)
+  // if (duplicate === 1) {
+  //   const result = yield call(removeDuplicate, line)
+  //   yield put(actions.mode.build.line.points.create.update(result))
+  // } else if (duplicate === 0) {
+  //   yield put(actions.mode.build.line.points.create.concat(props))
+  // }
+  // yield call(updateLineLength)
+}
+
+export function* updateModeExpand(action) {
+  const props = action.payload
+  // const line = yield select(selectors.getModeBuildLinePoints)
+  // const duplicate = yield call(checkForDuplicate, line, props)
+  // if (duplicate === 1) {
+  //   const result = yield call(removeDuplicate, line)
+  //   yield put(actions.mode.build.line.points.create.update(result))
+  // } else if (duplicate === 0) {
+  //   yield put(actions.mode.build.line.points.create.concat(props))
+  // }
+  // yield call(updateLineLength)
+  yield call(updateMode, props, 'expand')
+
+}
+
+function* updateMode(props, type) {
+  // const props = action.payload
   const line = yield select(selectors.getModeBuildLinePoints)
   const duplicate = yield call(checkForDuplicate, line, props)
   if (duplicate === 1) {
     const result = yield call(removeDuplicate, line)
-    yield put(actions.mode.build.line.points.create.update(result))
+    yield put(actions.mode[type].line.points.create.update(result))
   } else if (duplicate === 0) {
-    yield put(actions.mode.build.line.points.create.concat(props))
+    yield put(actions.mode[type].line.points.create.concat(props))
   }
   yield call(updateLineLength)
 }
@@ -47,8 +76,31 @@ export function* startModeBuild() {
   yield put(actions.mode.build.ongoing.create.on())
   yield put(actions.mode.build.line.id.create.update(length))
   yield put(actions.mode.build.line.key.create.update(length))
-  const colors = yield select(selectors.getModeBuildColors)
+  const colors = yield select(selectors.getGameColors)
   yield put(actions.mode.build.line.color.create.update(colors[length]))
+}
+
+export function* startModeExpand() {
+  // const lines = yield select(selectors.getMapLines)
+  // var length = Object.keys(lines).length;
+  yield put(actions.game.modal.create.off())
+  yield put(actions.mode.expand.ongoing.create.on())
+  yield put(actions.mode.expand.modal.create.on())
+  // yield put(actions.mode.build.line.id.create.update(length))
+  // yield put(actions.mode.build.line.key.create.update(length))
+  // const colors = yield select(selectors.getGameColors)
+  // yield put(actions.mode.build.line.color.create.update(colors[length]))
+}
+
+export function* continueModeExpand(action) {
+  const id = action.payload
+  const lines = yield select(selectors.getMapLines)
+  yield put(actions.mode.expand.ongoing.create.on())
+  yield put(actions.mode.expand.line.id.create.update(lines[id].id))
+  yield put(actions.mode.expand.line.key.create.update(lines[id].key))
+  yield put(actions.mode.expand.line.color.create.update(lines[id].color))
+  yield put(actions.mode.expand.modal.create.off())
+
 }
 
 export function* startModeWait() {
@@ -141,6 +193,12 @@ function* updateLineLength() {
 updateModeBuild.TRIGGER = "sagas: updateModeBuild (TRIGGER)"
 updateModeBuild.trigger = makeActionCreator(updateModeBuild.TRIGGER)
 
+updateModeExpand.TRIGGER = "sagas: updateModeExpand (TRIGGER)"
+updateModeExpand.trigger = makeActionCreator(updateModeExpand.TRIGGER)
+
+continueModeExpand.TRIGGER = "sagas: continueModeExpand (TRIGGER)"
+continueModeExpand.trigger = makeActionCreator(continueModeExpand.TRIGGER)
+
 finishModeBuild.TRIGGER = "sagas: finishModeBuild (TRIGGER)"
 finishModeBuild.trigger = makeActionCreator(finishModeBuild.TRIGGER)
 
@@ -150,6 +208,9 @@ startModeBuild.trigger = makeActionCreator(startModeBuild.TRIGGER)
 startModeWait.TRIGGER = "sagas: startModeWait (TRIGGER)"
 startModeWait.trigger = makeActionCreator(startModeWait.TRIGGER)
 
+startModeExpand.TRIGGER = "sagas: startModeExpand (TRIGGER)"
+startModeExpand.trigger = makeActionCreator(startModeExpand.TRIGGER)
+
 startGameRound.TRIGGER = "sagas: startGameRound (TRIGGER)"
 startGameRound.trigger = makeActionCreator(startGameRound.TRIGGER)
 
@@ -157,7 +218,10 @@ const sagas = [
   takeLeading(startGameRound.TRIGGER, startGameRound),
   takeLeading(startModeWait.TRIGGER, startModeWait),
   takeLeading(startModeBuild.TRIGGER, startModeBuild),
+  takeLeading(startModeExpand.TRIGGER, startModeExpand),
   takeLeading(finishModeBuild.TRIGGER, finishModeBuild),
+  takeLeading(continueModeExpand.TRIGGER, continueModeExpand),
+  takeLeading(updateModeExpand.TRIGGER, updateModeExpand),
   takeLeading(updateModeBuild.TRIGGER, updateModeBuild),
   // takeLeading(startQuiz.TRIGGER, startQuiz),
   // takeLeading(finishQuiz.TRIGGER, finishQuiz),

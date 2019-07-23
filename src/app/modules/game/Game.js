@@ -3,8 +3,9 @@ import React from 'react';
 // import * as selectors from '../../../redux/selectors'
 
 import GameBuild from './build';
+import GameExpand from './expand';
 import GameHome from './home';
-import GameMap from './map';
+// import GameMap from './map';
 
 import { ROUTES } from '../../constants/routes';
 import { Switch, Route } from 'react-router-dom';
@@ -19,9 +20,10 @@ function Game() {
   // }
   return (
     <Switch>
+      <Route path={ROUTES.GameExpand} component={GameExpand} />
       <Route path={ROUTES.GameBuild} component={GameBuild} />
       <Route path={ROUTES.GameHome} component={GameHome} />
-      <Route path={ROUTES.GameMap} component={GameMap} />
+      {/* <Route path={ROUTES.GameMap} component={GameMap} /> */}
     </Switch>
   )
 }

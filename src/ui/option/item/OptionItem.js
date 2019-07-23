@@ -27,7 +27,7 @@ function OptionItem(props) {
         disabled={props.disabled}
       >
         <div className={classes.OptionItemIcon}>
-          <Icon style={{ fontSize: "24px" }} />
+          {props.icon ? <Icon style={{ fontSize: "24px" }} /> : <div className={classes.OptionItemIconCircle} style={{ background: props.color }} />}
         </div>
         {props.text && <span>{props.text}</span>}
       </button>
