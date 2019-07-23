@@ -13,6 +13,7 @@ import Button from '../../../../ui/button/Button';
 import { ROUTES } from '../../../constants/routes';
 import AppMapCircleItem from '../../../common/map/circle/item/AppMapCircleItem';
 import AppCost from '../../../common/cost/AppCost';
+import AppModalExpand from '../../../common/modal/expand/AppModalExpand';
 
 function GameBuild() {
   const dispatch = useDispatch()
@@ -20,6 +21,7 @@ function GameBuild() {
   const color = useSelector(selectors.getModeBuildLineColor)
   const budget = useSelector(selectors.getGameBudget)
   const cost = useSelector(selectors.getModeBuildLineCost)
+  const show = useSelector(selectors.getModeBuildModal)
 
   const updateLine = (id, arr) => {
     var position = Object.keys(points).length;
@@ -43,6 +45,7 @@ function GameBuild() {
 
   return (
     <AppModule header >
+      <AppModalExpand show={show} />
       <AppHeader type="build" />
       <AppMap onClick={updateLine}>
         <AppMapLineItem color={color} points={points} />

@@ -21,6 +21,7 @@ export const getModeExpandLinePoints = state => state.mode.expand.line.points
 export const getModeExpandLineLength = state => state.mode.expand.line.length
 export const getModeExpandLineColor = state => state.mode.expand.line.color
 
+export const getModeBuildModal = state => state.mode.build.modal
 export const getModeBuildLine = state => state.mode.build.line
 export const getModeBuildLinePoints = state => state.mode.build.line.points
 export const getModeBuildLineLength = state => state.mode.build.line.length

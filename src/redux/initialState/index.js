@@ -20,6 +20,7 @@ export const initialState = {
   mode: {
     build: {
       ongoing: false,
+      modal: false,
       line: {
         id: null,
         key: null,
