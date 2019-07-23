@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-// import { actions } from '../../../../redux/leaves';
+import { actions } from '../../../../redux/leaves';
 import { useDispatch, useSelector } from 'react-redux';
 import * as selectors from '../../../../redux/selectors'
 import { updateModeBuild, finishModeBuild } from '../../../../redux/sagas'
@@ -37,6 +37,10 @@ function GameBuild() {
     dispatch(finishModeBuild.trigger())
   }
 
+  const resetPoints = () => {
+    dispatch(actions.mode.build.line.points.create.reset())
+  }
+
   return (
     <AppModule header >
       <AppHeader type="build" />
@@ -47,6 +51,7 @@ function GameBuild() {
         ))}
       </AppMap>
       <AppCost />
+      <Button text="Clear All" onClick={resetPoints} />
       <Button text="Save" to={ROUTES.GameHome} onClick={finishBuild} disabled={cost > budget} />
       {cost > budget && <p>You've gone above budget!</p>}
     </AppModule>

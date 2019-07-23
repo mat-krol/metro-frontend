@@ -9,6 +9,8 @@ export const getUpgradeLineLength = state => state.upgrade.line.length
 
 export const getGameBudget = state => state.game.budget
 export const getGameModal = state => state.game.modal
+export const getGamePopulation = state => state.game.population
+export const getGameView = state => state.game.view
 
 export const getModeBuildColors = state => state.mode.build.colors
 export const getModeBuildLine = state => state.mode.build.line
@@ -51,20 +53,18 @@ export const getMapPoints = createSelector(
   }
 )
 
-export const getView = state => state.view
-
 export const getCurrentViewPopulation = createSelector(
-  getView,
+  getGameView,
   view => view === 2
 )
 
 export const getCurrentViewSatisfaction = createSelector(
-  getView,
+  getGameView,
   view => view === 1
 )
 
 export const getCurrentViewPlain = createSelector(
-  getView,
+  getGameView,
   view => view === 0
 )
 

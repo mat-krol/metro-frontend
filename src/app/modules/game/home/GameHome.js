@@ -25,15 +25,15 @@ function GameHome() {
   // console.log(tomorrow)
 
   const updateViewPlain = () => {
-    dispatch(actions.view.create.update(0))
+    dispatch(actions.game.view.create.update(0))
   }
 
   const updateViewSatis = () => {
-    dispatch(actions.view.create.update(1))
+    dispatch(actions.game.view.create.update(1))
   }
 
   const updateViewPopul = () => {
-    dispatch(actions.view.create.update(2))
+    dispatch(actions.game.view.create.update(2))
   }
 
   const list = [
