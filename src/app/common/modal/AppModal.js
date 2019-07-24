@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as selectors from '../../../redux/selectors'
 import { FaAngleDoubleUp, FaExpandArrowsAlt, FaDollarSign, FaRegClock, FaExchangeAlt } from 'react-icons/fa'
 import { ROUTES } from '../../constants/routes';
-import { startModeBuild, startModeWait, startModeExpand } from '../../../redux/sagas/mode'
+import { startModeBuild, startModeWait } from '../../../redux/sagas/mode'
 
 import Modal from '../../../ui/modal/Modal';
 import Option from '../../../ui/option/Option';
@@ -16,17 +16,13 @@ function AppModal({ show }) {
     dispatch(startModeBuild.trigger())
   }
 
-  const startExpand = () => {
-    dispatch(startModeExpand.trigger())
-  }
-
   const startWait = () => {
     dispatch(startModeWait.trigger())
   }
 
   const list = [
     { key: 0, to: ROUTES.GameBuild, text: "Build", onClick: startBuild, icon: FaExchangeAlt },
-    { key: 1, to: ROUTES.GameBuild, text: "Expand", disabled: true, icon: FaExpandArrowsAlt },
+    { key: 1, to: ROUTES.GameBuild, text: "Expand", icon: FaExpandArrowsAlt, disabled: true },
     { key: 2, to: ROUTES.GameMap, text: "Upgrade", icon: FaAngleDoubleUp, disabled: true },
     { key: 3, to: ROUTES.GameMap, text: "Invest", icon: FaDollarSign, disabled: true },
     { key: 4, to: ROUTES.GameHome, text: "Wait", onClick: startWait, icon: FaRegClock },
