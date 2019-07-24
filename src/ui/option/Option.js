@@ -12,10 +12,11 @@ function Option(props) {
           key={item.text || item.key}
           disabled={item.disabled}
           icon={item.icon}
-          onClick={item.onClick}
+          onClick={item.onClick ? item.onClick : () => props.onClick(item.key)}
           src={item.src}
           to={item.to}
           text={item.text}
+          color={item.color}
         />
       ))}
     </div>

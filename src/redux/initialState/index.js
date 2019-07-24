@@ -5,31 +5,45 @@ export const initialState = {
     date: "1 May 2019",
     modal: false,
     view: 0,
+    colors: {
+      0: "#2e3192",
+      1: "#bf0000",
+      2: "#0e8f4c",
+      3: "#ffcc00",
+      4: "#000000",
+      5: "#22b3fa",
+      6: "#ff992d",
+      7: "#8B4513",
+      8: "#e59aaa",
+    }
+  },
+  round: {
+    budget: 500,
+    population: 500000,
+    date: "1 May 2019",
+    modal: false,
   },
   mode: {
     build: {
       ongoing: false,
-      colors: {
-        0: "#2e3192",
-        1: "#bf0000",
-        2: "#0e8f4c",
-        3: "#ffcc00",
-        4: "#22b3fa",
-        5: "#ff992d",
-        6: "#000000",
-        7: "#8B4513",
-        8: "#e59aaa",
-      },
+      modal: false,
       line: {
         id: null,
         key: null,
         length: 0,
         color: null,
-        points: []
+        points: [],
+        branch: {
+          0: {  
+            length: 0,
+            points: []
+          }
+        }
       }
     },
     expand: {
       ongoing: false,
+      modal: false,
     },
     upgrade: {
       ongoing: false,
@@ -47,6 +61,7 @@ export const initialState = {
       //   id: 0,
       //   key: 0,
       //   color: "#BF0000",
+      //   text: "Red Line",
       //   points: {
       //     0: {
       //       id: 20,
@@ -97,6 +112,7 @@ export const initialState = {
       //   id: 1,
       //   key: 1,
       //   color: "#2E3192",
+      //   text: "Blue Line",
       //   points: {
       //     0: {
       //       id: 28,

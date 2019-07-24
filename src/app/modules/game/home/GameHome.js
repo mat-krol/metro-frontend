@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react';                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 import { MdSentimentSatisfied, MdRadioButtonUnchecked, MdPeople } from 'react-icons/md'
 import { actions } from '../../../../redux/leaves'
 import { useDispatch, useSelector } from 'react-redux';
 import * as selectors from '../../../../redux/selectors'
-import { startGameRound } from '../../../../redux/sagas'
+import { startGameRound } from '../../../../redux/sagas/round'
 
 import AppHeader from '../../../common/header/AppHeader';
 import AppMap from '../../../common/map/AppMap';
@@ -14,8 +14,8 @@ import Option from '../../../../ui/option/Option';
 function GameHome() {
   const dispatch = useDispatch()
   const show = useSelector(selectors.getGameModal)
-
-  React.useEffect(() => {
+       
+  React.useEffect(() => {                   
     dispatch(startGameRound.trigger())
   }, [dispatch])
 

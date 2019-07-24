@@ -3,11 +3,8 @@ export const ROUTES = {
   IntroSplash: "/intro/splash",
   IntroSelect: "/intro/select",
   Game: "/game",
+  GameExpand: "/game/expand",
   GameBuild: "/game/build",
   GameHome: "/game/home",
   GameMap: "/game/map",
-  Quiz: "/quiz",
-  QuizSelect: "/quiz/select",
-  QuizStart: "/quiz/start",
-  QuizQuestion: "/quiz/question",
 }
