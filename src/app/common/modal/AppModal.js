@@ -26,7 +26,7 @@ function AppModal({ show }) {
 
   const list = [
     { key: 0, to: ROUTES.GameBuild, text: "Build", onClick: startBuild, icon: FaExchangeAlt },
-    { key: 1, to: ROUTES.GameBuild, text: "Expand", onClick: startExpand, icon: FaExpandArrowsAlt },
+    { key: 1, to: ROUTES.GameBuild, text: "Expand", disabled: true, icon: FaExpandArrowsAlt },
     { key: 2, to: ROUTES.GameMap, text: "Upgrade", icon: FaAngleDoubleUp, disabled: true },
     { key: 3, to: ROUTES.GameMap, text: "Invest", icon: FaDollarSign, disabled: true },
     { key: 4, to: ROUTES.GameHome, text: "Wait", onClick: startWait, icon: FaRegClock },

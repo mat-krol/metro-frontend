@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { actions } from '../../../../redux/leaves';
 import { useDispatch, useSelector } from 'react-redux';
 import * as selectors from '../../../../redux/selectors'
-import { updateModeBuild, finishModeBuild } from '../../../../redux/sagas'
+import { updateModeBuild, finishModeBuild, finishModeExpand } from '../../../../redux/sagas'
 
 import AppHeader from '../../../common/header/AppHeader';
 import AppMap from '../../../common/map/AppMap';
@@ -22,6 +22,7 @@ function GameBuild() {
   const budget = useSelector(selectors.getGameBudget)
   const cost = useSelector(selectors.getModeBuildLineCost)
   const show = useSelector(selectors.getModeBuildModal)
+  const build = useSelector(selectors.getModeBuildOngoing)
 
   const updateLine = (id, arr) => {
     var position = Object.keys(points).length;
@@ -37,6 +38,10 @@ function GameBuild() {
 
   const finishBuild = () => {
     dispatch(finishModeBuild.trigger())
+  }
+
+  const finishExpand = () => {
+    dispatch(finishModeExpand.trigger())
   }
 
   const resetPoints = () => {
@@ -55,7 +60,7 @@ function GameBuild() {
       </AppMap>
       <AppCost />
       <Button text="Clear All" onClick={resetPoints} />
-      <Button text="Save" to={ROUTES.GameHome} onClick={finishBuild} disabled={cost > budget} />
+      <Button text="Save" to={ROUTES.GameHome} onClick={build ? finishBuild : finishExpand} disabled={cost > budget} />
       {cost > budget && <p>You've gone above budget!</p>}
     </AppModule>
   )

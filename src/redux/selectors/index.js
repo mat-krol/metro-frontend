@@ -21,6 +21,7 @@ export const getModeBuildLinePoints = state => state.mode.build.line.points
 export const getModeBuildLineBranchPoints = state => state.mode.build.line.branch[0].points
 export const getModeBuildLineLength = state => state.mode.build.line.branch[0].length
 export const getModeBuildLineColor = state => state.mode.build.line.color
+export const getModeBuildOngoing = state => state.mode.build.ongoing
 
 export const getModeBuildLineStations = createSelector(
   getModeBuildLineBranchPoints,
