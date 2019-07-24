@@ -4,7 +4,7 @@ import { ROUTES } from '../../../constants/routes';
 
 import AppModule from '../../../common/module';
 import Backdrop from '../../../../ui/backdrop/Backdrop';
-import logo from '../../../../assets/logo.png'
+import logo from '../../../../assets/icon-blue.png'
 import text from '../../../../assets/text.png'
 
 function IntroSplash() {

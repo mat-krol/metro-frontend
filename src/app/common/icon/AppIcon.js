@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 
-import icon from '../../../assets/logo.png'
+import icon from '../../../assets/icon-blue.png'
 import classes from './AppIcon.module.css';
 import { ROUTES } from '../../constants/routes';
 
