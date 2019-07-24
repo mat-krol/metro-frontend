@@ -1,15 +1,15 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { startQuiz } from '../../../../redux/sagas'
+// import { useDispatch } from 'react-redux';
+// import { startQuiz } from '../../../../redux/sagas'
 
 import classes from './AppSelectionItem.module.css';
 import Stars from '../../../../ui/stars/Stars';
 
 function AppSelectionItem({ stars, name, id }) {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
   const handleStart= () => {
-    dispatch(startQuiz.trigger(id))
+    // dispatch(startQuiz.trigger(id))
   }
 
   return (

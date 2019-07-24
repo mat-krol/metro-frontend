@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { actions } from '../../../../redux/leaves';
 import { useDispatch, useSelector } from 'react-redux';
 import * as selectors from '../../../../redux/selectors'
-import { updateModeBuild, finishModeBuild, finishModeExpand } from '../../../../redux/sagas'
+import { updateModeBuild, finishModeBuild, finishModeExpand } from '../../../../redux/sagas/mode'
 
 import AppHeader from '../../../common/header/AppHeader';
 import AppMap from '../../../common/map/AppMap';

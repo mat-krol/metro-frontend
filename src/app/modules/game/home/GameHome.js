@@ -3,7 +3,7 @@ import { MdSentimentSatisfied, MdRadioButtonUnchecked, MdPeople } from 'react-ic
 import { actions } from '../../../../redux/leaves'
 import { useDispatch, useSelector } from 'react-redux';
 import * as selectors from '../../../../redux/selectors'
-import { startGameRound } from '../../../../redux/sagas'
+import { startGameRound } from '../../../../redux/sagas/round'
 
 import AppHeader from '../../../common/header/AppHeader';
 import AppMap from '../../../common/map/AppMap';

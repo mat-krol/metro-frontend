@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as selectors from '../../../../redux/selectors'
-import { continueModeExpand } from '../../../../redux/sagas'
+import { continueModeExpand } from '../../../../redux/sagas/mode'
 
 import Modal from '../../../../ui/modal/Modal';
 import Option from '../../../../ui/option/Option';

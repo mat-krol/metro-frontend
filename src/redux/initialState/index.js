@@ -17,6 +17,12 @@ export const initialState = {
       8: "#e59aaa",
     }
   },
+  round: {
+    budget: 500,
+    population: 500000,
+    date: "1 May 2019",
+    modal: false,
+  },
   mode: {
     build: {
       ongoing: false,
@@ -38,13 +44,6 @@ export const initialState = {
     expand: {
       ongoing: false,
       modal: false,
-      line: {
-        id: null,
-        key: null,
-        length: 0,
-        color: null,
-        points: []
-      }
     },
     upgrade: {
       ongoing: false,
