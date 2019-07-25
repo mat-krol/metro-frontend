@@ -16,9 +16,9 @@ function IntroSelect() {
 
 const list = [
   { to: ROUTES.GameHome, text: "Resume" },
-  { to: ROUTES.GameHome, text: "Restart" },
-  { to: ROUTES.GameHome, text: "Settings" },
-  { to: ROUTES.GameHome, text: "Log out" }
+  { to: ROUTES.GameHome, text: "Restart", disabled: true },
+  { to: ROUTES.Settings, text: "Settings", disabled: true },
+  { to: ROUTES.GameHome, text: "Log out", disabled: true }
 ]
 
 export default IntroSelect;

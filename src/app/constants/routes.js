@@ -7,4 +7,6 @@ export const ROUTES = {
   GameBuild: "/game/build",
   GameHome: "/game/home",
   GameMap: "/game/map",
+  Settings: "/settings",
+
 }
