@@ -1,12 +1,12 @@
 import {
   // all,
-  // call,
+  call,
   // cancel,
   // cancelled,
   delay,
   // fork,
   put,
-  // select,
+  select,
   // take,
   // takeEvery,
   // takeLatest,
@@ -14,18 +14,25 @@ import {
 } from 'redux-saga/effects';
 
 import { actions } from '../../leaves'
+import * as selectors from '../../selectors';
 import { makeActionCreator } from 'redux-leaves';
+import { daysInMonth } from './utils'
+import _ from 'lodash'
 
 export function* startGameRound() {
-  // yield put(actions.game.budget.create.increment(20))
-  // yield delay(2000)
-  // yield put(actions.game.budget.create.increment(10))
-  // yield delay(1000)
-  // yield put(actions.game.budget.create.increment(30))
-  // yield delay(500)
-  yield put(actions.game.budget.create.increment(1000))
-  yield delay(50000)
+  const date = yield select(selectors.getRoundDatePlain)
+  const days_number = yield call(daysInMonth, date)
+  const days = _.range(days_number)
+  for (let c of days) {
+    yield call(incrementDate, c)
+  }
+  yield delay(1000)
   yield put(actions.game.modal.create.on())
+}
+
+function* incrementDate() {
+  yield put(actions.round.date.create.increment(86400000))
+  yield delay(500)
 }
 
 startGameRound.TRIGGER = "sagas: startGameRound (TRIGGER)"

@@ -4,6 +4,17 @@ import { createSelector } from 'reselect';
 
 export const getGameBudget = state => state.game.budget
 export const getGameModal = state => state.game.modal
+export const getRoundDatePlain = state => state.round.date
+
+export const getRoundDate = createSelector(
+  getRoundDatePlain,
+  date => {
+    const today = new Date(date)
+    const result = today.toDateString().substring(4)
+    // "OK12".substr(2) + "OK12".substr(0,2) gives "12OK"
+    return result
+  }
+)
 
 export const getGamePopulation = createSelector(
   getMapAreas,

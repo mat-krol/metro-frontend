@@ -6,6 +6,7 @@ import * as selectors from '../../../../redux/selectors'
 
 function AppHeaderDate() {
   const budget = useSelector(selectors.getGameBudget)
+  const date = useSelector(selectors.getRoundDate)
   const population = useSelector(selectors.getGamePopulation)
   // const stations = useSelector(selectors.getModeBuildLineStations)
 
@@ -15,7 +16,7 @@ function AppHeaderDate() {
         <div className={classes.AppHeaderDateIcon}>
           <FaCalendar />
         </div>
-        <span>20 May 2019</span>
+        <span>{date}</span>
       </div>
       <div className={classes.AppHeaderDateItem}>
         <div className={classes.AppHeaderDateIcon}>

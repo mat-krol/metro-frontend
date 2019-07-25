@@ -20,7 +20,7 @@ export const initialState = {
   round: {
     budget: 500,
     population: 500000,
-    date: "1 May 2019",
+    date: 1577836800000,
     modal: false,
   },
   mode: {
