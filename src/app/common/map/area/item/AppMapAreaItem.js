@@ -29,10 +29,10 @@ function AppMapAreaItem(props) {
 const className = props => {
   const arr = [classes.AppMapAreaItem]
   if (props.showPop) {
-    props.population < 5 && arr.push(classes.AppMapAreaItemS)
-    props.population >= 5 && props.population < 10 && arr.push(classes.AppMapAreaItemM)
-    props.population >= 10 && props.population < 15 && arr.push(classes.AppMapAreaItemL)
-    props.population >= 15 && arr.push(classes.AppMapAreaItemXL)
+    props.population < 15 && arr.push(classes.AppMapAreaItemS)
+    props.population >= 15 && props.population < 25 && arr.push(classes.AppMapAreaItemM)
+    props.population >= 25 && props.population < 35 && arr.push(classes.AppMapAreaItemL)
+    props.population >= 35 && arr.push(classes.AppMapAreaItemXL)
   }
   if (props.showSat) {
     props.satisfaction < 2 && arr.push(classes.AppMapAreaItem2)

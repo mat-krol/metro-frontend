@@ -7,3 +7,8 @@ export const getMapLinesNumber = createSelector(
   getMapLines,
   lines => Object.keys(lines).length
 )
+
+export const getMapAreasNumber = createSelector(
+  getMapAreas,
+  areas => Object.keys(areas).length
+)

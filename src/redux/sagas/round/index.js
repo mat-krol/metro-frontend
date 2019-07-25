@@ -24,7 +24,7 @@ export function* startGameRound() {
   // yield put(actions.game.budget.create.increment(30))
   // yield delay(500)
   yield put(actions.game.budget.create.increment(1000))
-  yield delay(500)
+  yield delay(50000)
   yield put(actions.game.modal.create.on())
 }
 
