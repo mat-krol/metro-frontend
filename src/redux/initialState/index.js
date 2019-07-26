@@ -14,7 +14,7 @@ export const initialState = {
     }
   },
   round: {
-    budget: 500,
+    budget: 500000,
     date: 1577836800000,
     modal: false,
   },

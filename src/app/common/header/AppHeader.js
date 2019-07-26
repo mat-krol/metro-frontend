@@ -9,7 +9,7 @@ import React from 'react';
 // import src from '../../../assets/icon-blue.png'
 import classes from './AppHeader.module.css';
 import AppHeaderScore from './score/AppHeaderScore';
-import AppHeaderDate from './date/AppHeaderDate';
+import AppHeaderStats from './stats/AppHeaderStats';
 import AppIcon from '../icon/AppIcon';
 // import AppHeaderTimer from './timer/AppHeaderTimer';
 // import ProgressBar from '../../../ui/progress/bar/ProgressBar';
@@ -18,11 +18,14 @@ import AppIcon from '../icon/AppIcon';
 
 function AppHeader(props) {
   return (
-    <div className={className(props)}>
-        <AppIcon height="36px" />
-        <AppHeaderScore />
-        <AppHeaderDate />
-    </div>
+    <>
+      <div className={className(props)}>
+          <AppIcon height="36px" />
+          <AppHeaderScore />
+          <AppHeaderStats />
+      </div>
+      <AppHeaderStats />
+    </>
   )
   // const stars = useSelector(selectors.getUserStars)
   // const timer = useSelector(selectors.getQuizRoundTimer)

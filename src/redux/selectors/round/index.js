@@ -8,7 +8,7 @@ export const getRoundDatePlain = state => state.round.date
 
 export const getRoundBudget = createSelector(
   getRoundBudgetPlain,
-  budget => Math.floor(budget)
+  budget => stringify(budget)
 )
 
 export const getRoundDate = createSelector(
@@ -21,13 +21,18 @@ export const getRoundDate = createSelector(
   }
 )
 
-export const getRoundPopulation = createSelector(
+export const getRoundPopulationPlain = createSelector(
   getMapAreas,
   list => (
     _.reduce(list, (sum, n) => (
-      sum + n.population * 1000
+      sum + n.population
     ), 0)
   )
+)
+
+export const getRoundPopulation = createSelector(
+  getRoundPopulationPlain,
+  population => stringify(population)
 )
 
 export const getRoundSatisfaction = createSelector(
@@ -41,3 +46,9 @@ export const getRoundSatisfaction = createSelector(
     return result
   }
 )
+
+const stringify = number => {
+  if (number < 1000) return Math.round(number) + 'K'
+  else if (number < 1000000) return Math.round(number / 1000) + 'M'
+  else return Math.round(number / 1000000) + 'B'
+}
