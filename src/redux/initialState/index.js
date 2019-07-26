@@ -27,7 +27,6 @@ export const initialState = {
         key: null,
         length: 0,
         color: null,
-        points: [],
         branch: {
           0: {  
             length: 0,

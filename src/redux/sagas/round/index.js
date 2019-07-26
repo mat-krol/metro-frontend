@@ -23,20 +23,29 @@ export function* startGameRound() {
   const date = yield select(selectors.getRoundDatePlain)
   const days_number = yield call(daysInMonth, date)
   const days = _.range(days_number)
+  const increment = yield call(updateBudget, days_number)
   for (let c of days) {
-    yield call(incrementDate, c)
+    yield call(incrementDate, increment, c)
   }
   yield delay(1000)
   yield put(actions.round.modal.create.on())
 }
 
-function* incrementDate() {
+function* incrementDate(increment) {
   yield put(actions.round.date.create.increment(86400000))
+  yield put(actions.round.budget.create.increment(increment))
   // yield call(updatePopulation)
   // yield call(updateSatisfaction)
-  // yield call(updateBudget)
-  yield delay(500)
+  yield delay(100)
 }
+
+function* updateBudget(days_number) {
+  const stations = yield select(selectors.getMapStationsNumber)
+  const lines = yield select(selectors.getMapLinesNumber)
+  const increment = (lines * 20 + stations * 1) / days_number
+  return increment
+}
+
 
 startGameRound.TRIGGER = "sagas: startGameRound (TRIGGER)"
 startGameRound.trigger = makeActionCreator(startGameRound.TRIGGER)

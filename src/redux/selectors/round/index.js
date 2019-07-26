@@ -2,9 +2,14 @@ import _ from 'lodash'
 import { getMapAreas, getMapAreasNumber } from '../map'
 import { createSelector } from 'reselect';
 
-export const getRoundBudget = state => state.round.budget
+export const getRoundBudgetPlain = state => state.round.budget
 export const getRoundModal = state => state.round.modal
 export const getRoundDatePlain = state => state.round.date
+
+export const getRoundBudget = createSelector(
+  getRoundBudgetPlain,
+  budget => Math.floor(budget)
+)
 
 export const getRoundDate = createSelector(
   getRoundDatePlain,
