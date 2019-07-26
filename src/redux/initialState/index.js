@@ -1,9 +1,5 @@
 export const initialState = {
   game: {
-    budget: 500,
-    population: 500000,
-    date: "1 May 2019",
-    modal: false,
     view: 0,
     colors: {
       0: "#2e3192",
@@ -19,7 +15,6 @@ export const initialState = {
   },
   round: {
     budget: 500,
-    population: 500000,
     date: 1577836800000,
     modal: false,
   },

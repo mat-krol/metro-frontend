@@ -5,9 +5,9 @@ import { useSelector } from 'react-redux';
 import * as selectors from '../../../../redux/selectors'
 
 function AppHeaderDate() {
-  const budget = useSelector(selectors.getGameBudget)
+  const budget = useSelector(selectors.getRoundBudget)
   const date = useSelector(selectors.getRoundDate)
-  const population = useSelector(selectors.getGamePopulation)
+  const population = useSelector(selectors.getRoundPopulation)
   // const stations = useSelector(selectors.getModeBuildLineStations)
 
     return (

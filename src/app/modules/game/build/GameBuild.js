@@ -19,7 +19,7 @@ function GameBuild() {
   const dispatch = useDispatch()
   const points = useSelector(selectors.getModeBuildLineBranchPoints)
   const color = useSelector(selectors.getModeBuildLineColor)
-  const budget = useSelector(selectors.getGameBudget)
+  const budget = useSelector(selectors.getRoundBudget)
   const cost = useSelector(selectors.getModeBuildLineCost)
   const show = useSelector(selectors.getModeBuildModal)
   const build = useSelector(selectors.getModeBuildOngoing)

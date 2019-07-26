@@ -38,7 +38,7 @@ export function* finishModeBuild() {
   const cost = yield select(selectors.getModeBuildLineCost)
   var length = Object.keys(lines).length;
   yield put(actions.map.lines.create.assign({[length]: line}))
-  yield put(actions.game.budget.create.increment(cost * -1))
+  yield put(actions.round.budget.create.increment(cost * -1))
   yield put(actions.mode.build.create.reset())
 }
 
@@ -56,7 +56,7 @@ export function* finishModeExpand() {
 export function* startModeBuild() {
   const lines = yield select(selectors.getMapLines)
   var length = Object.keys(lines).length;
-  yield put(actions.game.modal.create.off())
+  yield put(actions.round.modal.create.off())
   yield put(actions.mode.build.ongoing.create.on())
   yield put(actions.mode.build.line.id.create.update(length))
   yield put(actions.mode.build.line.key.create.update(length))
@@ -65,7 +65,7 @@ export function* startModeBuild() {
 }
 
 export function* startModeExpand() {
-  yield put(actions.game.modal.create.off())
+  yield put(actions.round.modal.create.off())
   yield put(actions.mode.expand.ongoing.create.on())
   yield put(actions.mode.build.modal.create.on())
 }
@@ -80,7 +80,7 @@ export function* continueModeExpand(action) {
 }
 
 export function* startModeWait() {
-  yield put(actions.game.modal.create.off())
+  yield put(actions.round.modal.create.off())
   yield call(startGameRound)
 }
 

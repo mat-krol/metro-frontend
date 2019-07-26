@@ -27,7 +27,7 @@ export function* startGameRound() {
     yield call(incrementDate, c)
   }
   yield delay(1000)
-  yield put(actions.game.modal.create.on())
+  yield put(actions.round.modal.create.on())
 }
 
 function* incrementDate() {

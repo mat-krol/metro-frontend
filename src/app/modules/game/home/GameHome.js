@@ -13,7 +13,7 @@ import Option from '../../../../ui/option/Option';
 
 function GameHome() {
   const dispatch = useDispatch()
-  const show = useSelector(selectors.getGameModal)
+  const show = useSelector(selectors.getRoundModal)
        
   React.useEffect(() => {                   
     dispatch(startGameRound.trigger())

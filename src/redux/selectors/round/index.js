@@ -2,8 +2,8 @@ import _ from 'lodash'
 import { getMapAreas, getMapAreasNumber } from '../map'
 import { createSelector } from 'reselect';
 
-export const getGameBudget = state => state.game.budget
-export const getGameModal = state => state.game.modal
+export const getRoundBudget = state => state.round.budget
+export const getRoundModal = state => state.round.modal
 export const getRoundDatePlain = state => state.round.date
 
 export const getRoundDate = createSelector(
@@ -16,7 +16,7 @@ export const getRoundDate = createSelector(
   }
 )
 
-export const getGamePopulation = createSelector(
+export const getRoundPopulation = createSelector(
   getMapAreas,
   list => (
     _.reduce(list, (sum, n) => (
@@ -25,7 +25,7 @@ export const getGamePopulation = createSelector(
   )
 )
 
-export const getGameSatisfaction = createSelector(
+export const getRoundSatisfaction = createSelector(
   getMapAreas,
   getMapAreasNumber,
   (list, number) => {

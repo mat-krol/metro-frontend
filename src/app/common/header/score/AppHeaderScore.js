@@ -6,7 +6,7 @@ import classes from './AppHeaderScore.module.css'
 import { MdSentimentNeutral } from 'react-icons/md'
 
 function AppHeaderScore() {
-  const satisfaction = useSelector(selectors.getGameSatisfaction)
+  const satisfaction = useSelector(selectors.getRoundSatisfaction)
 
   return (
     <div className={classes.AppHeaderScore}>

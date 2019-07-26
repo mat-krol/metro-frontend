@@ -10,7 +10,7 @@ import Option from '../../../ui/option/Option';
 
 function AppModal({ show }) {
   const dispatch = useDispatch()
-  const budget = useSelector(selectors.getGameBudget)
+  const budget = useSelector(selectors.getRoundBudget)
   
   const startBuild = () => {
     dispatch(startModeBuild.trigger())
