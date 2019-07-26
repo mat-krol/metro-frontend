@@ -1,61 +1,6 @@
-/* .AppHeaderStats {
-  display: flex;
-  align-items: flex-start;
-  font-size: 10px;
-}
-
-.AppHeaderStatsIcon {
-  color: #2e3192;
-  background: white;
-  border-radius: 16px;
-  height: 16px;
-  width: 16px;
-  font-size: 10px;
-  margin-right: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.AppHeaderStatsItem {
-  display: flex;
-  align-items: center;
-  margin: 4px 0;
-}
-
-@media only screen and (min-width: 600px) {
-  .AppHeaderStats {
-    flex-direction: row;
-    font-size: 1rem;
-  }
-
-  .AppHeaderStatsItem {
-    margin: 0 1rem;
-  }
-} */
-
 .AppHeaderStats {
   display: flex;
-  color: #2e3192;
+  /* color: #2e3192; */
   justify-content: center;
   margin: 8px 0;
-}
-
-.AppHeaderStatsItem {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 80px;
-}
-
-.AppHeaderStatsItem span {
-  margin-bottom: 4px;
-  /* border: 2px solid #2e3192; */
-  /* border-radius: 30px; */
-}
-
-.AppHeaderStatsItem p {
-  font-size: 10px;
-  color: #2e3192;
-  margin: 0;
 }

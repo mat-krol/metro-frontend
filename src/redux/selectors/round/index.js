@@ -30,6 +30,12 @@ export const getRoundPopulationPlain = createSelector(
   )
 )
 
+export const getRoundPopulationAverage = createSelector(
+  getRoundPopulationPlain,
+  getMapAreasNumber,
+  (population, number) => Math.round(population / number)
+)
+
 export const getRoundPopulation = createSelector(
   getRoundPopulationPlain,
   population => stringify(population)
@@ -37,10 +43,10 @@ export const getRoundPopulation = createSelector(
 
 export const getRoundSatisfaction = createSelector(
   getMapAreas,
-  getMapAreasNumber,
+  getRoundPopulationPlain,
   (list, number) => {
     const total = _.reduce(list, (sum, n) => (
-      sum + n.satisfaction
+      sum + n.satisfaction * n.population
     ), 0)
     const result = Math.round( total / number * 10) / 10
     return result

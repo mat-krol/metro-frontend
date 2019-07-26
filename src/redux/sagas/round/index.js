@@ -35,7 +35,7 @@ function* incrementDate(increment) {
   yield put(actions.round.date.create.increment(86400000))
   yield put(actions.round.budget.create.increment(increment))
   // yield call(updatePopulation)
-  // yield call(updateSatisfaction)
+  yield call(updateSatisfaction)
   yield delay(100)
 }
 
@@ -44,6 +44,14 @@ function* updateBudget(days_number) {
   const lines = yield select(selectors.getMapLinesNumber)
   const increment = (lines * 20000 + stations * 1000) / days_number
   return increment
+}
+
+function* updateSatisfaction() {
+  const areas = yield select(selectors.getMapAreas)
+  for (let i in areas) {
+    const value = Math.round(areas[i].satisfaction * 100 - 1) / 100
+    yield put(actions.map.areas[i].satisfaction.create.update(value))
+  }
 }
 
 
