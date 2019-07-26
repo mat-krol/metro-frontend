@@ -1,13 +1,13 @@
 import React from 'react';
 import { obtainLine } from '../../../../../helpers/utils';
 
-function AppMapLineItem({ color, points }) {
+function AppMapLineItem({ color, points, capacity }) {
   return (
     <path
       d={obtainLine(points)}
       fill="none"
       vectorEffect="non-scaling-stroke"
-      strokeWidth="3"
+      strokeWidth={capacity}
       stroke={color}
       strokeLinejoin="miter"
       strokeLinecap="square"

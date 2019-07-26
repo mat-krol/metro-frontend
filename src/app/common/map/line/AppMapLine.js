@@ -12,7 +12,7 @@ function AppMapLine() {
     <>
       {_.map(lines, line => (
         _.map(line.branch, item => (
-          <AppMapLineItem {...item} color={line.color} key={item.length} />
+          <AppMapLineItem {...item} color={line.color} capacity={line.capacity} key={item.length} />
         ))
       ))}
     </>
