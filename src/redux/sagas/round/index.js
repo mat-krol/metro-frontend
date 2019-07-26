@@ -32,6 +32,9 @@ export function* startGameRound() {
 
 function* incrementDate() {
   yield put(actions.round.date.create.increment(86400000))
+  // yield call(updatePopulation)
+  // yield call(updateSatisfaction)
+  // yield call(updateBudget)
   yield delay(500)
 }
 

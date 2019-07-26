@@ -24,3 +24,39 @@
 .AppHeaderScore span {
   font-size: 10px;
 }
+
+.AppHeaderScore10 svg {
+  color: #ff5400;
+}
+
+.AppHeaderScore15 svg {
+  color: #ff7900;
+}
+
+.AppHeaderScore20 svg {
+  color: #ffa500;
+}
+
+.AppHeaderScore25 svg {
+  color: #ffc400;
+}
+
+.AppHeaderScore30 svg {
+  color: #ffd800;
+}
+
+.AppHeaderScore35 svg {
+  color: #c4d819;
+}
+
+.AppHeaderScore40 svg {
+  color: #7bcd32;
+}
+
+.AppHeaderScore45 svg {
+  color: #37b632;
+}
+
+.AppHeaderScore50 svg {
+  color: #03a032;
+}

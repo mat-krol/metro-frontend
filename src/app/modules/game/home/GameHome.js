@@ -19,17 +19,6 @@ function GameHome() {
     dispatch(startGameRound.trigger())
   }, [dispatch])
 
-  // console.log(1577836800000 - 1577923200000)
-  // var today = new Date(1577836800000)
-  // console.log(today)
-  // console.log(today.toDateString().substring(4))
-  // today.setDate(today.getDate() + 365);
-  // console.log(today)
-
-  // console.log(tomorrow)
-  // tomorrow.setDate(tomorrow.getDate() + 1);
-  // console.log(tomorrow)
-
   const updateViewPlain = () => {
     dispatch(actions.game.view.create.update(0))
   }

@@ -35,10 +35,15 @@ const className = props => {
     props.population >= 35 && arr.push(classes.AppMapAreaItemXL)
   }
   if (props.showSat) {
-    props.satisfaction < 2 && arr.push(classes.AppMapAreaItem2)
-    props.satisfaction >= 2 && props.satisfaction < 3 && arr.push(classes.AppMapAreaItem3)
-    props.satisfaction >= 3 && props.satisfaction < 4 && arr.push(classes.AppMapAreaItem4)
-    props.satisfaction >= 4 && arr.push(classes.AppMapAreaItem5)
+    props.satisfaction < 1.25 && arr.push(classes.AppMapAreaItem10)
+    props.satisfaction >= 1.25 && props.satisfaction < 1.75 && arr.push(classes.AppMapAreaItem15)
+    props.satisfaction >= 1.75 && props.satisfaction < 2.25 && arr.push(classes.AppMapAreaItem20)
+    props.satisfaction >= 2.25 && props.satisfaction < 2.75 && arr.push(classes.AppMapAreaItem25)
+    props.satisfaction >= 2.75 && props.satisfaction < 3.25 && arr.push(classes.AppMapAreaItem30)
+    props.satisfaction >= 3.25 && props.satisfaction < 3.75 && arr.push(classes.AppMapAreaItem35)
+    props.satisfaction >= 3.75 && props.satisfaction < 4.25 && arr.push(classes.AppMapAreaItem40)
+    props.satisfaction >= 4.25 && props.satisfaction < 4.75 && arr.push(classes.AppMapAreaItem45)
+    props.satisfaction >= 4.75 && arr.push(classes.AppMapAreaItem50)
   }
   return arr.join(' ')
 }

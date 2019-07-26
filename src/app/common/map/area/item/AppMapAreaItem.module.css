@@ -14,18 +14,38 @@
   fill: hsl(0, 0%, 80%);
 }
 
-.AppMapAreaItem2 {
+.AppMapAreaItem10 {
+  fill: #ff540080;
+}
+
+.AppMapAreaItem15 {
+  fill: #ff790080;
+}
+
+.AppMapAreaItem20 {
   fill: #ffa50080;
 }
 
-.AppMapAreaItem3 {
-  fill: #ffe60080;
+.AppMapAreaItem25 {
+  fill: #ffc40080;
 }
 
-.AppMapAreaItem4 {
-  fill: #9acd3280;
+.AppMapAreaItem30 {
+  fill: #ffd80080;
 }
 
-.AppMapAreaItem5 {
+.AppMapAreaItem35 {
+  fill: #c4d81980;
+}
+
+.AppMapAreaItem40 {
+  fill: #7bcd3280;
+}
+
+.AppMapAreaItem45 {
+  fill: #37b63280;
+}
+
+.AppMapAreaItem50 {
   fill: #03a03280;
 }
