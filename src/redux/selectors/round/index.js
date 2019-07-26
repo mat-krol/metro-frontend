@@ -15,7 +15,7 @@ export const getRoundDate = createSelector(
   getRoundDatePlain,
   date => {
     const today = new Date(date)
-    const result = today.toDateString().substring(4)
+    const result = today.toDateString().substring(4, 10)
     // "OK12".substr(2) + "OK12".substr(0,2) gives "12OK"
     return result
   }

@@ -39,7 +39,7 @@ function GameHome() {
 
   return (
     <AppModule header >
-      <AppHeader />
+      <AppHeader satisfaction />
       <AppMap />
       <Option horizontal list={list} />
       <AppModal show={show} />

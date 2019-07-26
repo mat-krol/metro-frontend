@@ -27,7 +27,7 @@ export function* startGameRound() {
   for (let c of days) {
     yield call(incrementDate, increment, c)
   }
-  yield delay(1000)
+  yield delay(5000)
   yield put(actions.round.modal.create.on())
 }
 
