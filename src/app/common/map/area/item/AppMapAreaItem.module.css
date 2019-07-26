@@ -1,51 +1,79 @@
-.AppMapAreaItemS {
-  fill: hsl(0, 0%, 95%);
+.AppMapAreaItemPopulation00 {
+  fill: hsl(0, 0%, 96%);
 }
 
-.AppMapAreaItemM {
+.AppMapAreaItemPopulation05 {
+  fill: hsl(0, 0%, 94%);
+}
+
+.AppMapAreaItemPopulation10 {
+  fill: hsl(0, 0%, 92%);
+}
+
+.AppMapAreaItemPopulation15 {
   fill: hsl(0, 0%, 90%);
 }
 
-.AppMapAreaItemL {
-  fill: hsl(0, 0%, 85%);
+.AppMapAreaItemPopulation20 {
+  fill: hsl(0, 0%, 88%);
 }
 
-.AppMapAreaItemXL {
+.AppMapAreaItemPopulation25 {
+  fill: hsl(0, 0%, 86%);
+}
+
+.AppMapAreaItemPopulation30 {
+  fill: hsl(0, 0%, 84%);
+}
+
+.AppMapAreaItemPopulation40 {
   fill: hsl(0, 0%, 80%);
 }
 
-.AppMapAreaItem10 {
+.AppMapAreaItemPopulation60 {
+  fill: hsl(0, 0%, 76%);
+}
+
+.AppMapAreaItemPopulation75 {
+  fill: hsl(0, 0%, 72%);
+}
+
+.AppMapAreaItemPopulation99 {
+  fill: hsl(0, 0%, 68%);
+}
+
+.AppMapAreaItemSatisfaction10 {
   fill: #ff540080;
 }
 
-.AppMapAreaItem15 {
+.AppMapAreaItemSatisfaction15 {
   fill: #ff790080;
 }
 
-.AppMapAreaItem20 {
+.AppMapAreaItemSatisfaction20 {
   fill: #ffa50080;
 }
 
-.AppMapAreaItem25 {
+.AppMapAreaItemSatisfaction25 {
   fill: #ffc40080;
 }
 
-.AppMapAreaItem30 {
+.AppMapAreaItemSatisfaction30 {
   fill: #ffd80080;
 }
 
-.AppMapAreaItem35 {
+.AppMapAreaItemSatisfaction35 {
   fill: #c4d81980;
 }
 
-.AppMapAreaItem40 {
+.AppMapAreaItemSatisfaction40 {
   fill: #7bcd3280;
 }
 
-.AppMapAreaItem45 {
+.AppMapAreaItemSatisfaction45 {
   fill: #37b63280;
 }
 
-.AppMapAreaItem50 {
+.AppMapAreaItemSatisfaction50 {
   fill: #03a03280;
 }

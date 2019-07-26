@@ -29,21 +29,28 @@ function AppMapAreaItem(props) {
 const className = props => {
   const arr = [classes.AppMapAreaItem]
   if (props.showPop) {
-    props.population < 15 && arr.push(classes.AppMapAreaItemS)
-    props.population >= 15 && props.population < 25 && arr.push(classes.AppMapAreaItemM)
-    props.population >= 25 && props.population < 35 && arr.push(classes.AppMapAreaItemL)
-    props.population >= 35 && arr.push(classes.AppMapAreaItemXL)
+    props.population < 5 && arr.push(classes.AppMapAreaItemPopulation00)
+    props.population >= 5 && props.population < 10 && arr.push(classes.AppMapAreaItemPopulation05)
+    props.population >= 10 && props.population < 15 && arr.push(classes.AppMapAreaItemPopulation10)
+    props.population >= 15 && props.population < 20 && arr.push(classes.AppMapAreaItemPopulation15)
+    props.population >= 20 && props.population < 25 && arr.push(classes.AppMapAreaItemPopulation20)
+    props.population >= 25 && props.population < 30 && arr.push(classes.AppMapAreaItemPopulation25)
+    props.population >= 30 && props.population < 40 && arr.push(classes.AppMapAreaItemPopulation30)
+    props.population >= 40 && props.population < 60 && arr.push(classes.AppMapAreaItemPopulation40)
+    props.population >= 60 && props.population < 75 && arr.push(classes.AppMapAreaItemPopulation60)
+    props.population >= 75 && props.population < 100 && arr.push(classes.AppMapAreaItemPopulation75)
+    props.population >= 100 && arr.push(classes.AppMapAreaItemPopulation99)
   }
   if (props.showSat) {
-    props.satisfaction < 1.25 && arr.push(classes.AppMapAreaItem10)
-    props.satisfaction >= 1.25 && props.satisfaction < 1.75 && arr.push(classes.AppMapAreaItem15)
-    props.satisfaction >= 1.75 && props.satisfaction < 2.25 && arr.push(classes.AppMapAreaItem20)
-    props.satisfaction >= 2.25 && props.satisfaction < 2.75 && arr.push(classes.AppMapAreaItem25)
-    props.satisfaction >= 2.75 && props.satisfaction < 3.25 && arr.push(classes.AppMapAreaItem30)
-    props.satisfaction >= 3.25 && props.satisfaction < 3.75 && arr.push(classes.AppMapAreaItem35)
-    props.satisfaction >= 3.75 && props.satisfaction < 4.25 && arr.push(classes.AppMapAreaItem40)
-    props.satisfaction >= 4.25 && props.satisfaction < 4.75 && arr.push(classes.AppMapAreaItem45)
-    props.satisfaction >= 4.75 && arr.push(classes.AppMapAreaItem50)
+    props.satisfaction < 1.25 && arr.push(classes.AppMapAreaItemSatisfaction10)
+    props.satisfaction >= 1.25 && props.satisfaction < 1.75 && arr.push(classes.AppMapAreaItemSatisfaction15)
+    props.satisfaction >= 1.75 && props.satisfaction < 2.25 && arr.push(classes.AppMapAreaItemSatisfaction20)
+    props.satisfaction >= 2.25 && props.satisfaction < 2.75 && arr.push(classes.AppMapAreaItemSatisfaction25)
+    props.satisfaction >= 2.75 && props.satisfaction < 3.25 && arr.push(classes.AppMapAreaItemSatisfaction30)
+    props.satisfaction >= 3.25 && props.satisfaction < 3.75 && arr.push(classes.AppMapAreaItemSatisfaction35)
+    props.satisfaction >= 3.75 && props.satisfaction < 4.25 && arr.push(classes.AppMapAreaItemSatisfaction40)
+    props.satisfaction >= 4.25 && props.satisfaction < 4.75 && arr.push(classes.AppMapAreaItemSatisfaction45)
+    props.satisfaction >= 4.75 && arr.push(classes.AppMapAreaItemSatisfaction50)
   }
   return arr.join(' ')
 }
