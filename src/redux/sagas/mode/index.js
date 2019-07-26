@@ -35,7 +35,7 @@ export function* updateModeBuild(action) {
 export function* finishModeBuild() {
   const line = yield select(selectors.getModeBuildLine)
   const lines = yield select(selectors.getMapLines)
-  const cost = yield select(selectors.getModeBuildLineCost)
+  const cost = yield select(selectors.getModeBuildLineCostPlain)
   var length = Object.keys(lines).length;
   yield put(actions.map.lines.create.assign({[length]: line}))
   yield put(actions.round.budget.create.increment(cost * -1))

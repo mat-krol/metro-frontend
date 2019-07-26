@@ -32,7 +32,7 @@ function AppModal({ show }) {
   return (
     <Modal show={show}>
       <h1>One month has passed!</h1>
-      <p style={{ marginBottom: "8px" }}>Your current budget is {budget}</p>
+      <p style={{ marginBottom: "8px" }}>Your current budget is <strong>{budget}</strong></p>
       <p style={{ marginTop: "0" }}>What would you like to do now?</p>
       <Option list={list} horizontal />
     </Modal>

@@ -21,12 +21,15 @@
   justify-content: space-between;
 }
 
-.AppHeaderBuild::after {
-  background: repeating-linear-gradient(-60deg, #000 0px, #000 10px, #ffcc00 10px, #ffcc00 20px);
+.AppHeaderBuild {
+  background: repeating-linear-gradient(-60deg, #000 0px, #000 15px, #ffcc00 15px, #ffcc00 30px);
+}
+
+/* .AppHeaderBuild::after {
   content: " ";
   height: 10px;
   width: 100%;
   position: absolute;
   bottom: 0px;
   left: 0;
-}
+} */
