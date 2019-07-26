@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import { stringify } from '../utils'
 
 export const getModeBuildModal = state => state.mode.build.modal
 export const getModeBuildLine = state => state.mode.build.line
@@ -13,8 +14,13 @@ export const getModeBuildLineStations = createSelector(
   points => Object.keys(points).length
 )
 
-export const getModeBuildLineCost = createSelector(
+export const getModeBuildLineCostPlain = createSelector(
   getModeBuildLineStations,
   getModeBuildLineLength,
-  (stations, length) => Math.floor(stations * 20 + length * 100)
+  (stations, length) => stations * 20000 + length * 100000
+)
+
+export const getModeBuildLineCost = createSelector(
+  getModeBuildLineCostPlain,
+  cost => stringify(cost)
 )

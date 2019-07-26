@@ -27,6 +27,7 @@ export function* startGameRound() {
   for (let c of days) {
     yield call(incrementDate, increment, c)
   }
+  yield call(updateSatisfaction)
   yield delay(5000)
   yield put(actions.round.modal.create.on())
 }
@@ -35,7 +36,6 @@ function* incrementDate(increment) {
   yield put(actions.round.date.create.increment(86400000))
   yield put(actions.round.budget.create.increment(increment))
   // yield call(updatePopulation)
-  yield call(updateSatisfaction)
   yield delay(100)
 }
 
@@ -49,7 +49,7 @@ function* updateBudget(days_number) {
 function* updateSatisfaction() {
   const areas = yield select(selectors.getMapAreas)
   for (let i in areas) {
-    const value = Math.round(areas[i].satisfaction * 100 - 1) / 100
+    const value = Math.round(areas[i].satisfaction * 100 - 10) / 100
     yield put(actions.map.areas[i].satisfaction.create.update(value))
   }
 }

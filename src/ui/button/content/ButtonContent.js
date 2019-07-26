@@ -17,6 +17,7 @@ function ButtonContent(props) {
 const className = props => {
   const arr = [classes.Button]
   props.animated && arr.push(classes.ButtonAnimated);
+  props.inline && arr.push(classes.ButtonInline);
   props.color === "teal" && arr.push(classes.ButtonTeal);
   return arr.join(' ')
 }

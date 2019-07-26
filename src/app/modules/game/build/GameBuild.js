@@ -18,11 +18,13 @@ import AppModalExpand from '../../../common/modal/expand/AppModalExpand';
 function GameBuild() {
   const dispatch = useDispatch()
   const points = useSelector(selectors.getModeBuildLineBranchPoints)
+  const stations = useSelector(selectors.getModeBuildLineStations)
   const color = useSelector(selectors.getModeBuildLineColor)
-  const budget = useSelector(selectors.getRoundBudget)
-  const cost = useSelector(selectors.getModeBuildLineCost)
-  const show = useSelector(selectors.getModeBuildModal)
   const build = useSelector(selectors.getModeBuildOngoing)
+  const cost = useSelector(selectors.getModeBuildLineCostPlain)
+  const show = useSelector(selectors.getModeBuildModal)
+  const budget = useSelector(selectors.getRoundBudgetPlain)
+
 
   const updateLine = (id, arr) => {
     var position = Object.keys(points).length;
@@ -59,9 +61,12 @@ function GameBuild() {
         ))}
       </AppMap>
       <AppCost />
-      <Button text="Clear All" onClick={resetPoints} />
-      <Button text="Save" to={ROUTES.GameHome} onClick={build ? finishBuild : finishExpand} disabled={cost > budget} />
-      {cost > budget && <p>You've gone above budget!</p>}
+      <div style={{display: "flex", justifyContent: "center" }}>
+        <Button inline text="Clear All" onClick={resetPoints} />
+        <Button inline text="Save" to={ROUTES.GameHome} onClick={build ? finishBuild : finishExpand} disabled={cost > budget || stations < 2 } />
+      </div>
+      {cost > budget && <span style={{ fontSize: "10px" }}>You exceeded your budget</span>}
+      {stations < 2 && <span style={{ fontSize: "10px" }}>You need at least 2 stations</span>}
     </AppModule>
   )
 }
