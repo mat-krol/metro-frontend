@@ -1,5 +1,5 @@
 .AppMapAreaItemPopulation00 {
-  fill: hsl(0, 0%, 96%);
+  fill: #f4f4f4;
 }
 
 .AppMapAreaItemPopulation05 {
@@ -43,37 +43,37 @@
 }
 
 .AppMapAreaItemSatisfaction10 {
-  fill: #ff540080;
+  fill: #ff5400;
 }
 
 .AppMapAreaItemSatisfaction15 {
-  fill: #ff790080;
+  fill: #ff7635;
 }
 
 .AppMapAreaItemSatisfaction20 {
-  fill: #ffa50080;
+  fill: #ffa684;
 }
 
 .AppMapAreaItemSatisfaction25 {
-  fill: #ffc40080;
+  fill: #ffd6cd;
 }
 
 .AppMapAreaItemSatisfaction30 {
-  fill: #ffd80080;
+  fill: #eeeeee;
 }
 
 .AppMapAreaItemSatisfaction35 {
-  fill: #c4d81980;
+  fill: #c0eadb;
 }
 
 .AppMapAreaItemSatisfaction40 {
-  fill: #7bcd3280;
+  fill: #7bd2a2;
 }
 
 .AppMapAreaItemSatisfaction45 {
-  fill: #37b63280;
+  fill: #34b460;
 }
 
 .AppMapAreaItemSatisfaction50 {
-  fill: #03a03280;
+  fill: #03a032;
 }

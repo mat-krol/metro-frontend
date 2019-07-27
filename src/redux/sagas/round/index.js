@@ -25,10 +25,10 @@ export function* startGameRound() {
   const days = _.range(days_number)
   const increment = yield call(updateBudget, days_number)
   yield call(updateSatisfaction)
-  for (let c of days) {
-    yield call(incrementDate, increment, c)
-  }
-  yield delay(5000)
+  // for (let c of days) {
+  //   yield call(incrementDate, increment, c)
+  // }
+  yield delay(1000)
   yield put(actions.round.modal.create.on())
 }
 
@@ -36,7 +36,7 @@ function* incrementDate(increment) {
   yield put(actions.round.date.create.increment(86400000))
   yield put(actions.round.budget.create.increment(increment))
   yield call(updatePopulation)
-  yield delay(100)
+  yield delay(1000)
 }
 
 function* updateBudget(days_number) {
@@ -49,16 +49,28 @@ function* updateBudget(days_number) {
 function* updateSatisfaction() {
   const areas = yield select(selectors.getMapAreas)
   for (let i in areas) {
-    const value = Math.round(areas[i].satisfaction * 100 - 10) / 100
-    yield put(actions.map.areas[i].satisfaction.create.update(value))
+    let value
+    if (areas[i].metro.stations) {
+      value = 5
+    } else {
+      value = Math.round(areas[i].metro.satisfaction * 100 - 10) / 100
+    }
+    yield put(actions.map.areas[i].metro.satisfaction.create.update(value))
   }
 }
 
 function* updatePopulation() {
   const areas = yield select(selectors.getMapAreas)
   for (let i in areas) {
-    const value = areas[i].population + Math.random() * 0.1
-    yield put(actions.map.areas[i].population.create.update(value))
+    const value = areas[i].metro.population + Math.random() * 0.1
+    yield put(actions.map.areas[i].metro.population.create.update(value))
+  }
+}
+
+export function* updateStationCount(points) {
+  for (let i in points) {
+    const id = points[i].id
+    yield put(actions.map.areas[id].metro.stations.create.increment(1))
   }
 }
 

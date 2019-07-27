@@ -16,7 +16,7 @@ import {
 import { actions } from '../../leaves'
 import { makeActionCreator } from 'redux-leaves';
 import * as selectors from '../../selectors';
-import { startGameRound } from '../round'
+import { startGameRound, updateStationCount } from '../round'
 import { evaluateLineLength, checkForDuplicate, removeDuplicate } from './utils'
 
 export function* updateModeBuild(action) {
@@ -34,9 +34,11 @@ export function* updateModeBuild(action) {
 
 export function* finishModeBuild() {
   const line = yield select(selectors.getModeBuildLine)
-  const lines = yield select(selectors.getMapLines)
+  const length = yield select(selectors.getMapLinesNumber)
   const cost = yield select(selectors.getModeBuildLineCostPlain)
-  var length = Object.keys(lines).length;
+  const points = yield select(selectors.getModeBuildLineBranchPoints)
+
+  yield call(updateStationCount, points)
   yield put(actions.map.lines.create.assign({[length]: line}))
   yield put(actions.round.budget.create.increment(cost * -1))
   yield put(actions.mode.build.create.reset())

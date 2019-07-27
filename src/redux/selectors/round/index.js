@@ -25,7 +25,7 @@ export const getRoundPopulationPlain = createSelector(
   getMapAreas,
   list => (
     _.reduce(list, (sum, n) => (
-      sum + n.population
+      sum + n.metro.population
     ), 0)
   )
 )
@@ -46,7 +46,7 @@ export const getRoundSatisfaction = createSelector(
   getRoundPopulationPlain,
   (list, number) => {
     const total = _.reduce(list, (sum, n) => (
-      sum + n.satisfaction * n.population
+      sum + n.metro.satisfaction * n.metro.population
     ), 0)
     const result = Math.round( total / number * 10) / 10
     return result
