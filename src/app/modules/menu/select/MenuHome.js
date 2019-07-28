@@ -5,7 +5,7 @@ import logo from '../../../../assets/icon-white.png'
 import AppModule from '../../../common/module';
 import Selection from '../../../../ui/selection/Selection';
 
-function IntroSelect() {
+function MenuHome() {
   return (
     <AppModule type="select" header>
       <img src={logo} alt="logo" style={{ width: "115px", marginBottom: "2rem"}} />
@@ -21,4 +21,4 @@ const list = [
   { to: ROUTES.GameHome, text: "Log out", disabled: true }
 ]
 
-export default IntroSelect;
+export default MenuHome;

@@ -39,7 +39,7 @@ function IntroSplash() {
 
   if (shouldRedirect) {
     return (
-      <Redirect to={ROUTES.IntroSelect} />
+      <Redirect to={ROUTES.MenuSelect} />
     )
   } else {
     return (

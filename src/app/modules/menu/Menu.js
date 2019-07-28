@@ -2,14 +2,14 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { ROUTES } from '../../constants/routes';
 
-import IntroSplash from './splash'
+import MenuHome from './select'
 
-function Intro() {
+function Menu() {
   return (
     <Switch>
-      <Route path={ROUTES.IntroSplash} component={IntroSplash} />
+      <Route path={ROUTES.MenuHome} component={MenuHome} />
     </Switch>
   )
 }
 
-export default Intro;
+export default Menu;
