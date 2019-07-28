@@ -15,8 +15,7 @@ function MenuHome() {
 }
 
 const list = [
-  { to: ROUTES.GameHome, text: "Resume" },
-  { to: ROUTES.GameHome, text: "Restart", disabled: true },
+  { to: ROUTES.MenuBoard, text: "Play" },
   { to: ROUTES.Settings, text: "Settings", disabled: true },
   { to: ROUTES.GameHome, text: "Log out", disabled: true }
 ]

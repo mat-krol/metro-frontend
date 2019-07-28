@@ -1,0 +1,32 @@
+.Choice a {
+  opacity: 0;
+  animation: fillIn 0.5s linear 0.5s 1 forwards;
+}
+
+.Choice {
+  max-width: 600px;
+  height: 60vh;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px 100px;
+  grid-gap: 1rem;
+}
+
+/* .Choice a:nth-child(1) { animation-delay: 1s }
+.Choice a:nth-child(2) { animation-delay: 1.5s }
+.Choice a:nth-child(3) { animation-delay: 2s }
+.Choice a:nth-child(4) { animation-delay: 2.5s }
+.Choice a:nth-child(5) { animation-delay: 3s }
+.Choice a:nth-child(6) { animation-delay: 3.5s } */
+
+@keyframes fillIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
