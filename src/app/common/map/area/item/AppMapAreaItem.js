@@ -48,15 +48,13 @@ const className = props => {
     population >= 100 && arr.push(classes.AppMapAreaItemPopulation99)
   }
   if (props.showSat) {
-    satisfaction < 1.5 && arr.push(classes.AppMapAreaItemSatisfaction10)
-    satisfaction >= 1.5 && satisfaction < 2.0 && arr.push(classes.AppMapAreaItemSatisfaction15)
-    satisfaction >= 2.0 && satisfaction < 2.5 && arr.push(classes.AppMapAreaItemSatisfaction20)
-    satisfaction >= 2.5 && satisfaction < 3.0 && arr.push(classes.AppMapAreaItemSatisfaction25)
-    satisfaction >= 3.0 && satisfaction < 3.5 && arr.push(classes.AppMapAreaItemSatisfaction30)
+    satisfaction < 1.5 && arr.push(classes.AppMapAreaItemSatisfaction15)
+    satisfaction >= 1.5 && satisfaction < 2.0 && arr.push(classes.AppMapAreaItemSatisfaction20)
+    satisfaction >= 2.0 && satisfaction < 2.5 && arr.push(classes.AppMapAreaItemSatisfaction25)
+    satisfaction >= 2.5 && satisfaction < 3.5 && arr.push(classes.AppMapAreaItemSatisfaction30)
     satisfaction >= 3.5 && satisfaction < 4.0 && arr.push(classes.AppMapAreaItemSatisfaction35)
     satisfaction >= 4.0 && satisfaction < 4.5 && arr.push(classes.AppMapAreaItemSatisfaction40)
-    satisfaction >= 4.5 && satisfaction < 5.0 && arr.push(classes.AppMapAreaItemSatisfaction45)
-    satisfaction >= 5.0 && arr.push(classes.AppMapAreaItemSatisfaction50)
+    satisfaction >= 4.5 && arr.push(classes.AppMapAreaItemSatisfaction45)
   }
   return arr.join(' ')
 }

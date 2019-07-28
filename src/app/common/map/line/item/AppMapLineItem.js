@@ -7,7 +7,7 @@ function AppMapLineItem({ color, points, capacity }) {
       d={obtainLine(points)}
       fill="none"
       vectorEffect="non-scaling-stroke"
-      strokeWidth={capacity}
+      strokeWidth={capacity || 3}
       stroke={color}
       strokeLinejoin="miter"
       strokeLinecap="square"

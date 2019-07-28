@@ -26,7 +26,7 @@ export const initialState = {
         id: null,
         key: null,
         length: 0,
-        capacity: 2,
+        capacity: 9,
         color: null,
         branch: {
           0: {  

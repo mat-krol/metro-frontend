@@ -55,7 +55,7 @@ function GameBuild() {
       <AppModalExpand show={show} />
       <AppHeader type="build" />
       <AppMap onClick={updateLine}>
-        <AppMapLineItem color={color} points={points} capacity={2} />
+        <AppMapLineItem color={color} points={points} />
         {_.map(points, item => (
           <AppMapCircleItem {...item} />
         ))}
