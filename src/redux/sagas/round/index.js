@@ -19,6 +19,11 @@ import { makeActionCreator } from 'redux-leaves';
 import { daysInMonth } from './utils'
 import _ from 'lodash'
 
+export function* initiateGameRound() {
+  yield delay(1000)
+  yield put(actions.round.modal.create.on())
+}
+
 export function* startGameRound() {
   const date = yield select(selectors.getRoundDatePlain)
   const days_number = yield call(daysInMonth, date)
@@ -78,7 +83,11 @@ export function* updateStationCount(points) {
 startGameRound.TRIGGER = "sagas: startGameRound (TRIGGER)"
 startGameRound.trigger = makeActionCreator(startGameRound.TRIGGER)
 
+initiateGameRound.TRIGGER = "sagas: initiateGameRound (TRIGGER)"
+initiateGameRound.trigger = makeActionCreator(initiateGameRound.TRIGGER)
+
 export const sagas = [
+  takeLeading(initiateGameRound.TRIGGER, initiateGameRound),
   takeLeading(startGameRound.TRIGGER, startGameRound),
 ]
 

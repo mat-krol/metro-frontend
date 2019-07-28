@@ -3,14 +3,16 @@ import { useSelector } from 'react-redux';
 import * as selectors from '../../../../redux/selectors'
 
 import classes from './AppHeaderScore.module.css'
-import { MdSentimentNeutral } from 'react-icons/md'
+import { MdSentimentNeutral, MdSentimentSatisfied, MdSentimentDissatisfied } from 'react-icons/md'
 
 function AppHeaderScore() {
   const satisfaction = useSelector(selectors.getRoundSatisfaction)
 
   return (
     <div className={className(satisfaction)}>
-      <MdSentimentNeutral />
+      {satisfaction < 2 && <MdSentimentDissatisfied />}
+      {satisfaction >= 2 && satisfaction <= 4 && <MdSentimentNeutral />}
+      {satisfaction > 4 && <MdSentimentSatisfied />}
       <span>{satisfaction}</span>
     </div>
   )
