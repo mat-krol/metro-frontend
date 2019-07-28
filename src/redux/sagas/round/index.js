@@ -56,11 +56,12 @@ function* updateSatisfaction() {
   const areas = yield select(selectors.getMapAreas)
   for (let i in areas) {
     let value
-    if (areas[i].metro.stations) {
-      value = 5
-    } else {
-      value = Math.round(areas[i].metro.satisfaction * 100 - 10) / 100
+    if (areas[i].metro.stations) value = 5
+    else if (areas[i].metro.neighbouring) {
+      value = 3.5
+      yield put(actions.map.areas[i].metro.neighbouring.create.reset())
     }
+    else value = Math.round(areas[i].metro.satisfaction * 100 - 20) / 100
     yield put(actions.map.areas[i].metro.satisfaction.create.update(value))
   }
 }
@@ -74,8 +75,14 @@ function* updateSatisfaction() {
 // }
 
 export function* updateStationCount(points) {
+  const areas = yield select(selectors.getMapAreas)
   for (let i in points) {
     const id = points[i].id
+    const neighbours = areas[id].neighbours
+    for (let j in neighbours) {
+      const id = neighbours[j]
+      yield put(actions.map.areas[id].metro.neighbouring.create.increment(1))
+    }
     yield put(actions.map.areas[id].metro.stations.create.increment(1))
   }
 }

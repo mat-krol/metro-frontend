@@ -157,6 +157,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 20,
           satisfaction: 3,
         },
@@ -169,6 +170,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 20,
           satisfaction: 3,
         },
@@ -181,6 +183,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 17,
           satisfaction: 3,
         },
@@ -193,6 +196,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 16,
           satisfaction: 3,
         },
@@ -205,6 +209,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 3,
           satisfaction: 3,
         },
@@ -217,6 +222,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 4,
           satisfaction: 3,
         },
@@ -229,6 +235,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 24,
           satisfaction: 3,
         },
@@ -241,6 +248,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 8,
           satisfaction: 3,
         },
@@ -253,6 +261,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 8,
           satisfaction: 3,
         },
@@ -265,6 +274,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 20,
           satisfaction: 3,
         },
@@ -277,6 +287,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 20,
           satisfaction: 3,
         },
@@ -289,6 +300,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 12,
           satisfaction: 3,
         },
@@ -301,6 +313,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 9,
           satisfaction: 3,
         },
@@ -313,6 +326,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 12,
           satisfaction: 3,
         },
@@ -325,6 +339,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 15,
           satisfaction: 3,
         },
@@ -337,6 +352,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 9,
           satisfaction: 3,
         },
@@ -349,6 +365,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 10,
           satisfaction: 3,
         },
@@ -361,6 +378,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 13,
           satisfaction: 3,
         },
@@ -373,6 +391,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 25,
           satisfaction: 3,
         },
@@ -385,6 +404,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 10,
           satisfaction: 3,
         },
@@ -397,6 +417,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 20,
           satisfaction: 3,
         },
@@ -409,6 +430,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 13,
           satisfaction: 3,
         },
@@ -421,6 +443,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 20,
           satisfaction: 3,
         },
@@ -433,6 +456,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 14,
           satisfaction: 3,
         },
@@ -445,6 +469,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 6,
           satisfaction: 3,
         },
@@ -457,6 +482,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 10,
           satisfaction: 3,
         },
@@ -469,6 +495,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 12,
           satisfaction: 3,
         },
@@ -481,6 +508,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 17,
           satisfaction: 3,
         },
@@ -493,6 +521,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 20,
           satisfaction: 3,
         },
@@ -505,6 +534,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 15,
           satisfaction: 3,
         },
@@ -517,6 +547,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 20,
           satisfaction: 3,
         },
@@ -529,6 +560,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 21,
           satisfaction: 3,
         },
@@ -541,6 +573,7 @@ export const initialState = {
         metro: {
           capacity: 0,
           stations: 0,
+          neighbouring: 0,
           population: 14,
           satisfaction: 3,
         },

@@ -3,7 +3,7 @@ import React from 'react';
 // import { actions } from '../../../../redux/leaves'
 import { useDispatch, useSelector } from 'react-redux';
 import * as selectors from '../../../../redux/selectors'
-import { initiateGameRound } from '../../../../redux/sagas/round'
+import { startGameRound } from '../../../../redux/sagas/round'
 
 import AppHeader from '../../../common/header/AppHeader';
 import AppMap from '../../../common/map/AppMap';
@@ -17,7 +17,7 @@ function GameHome() {
   const show = useSelector(selectors.getRoundModal)
        
   React.useEffect(() => {                   
-    dispatch(initiateGameRound.trigger())
+    dispatch(startGameRound.trigger())
   }, [dispatch])
 
   // const updateViewPlain = () => {
