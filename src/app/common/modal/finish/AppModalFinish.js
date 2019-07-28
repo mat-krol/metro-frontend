@@ -2,12 +2,12 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import * as selectors from '../../../../redux/selectors'
 // import { continueModeExpand } from '../../../../redux/sagas/mode'
-import { ROUTES } from '../../constants/routes';
+import { ROUTES } from '../../../constants/routes';
 
 import Modal from '../../../../ui/modal/Modal';
 import Button from '../../../../ui/button/Button';
 
-function AppModalExpand({ show }) {
+function AppModalFinish({ show }) {
   // const dispatch = useDispatch()
   const satisfaction = useSelector(selectors.getRoundSatisfaction)
   
@@ -20,4 +20,4 @@ function AppModalExpand({ show }) {
   )
 }
 
-export default AppModalExpand
+export default AppModalFinish

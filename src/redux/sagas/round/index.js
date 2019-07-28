@@ -39,9 +39,9 @@ function* incrementDate(increment) {
   yield delay(100)
 }
 
-function* updateBudget(days_number) {
-  const stations = yield select(selectors.getMapStationsNumber)
-  const lines = yield select(selectors.getMapLinesNumber)
+function updateBudget(days_number) {
+  // const stations = yield select(selectors.getMapStationsNumber)
+  // const lines = yield select(selectors.getMapLinesNumber)
   // const increment = (lines * 20000 + stations * 1000) / days_number
   const increment = 250000 / days_number
   return increment
@@ -60,13 +60,13 @@ function* updateSatisfaction() {
   }
 }
 
-function* updatePopulation() {
-  const areas = yield select(selectors.getMapAreas)
-  for (let i in areas) {
-    const value = areas[i].metro.population + Math.random() * 0.1
-    yield put(actions.map.areas[i].metro.population.create.update(value))
-  }
-}
+// function* updatePopulation() {
+//   const areas = yield select(selectors.getMapAreas)
+//   for (let i in areas) {
+//     const value = areas[i].metro.population + Math.random() * 0.1
+//     yield put(actions.map.areas[i].metro.population.create.update(value))
+//   }
+// }
 
 export function* updateStationCount(points) {
   for (let i in points) {

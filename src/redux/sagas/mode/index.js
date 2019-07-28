@@ -48,7 +48,7 @@ export function* finishModeExpand() {
   const line = yield select(selectors.getModeBuildLine)
   const lines = yield select(selectors.getMapLines)
   var id = Object.keys(lines[line.id].branch).length;
-  // console.log(lines[0], lines['0'], lines[line.id], line.id, id, line.branch[0])
+  console.log(lines[0], lines['0'], lines[line.id], line.id, id, line.branch[0])
   // yield put(actions.map.lines[0].create.update({[id]: line.branch[0]}))
   // yield put(actions.map.lines[0].branch.create.assign('id', line.branch[0]))
   yield put(actions.mode.build.create.reset())
