@@ -15,7 +15,7 @@ function AppModalFinish({ show }) {
     <Modal show={satisfaction === 5}>
       <h1>Round finished!</h1>
       <p style={{ marginTop: "0" }}>Well done, you've achieved 5.0 satisfaction in all neighbourhoods</p>
-      <Button to={ROUTES.IntroSelect} text="OK" />
+      <Button to={ROUTES.MenuHome} text="OK" />
     </Modal>
   )
 }

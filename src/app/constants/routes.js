@@ -10,5 +10,6 @@ export const ROUTES = {
   Menu: "/menu",
   MenuHome: "/menu/home",
   MenuBoard: "/menu/board",
+  MenuCountry: "/menu/country",
   Settings: "/settings",
 }

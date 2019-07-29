@@ -48,21 +48,22 @@ function updateBudget(days_number) {
   // const stations = yield select(selectors.getMapStationsNumber)
   // const lines = yield select(selectors.getMapLinesNumber)
   // const increment = (lines * 20000 + stations * 1000) / days_number
-  const increment = 250000 / days_number
+  const increment = 1000000 / days_number
   return increment
 }
 
 function* updateSatisfaction() {
   const areas = yield select(selectors.getMapAreas)
   for (let i in areas) {
-    let value
-    if (areas[i].metro.stations) value = 5
-    else if (areas[i].metro.neighbouring) {
-      value = 3.5
-      yield put(actions.map.areas[i].metro.neighbouring.create.reset())
-    }
-    else value = Math.round(areas[i].metro.satisfaction * 100 - 20) / 100
-    yield put(actions.map.areas[i].metro.satisfaction.create.update(value))
+    let value = areas[i].metro.satisfaction
+    if (areas[i].metro.stations === 1) value += 1
+    else if (areas[i].metro.neighbouring) value += 0.25
+    // else value = Math.round(areas[i].metro.satisfaction * 100 - 20) / 100
+    yield put(actions.map.areas[i].metro.stations.create.reset())
+    yield put(actions.map.areas[i].metro.neighbouring.create.reset())
+
+    if (value > 5) value = 5
+    if (value) yield put(actions.map.areas[i].metro.satisfaction.create.update(value))
   }
 }
 

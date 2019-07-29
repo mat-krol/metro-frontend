@@ -13,8 +13,8 @@ function ChoiceItem(props) {
       >
         {props.src && <img src={props.src} alt={props.text} style={{ height: "40px" }} />}
         {props.disabled && <MdLock />}
-        {props.text && <p>{props.text}</p>}
-        {props.score && <p>{props.score}</p>}
+        {props.text && <span>{props.text}</span>}
+        {props.score ? <span>{props.score.toFixed(1)}</span> : <span>-.-</span>}
       </button>
     </Link>
   )

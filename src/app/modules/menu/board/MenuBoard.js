@@ -15,15 +15,15 @@ function MenuBoard() {
 }
 
 const list = [
-  { to: ROUTES.GameHome, text: "London" },
-  { to: ROUTES.GameHome, text: "Hong Kong" },
-  { to: ROUTES.GameHome, text: "Sao Paulo" },
-  { to: ROUTES.GameHome, text: "Paris", disabled: true },
-  { to: ROUTES.GameHome, text: "New York", disabled: true },
-  { to: ROUTES.GameHome, text: "Sydney", disabled: true },
-  { to: ROUTES.GameHome, text: "Cairo", disabled: true },
-  { to: ROUTES.GameHome, text: "Cape Town", disabled: true },
-  { to: ROUTES.GameHome, text: "Seoul", disabled: true }
+  { to: ROUTES.GameHome, text: "Brighton", score: 5 },
+  { to: ROUTES.GameHome, text: "Manchester", disabled: true },
+  { to: ROUTES.GameHome, text: "Birmingham", disabled: true },
+  { to: ROUTES.GameHome, text: "Edinburgh", disabled: true },
+  { to: ROUTES.GameHome, text: "Belfast", disabled: true },
+  { to: ROUTES.GameHome, text: "Bristol", disabled: true },
+  { to: ROUTES.GameHome, text: "Cardiff", disabled: true },
+  { to: ROUTES.GameHome, text: "Aberdeen", disabled: true },
+  { to: ROUTES.GameHome, text: "London", disabled: true},
 ]
 
 export default MenuBoard;

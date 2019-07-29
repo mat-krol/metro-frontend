@@ -9,14 +9,8 @@ function Choice(props) {
     <div className={classes.Choice}>
       {_.map(props.list, item => (
         <ChoiceItem
-          horizontal={props.horizontal}
           key={item.text || item.key}
-          disabled={item.disabled}
-          icon={item.icon}
-          onClick={item.onClick}
-          src={item.src}
-          to={item.to}
-          text={item.text}
+          {...item}
         />
       ))}
     </div>
