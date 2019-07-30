@@ -31,17 +31,17 @@ function IntroSplash() {
     }, 100);
   }, [])
 
-  React.useEffect(() => {
-    setTimeout(() => {
-      setShowBackdropWhite(true)
-    }, 2500);
-  }, [])
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     setShowBackdropWhite(true)
+  //   }, 2500);
+  // }, [])
 
-  if (shouldRedirect) {
-    return (
-      <Redirect to={ROUTES.MenuHome} />
-    )
-  } else {
+  // if (shouldRedirect) {
+  //   return (
+  //     <Redirect to={ROUTES.MenuHome} />
+  //   )
+  // } else {
     return (
       <AppModule type="splash">
         <Backdrop show={showBackdropBlue} color="blue" />
@@ -51,7 +51,7 @@ function IntroSplash() {
         {/* <h1 style={{ color: "white", marginBottom: "4rem" }}>Arithmetic</h1> */}
       </AppModule>
     )
-  }
+  // }
 }
 
 export default IntroSplash;
