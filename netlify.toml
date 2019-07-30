@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "https://metrometrometro.netlify.com/*"
+  to = "https://metrometrometro.com/:splat"
+  force = true
