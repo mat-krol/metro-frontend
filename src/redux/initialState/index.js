@@ -185,7 +185,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 17,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 271.303 125 L 206.378 183.14 L 258.99 227.326 L 316.079 227.326 L 304.885 170.349 L 271.303 125 Z"
       },
@@ -198,7 +198,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 16,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 417.945 487.791 L 396.677 384.302 L 376.527 338.953 L 316.079 384.302 L 327.274 472.674 L 332.871 504.07 L 417.945 487.791 Z"
       },
@@ -211,7 +211,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 3,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 531.005 433.14 L 595.93 350.581 L 595.93 278.488 L 494.065 330.814 L 499.662 350.581 L 531.005 433.14 Z"
       },
@@ -224,7 +224,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 4,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 494.065 330.814 L 471.677 227.326 L 569.065 170.349 L 595.93 278.488 L 494.065 330.814 Z"
       },
@@ -237,7 +237,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 24,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 494.065 472.674 L 471.677 575 L 316.079 595.93 L 332.871 504.07 L 494.065 472.674 Z"
       },
@@ -250,7 +250,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 8,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 1.527 248.256 L 47.423 59.884 L 102.274 72.674 L 69.811 191.279 L 60.856 258.721 L 1.527 248.256 Z"
       },
@@ -263,7 +263,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 8,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 60.856 509.884 L 119.065 575 L 206.378 595.93 L 206.378 498.256 L 191.826 504.07 L 92.199 498.256 L 60.856 509.884 Z"
       },
@@ -276,7 +276,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 20,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 191.826 104.07 L 178.393 163.372 L 206.378 183.14 L 271.303 125 L 216.93 42.07 L 191.826 104.07 Z"
       },
@@ -302,7 +302,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 12,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 142.572 274.07 L 200.781 299.419 L 206.378 183.14 L 178.393 163.372 L 142.572 274.07 Z"
       },
@@ -315,7 +315,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 9,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 178.393 163.372 L 83.93 134.302 L 69.811 187.07 L 60.856 258.721 L 142.572 274.07 L 178.393 163.372 Z"
       },
@@ -341,7 +341,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 15,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 200.781 299.419 L 142.572 270.349 L 128.02 325 L 128.02 369.186 L 200.781 407.558 L 230.93 369.186 L 200.781 299.419 Z"
       },
@@ -367,7 +367,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 10,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 271.303 125 L 304.885 170.349 L 376.527 134.302 L 332.871 83.07 L 271.303 125 Z"
       },
@@ -380,7 +380,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 13,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 396.677 34.07 L 445.93 59.884 L 376.527 134.302 L 327.274 83.07 L 293.691 4.07 L 361.93 4.07 L 396.677 34.07 Z"
       },
@@ -406,7 +406,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 10,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 376.527 134.302 L 427.93 170.349 L 357.497 227.326 L 316.079 227.326 L 304.885 170.349 L 376.527 134.302 Z"
       },
@@ -419,7 +419,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 20,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 445.93 59.884 L 376.527 134.302 L 427.93 170.349 L 471.677 227.326 L 569.065 170.349 L 515.93 104.07 L 445.93 59.884 Z"
       },
@@ -432,7 +432,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 13,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 216.93 46.07 L 191.826 104.07 L 178.393 163.372 L 83.93 134.302 L 102.274 72.674 L 216.93 46.07 Z"
       },
@@ -445,7 +445,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 20,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 427.93 170.349 L 357.497 227.326 L 410.109 274.07 L 471.677 227.326 L 427.93 170.349 Z"
       },
@@ -458,7 +458,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 14,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 327.274 461.07 L 316.079 384.302 L 230.93 369.186 L 200.781 407.558 L 327.274 461.07 Z"
       },
@@ -471,7 +471,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 6,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 332.871 504.07 L 206.378 498.256 L 200.781 407.558 L 327.274 461.07 L 332.871 504.07 Z"
       },
@@ -484,7 +484,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 10,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 316.079 595.93 L 332.871 504.07 L 206.378 498.256 L 206.378 592.07 L 316.079 595.93 Z"
       },
@@ -497,7 +497,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 12,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 494.065 330.814 L 471.677 227.326 L 410.109 274.07 L 376.527 338.953 L 396.677 384.302 L 494.065 330.814 Z"
       },
@@ -510,7 +510,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 17,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 531.005 433.14 L 494.065 330.814 L 396.677 384.302 L 417.945 487.791 L 494.065 472.674 L 531.005 433.14 Z"
       },
@@ -523,7 +523,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 20,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 216.93 46.07 L 293.691 4.07 L 332.871 87 L 271.303 125 L 216.93 46.07 Z"
       },
@@ -536,7 +536,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 15,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 60.856 258.721 L 142.572 274.07 L 132 320 L 128.02 369.186 L 92.199 433.14 L 60.856 369.186 L 60.856 258.721 Z"
       },
@@ -549,7 +549,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 20,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 1.527 248.256 L 60.856 258.721 L 65 369.186 L 92.199 425 L 16 450 L 1.527 369.186 L 1.527 248.256 Z"
       },
@@ -562,7 +562,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 21,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 128.02 369.186 L 200.781 407.558 L 206.378 498.256 L 191.826 504.07 L 102.274 504.07 L 92.199 425 L 128.02 369.186 Z"
       },
@@ -575,7 +575,7 @@ export const initialState = {
           stations: 0,
           neighbouring: 0,
           population: 14,
-          satisfaction: 3,
+          satisfaction: 5,
         },
         d: "M 16 450 L 69.811 514 L 102.274 498.256 L 92.199 421 L 16 450 Z"
       },
