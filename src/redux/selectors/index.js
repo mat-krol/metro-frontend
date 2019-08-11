@@ -1,4 +1,5 @@
 export * from './game'
+export * from './levels'
 export * from './map'
 export * from './mode'
 export * from './round'

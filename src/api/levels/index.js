@@ -11,7 +11,7 @@ const configFor = (params = {}) => {
     //   Authorization: localStorage.getItem("token")
     // },
     url: "levels",
-    params: params
+    // params: params
   }
 }
 

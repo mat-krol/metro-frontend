@@ -13,6 +13,10 @@ export const initialState = {
       8: "#e59aaa",
     }
   },
+  levels: {
+    list: [],
+    position: null,
+  },
   round: {
     budget: 500000,
     date: 1577836800000,
