@@ -15,7 +15,7 @@ import {
 
 import { actions } from '../../leaves'
 import { makeActionCreator } from 'redux-leaves';
-import * as selectors from '../../selectors';
+// import * as selectors from '../../selectors';
 import Api from '../../../api/index'
 
 export function* getLevels() {

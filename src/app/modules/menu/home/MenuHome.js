@@ -1,18 +1,18 @@
 import React from 'react';
 import { ROUTES } from '../../../constants/routes';
-import { useDispatch } from 'react-redux'
-import { getLevels } from '../../../../redux/sagas/game'
+// import { useDispatch } from 'react-redux'
+// import { getLevels } from '../../../../redux/sagas/game'
 
 import logo from '../../../../assets/icon-white.png'
 import AppModule from '../../../common/module';
 import Selection from '../../../../ui/selection/Selection';
 
 function MenuHome() {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
-  React.useEffect(() => {                   
-    dispatch(getLevels.trigger())
-  }, [dispatch])
+  // React.useEffect(() => {                   
+  //   dispatch(getLevels.trigger())
+  // }, [dispatch])
 
   return (
     <AppModule type="select" header>
@@ -23,7 +23,7 @@ function MenuHome() {
 }
 
 const list = [
-  { to: ROUTES.MenuCountry, text: "Play" },
+  { to: ROUTES.GameHome, text: "Demo" },
   { to: ROUTES.Settings, text: "Settings", disabled: true },
   { to: ROUTES.GameHome, text: "Log out", disabled: true }
 ]
