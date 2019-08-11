@@ -11,6 +11,8 @@ function Choice(props) {
         <ChoiceItem
           key={item.text || item.key}
           {...item}
+          to={item.to || props.to}
+          onClick={props.onClick}
         />
       ))}
     </div>

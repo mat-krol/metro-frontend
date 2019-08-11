@@ -8,7 +8,7 @@ import { ROUTES } from '../../constants/routes';
 
 function AppIcon(props) {
   return (
-    <Link to={ROUTES.IntroSelect}>
+    <Link to={ROUTES.MenuHome}>
       <img src={icon} alt="Logo" height={props.height} className={classes.AppIconImage}  />
     </Link>
   )

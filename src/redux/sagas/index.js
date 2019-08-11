@@ -13,10 +13,12 @@ import {
   // takeLeading,
 } from 'redux-saga/effects';
 
+import * as game from './game'
 import * as mode from './mode'
 import * as round from './round'
 
 const sagas = [
+  ...game.sagas,
   ...mode.sagas,
   ...round.sagas,
 ]

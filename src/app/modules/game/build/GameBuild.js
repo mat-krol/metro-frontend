@@ -63,8 +63,10 @@ function GameBuild() {
       <AppCost />
       <div style={{display: "flex", justifyContent: "center" }}>
         <Button inline text="Clear All" onClick={resetPoints} />
-        <Button inline text="Save" to={ROUTES.GameHome} onClick={build ? finishBuild : finishExpand} disabled={cost > budget || stations < 2 } />
         <Button inline text="Cancel" to={ROUTES.GameHome} onClick={resetPoints} />
+      </div>
+      <div style={{display: "flex", justifyContent: "center" }}>
+        <Button inline text="Save" to={ROUTES.GameHome} onClick={build ? finishBuild : finishExpand} disabled={cost > budget || stations < 2 } />
       </div>
       {cost > budget && <span style={{ fontSize: "10px" }}>You exceeded your budget</span>}
       {stations < 2 && <span style={{ fontSize: "10px" }}>You need at least 2 stations</span>}

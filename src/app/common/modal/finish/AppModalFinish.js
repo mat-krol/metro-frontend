@@ -12,7 +12,7 @@ function AppModalFinish({ show }) {
   const satisfaction = useSelector(selectors.getRoundSatisfaction)
   
   return (
-    <Modal show={satisfaction === 5}>
+    <Modal show={satisfaction > 9}>
       <h1>Round finished!</h1>
       <p style={{ marginTop: "0" }}>Well done, you've achieved 5.0 satisfaction in all neighbourhoods</p>
       <Button to={ROUTES.MenuHome} text="OK" />

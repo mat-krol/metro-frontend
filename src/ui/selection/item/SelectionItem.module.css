@@ -34,7 +34,7 @@
 .SelectionItem:disabled {
   cursor: not-allowed;
   background: #eee;
-  border: 2px solid #bbb;
+  border-color: #bbb;
   color: #bbb;
   opacity: 0.5;
 }
