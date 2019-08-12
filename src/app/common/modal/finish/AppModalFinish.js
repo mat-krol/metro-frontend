@@ -16,7 +16,7 @@ function AppModalFinish({ show }) {
   }
   
   return (
-    <Modal show={satisfaction > 5}>
+    <Modal show={satisfaction > 9}>
       <h1>Round finished!</h1>
       <p style={{ marginTop: "0" }}>Well done, you've achieved an average satisfaction of 9.0 across all neighbourhoods</p>
       <Button to={ROUTES.MenuHome} text="OK" onClick={finishGame} />
