@@ -37,6 +37,12 @@ export function* startGameRound() {
   yield put(actions.round.modal.create.on())
 }
 
+export function* finishGameRound() {
+  yield put(actions.round.create.reset())
+  yield put(actions.mode.create.reset())
+  yield put(actions.map.create.reset())
+}
+
 function* incrementDate(increment) {
   yield put(actions.round.date.create.increment(86400000))
   yield put(actions.round.budget.create.increment(increment))
@@ -48,7 +54,8 @@ function updateBudget(days_number) {
   // const stations = yield select(selectors.getMapStationsNumber)
   // const lines = yield select(selectors.getMapLinesNumber)
   // const increment = (lines * 20000 + stations * 1000) / days_number
-  const increment = 300000 / days_number
+  // const increment = 300000 / days_number
+  const increment = 1000000 / days_number
   return increment
 }
 
@@ -91,11 +98,15 @@ export function* updateStationCount(points) {
 startGameRound.TRIGGER = "sagas: startGameRound (TRIGGER)"
 startGameRound.trigger = makeActionCreator(startGameRound.TRIGGER)
 
+finishGameRound.TRIGGER = "sagas: finishGameRound (TRIGGER)"
+finishGameRound.trigger = makeActionCreator(finishGameRound.TRIGGER)
+
 initiateGameRound.TRIGGER = "sagas: initiateGameRound (TRIGGER)"
 initiateGameRound.trigger = makeActionCreator(initiateGameRound.TRIGGER)
 
 export const sagas = [
   takeLeading(initiateGameRound.TRIGGER, initiateGameRound),
+  takeLeading(finishGameRound.TRIGGER, finishGameRound),
   takeLeading(startGameRound.TRIGGER, startGameRound),
 ]
 
