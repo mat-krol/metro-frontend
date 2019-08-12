@@ -54,8 +54,7 @@ function updateBudget(days_number) {
   // const stations = yield select(selectors.getMapStationsNumber)
   // const lines = yield select(selectors.getMapLinesNumber)
   // const increment = (lines * 20000 + stations * 1000) / days_number
-  // const increment = 300000 / days_number
-  const increment = 1000000 / days_number
+  const increment = 300000 / days_number
   return increment
 }
 
