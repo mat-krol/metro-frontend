@@ -17,7 +17,7 @@ function App() {
         <Route path={ROUTES.Intro} component={Intro} />
         <Route path={ROUTES.Menu} component={Menu} />
         <Route path={ROUTES.Settings} component={Settings} />
-        <Route path="/" component={Menu} />
+        <Route path="/" component={IntroSplash} />
       </Switch>
     </div>
   );
