@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.metrometrometroapp.app",
+      "sha256_cert_fingerprints": [
+        "3B:E6:48:45:3C:87:6B:75:2B:FC:F6:8D:B5:96:91:97:86:66:57:A1:E7:7B:4E:9A:33:19:E2:C2:D0:C3:26:54"
+      ]
+    }
+  }
+]
