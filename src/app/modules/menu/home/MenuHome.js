@@ -28,8 +28,7 @@ function MenuHome() {
 
 const list = [
   { to: ROUTES.GameHome, text: "Demo" },
-  { to: ROUTES.MenuBoard, text: "Demo" },
-  { to: ROUTES.MenuCountry, text: "Demo" },
+  { to: ROUTES.MenuBoard, text: "Play", disabled: true },
   { to: ROUTES.Settings, text: "Settings", disabled: true },
   { to: ROUTES.GameHome, text: "Log out", disabled: true }
 ];
