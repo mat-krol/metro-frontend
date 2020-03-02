@@ -1,4 +1,4 @@
-.AppModule {
+.wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 
-.AppModuleSplash {
+.splash {
   background: #2e3192;
   /* background: linear-gradient(90deg, #2e3192 50%, #1e6bc2 50%, #2e3192); */
   display: flex;
@@ -19,10 +19,15 @@
   padding: 4rem 1rem;
 }
 
-.AppModuleMargin {
+.blue {
+  background: #2e3192;
+  color: white;
+}
+
+.margin {
   padding-top: 60px;
 }
 
-.AppModuleSelect {
-  background: #ffffff;  
+.select {
+  background: #ffffff;
 }

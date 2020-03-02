@@ -1,30 +1,19 @@
-import React from 'react';
-import classes from './AppModule.module.css'
-// import Backdrop from '../../../ui/backdrop/Backdrop';
+import React from "react";
+import classnames from "classnames";
 
-function AppModule(props) {
-  // const [showBackdrop, setShowBackdrop] = React.useState(true)
+import styles from "./AppModule.module.css";
 
-  // React.useEffect(() => {
-  //   setTimeout(() => {
-  //     setShowBackdrop(false)
-  //   }, 500);
-  // }, [])
-
+export default function AppModule({ type, header, children }) {
   return (
-    <div className={className(props)}>
-      {/* <Backdrop show={showBackdrop} color={props.backdrop} /> */}
-      {props.children}
+    <div
+      className={classnames(styles.wrapper, {
+        [styles.splash]: type === "splash",
+        [styles.select]: type === "select",
+        [styles.blue]: type === "select",
+        [styles.margin]: header
+      })}
+    >
+      {children}
     </div>
-  )
+  );
 }
-
-const className = props => {
-  const arr = [classes.AppModule]
-  props.type === "splash" && arr.push(classes.AppModuleSplash);
-  props.type === "select" && arr.push(classes.AppModuleSelect);
-  props.header && arr.push(classes.AppModuleMargin);
-  return arr.join(' ')
-}
-
-export default AppModule;
