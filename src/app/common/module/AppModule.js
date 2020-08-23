@@ -9,7 +9,7 @@ export default function AppModule({ type, header, children }) {
       className={classnames(styles.wrapper, {
         [styles.splash]: type === "splash",
         [styles.select]: type === "select",
-        [styles.blue]: type === "select",
+        [styles.blue]: type === "blue",
         [styles.margin]: header
       })}
     >

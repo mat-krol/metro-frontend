@@ -3,7 +3,7 @@ import { ROUTES } from "../../../constants/routes";
 // import { useDispatch } from 'react-redux'
 // import { getLevels } from '../../../../redux/sagas/game'
 
-import logo from "../../../../assets/icon-white.png";
+import logo from "../../../../assets/icon-blue.png";
 import AppModule from "../../../common/module";
 import Selection from "../../../../ui/selection/Selection";
 
@@ -15,7 +15,7 @@ function MenuHome() {
   // }, [dispatch])
 
   return (
-    <AppModule type="select" header>
+    <AppModule type="blue" header>
       <img
         src={logo}
         alt="logo"
@@ -27,10 +27,10 @@ function MenuHome() {
 }
 
 const list = [
-  { to: ROUTES.GameHome, text: "Demo" },
-  { to: ROUTES.MenuBoard, text: "Play", disabled: true },
-  { to: ROUTES.Settings, text: "Settings", disabled: true },
-  { to: ROUTES.GameHome, text: "Log out", disabled: true }
+  { to: ROUTES.GameHome, color: "blue", text: "Demo" },
+  { to: ROUTES.MenuBoard, color: "blue", text: "Play", disabled: true },
+  { to: ROUTES.Settings, color: "blue", text: "Settings", disabled: true },
+  { to: ROUTES.GameHome, color: "blue", text: "Log out", disabled: true }
 ];
 
 export default MenuHome;

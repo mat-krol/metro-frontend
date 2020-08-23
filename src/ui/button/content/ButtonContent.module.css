@@ -1,4 +1,4 @@
-.Button {
+.button {
   display: block;
   margin: 1rem auto;
   padding: 10px 20px;
@@ -14,7 +14,7 @@
   cursor: pointer;
 }
 
-.ButtonInline {
+.inline {
   margin: 1rem 4px;
   margin: 4px;
 }
@@ -23,20 +23,26 @@
   outline: 0 !important;
 }
 
-.Button:enabled:hover,
-.Button:active {
+.button:enabled:hover,
+.button:active {
   background: #2e319220;
   text-decoration: none;
 }
 
-.ButtonAnimated {
+.animated {
   opacity: 0;
   animation: fillIn 0.5s linear 6s 1 forwards;
 }
 
-.ButtonTeal {
+.colorTeal {
   background: #108f69;
   border: 0;
+}
+
+.colorBlue {
+  background: #2e3192;
+  color: white;
+  border-color: white;
 }
 
 @keyframes fillIn {
@@ -48,10 +54,10 @@
   }
 }
 
-.Button:disabled {
+.button:disabled {
   cursor: not-allowed;
   background: #eee;
   border: 2px solid #bbb;
   color: #bbb;
-  opacity: 0.5;
+  /* opacity: 0.5; */
 }

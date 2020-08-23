@@ -1,24 +1,28 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import classnames from "classnames";
 
-import classes from './SelectionItem.module.css'
+import styles from "./SelectionItem.module.scss";
 
-function SelectionItem(props) {
-  const Icon = props.icon
+function SelectionItem({ icon, to, text, onClick, color, disabled }) {
+  const Icon = icon;
   return (
-    <Link to={props.to} onClick={props.onClick}>
+    <Link to={to} onClick={onClick}>
       <button
-        className={classes.SelectionItem}
-        disabled={props.disabled}
+        className={classnames(styles.SelectionItem, {
+          [styles.colorBlue]: color === "blue",
+          [styles.colorWhite]: color === "white" || !color
+        })}
+        disabled={disabled}
       >
-        {/* {props.src && <img src={props.src} alt={props.text} style={{ height: "40px" }} />} */}
-        {/* {props.src && props.text && <div style={{ width: "16px" }} />} */}
-        {props.icon && <Icon style={{ fontSize: "24px" }} />}
-        {props.icon && props.text && <div style={{ width: "16px" }} />}
-        {props.text && <span>{props.text}</span>}
+        {/* {src && <img src={src} alt={text} style={{ height: "40px" }} />} */}
+        {/* {src && text && <div style={{ width: "16px" }} />} */}
+        {icon && <Icon style={{ fontSize: "24px" }} />}
+        {icon && text && <div style={{ width: "16px" }} />}
+        {text && <span>{text}</span>}
       </button>
     </Link>
-  )
+  );
 }
 
-export default SelectionItem
+export default SelectionItem;
