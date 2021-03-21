@@ -1,15 +1,21 @@
-import React from 'react'
-import _ from 'lodash';
-import classes from './Selection.module.css';
+import React from "react";
 
-import SelectionItem from './item/SelectionItem';
+import SelectionItem from "./item/SelectionItem";
+import classes from "./Selection.module.css";
 
-function Selection(props) {
+export default function Selection({ horizontal, list }) {
   return (
-    <div className={classes.Selection} style={{ display: "flex", flexDirection: props.horizontal ? "row" : "column", justifyContent: "center" }}>
-      {_.map(props.list, item => (
+    <div
+      className={classes.Selection}
+      style={{
+        display: "flex",
+        flexDirection: horizontal ? "row" : "column",
+        justifyContent: "center",
+      }}
+    >
+      {list.map((item) => (
         <SelectionItem
-          horizontal={props.horizontal}
+          horizontal={horizontal}
           key={item.text || item.key}
           disabled={item.disabled}
           icon={item.icon}
@@ -20,7 +26,5 @@ function Selection(props) {
         />
       ))}
     </div>
-  )
+  );
 }
-
-export default Selection

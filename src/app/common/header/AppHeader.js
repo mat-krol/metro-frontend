@@ -1,28 +1,26 @@
-import React from 'react';
+import React from "react";
+import classnames from "classnames";
+// import { MdMenu } from "react-icons/md";
 
-import classes from './AppHeader.module.css';
-import { MdMenu } from "react-icons/md";
-import AppHeaderScore from './score/AppHeaderScore';
-import AppHeaderStats from './stats/AppHeaderStats';
-import AppIcon from '../icon/AppIcon';
+import AppIcon from "../icon/AppIcon";
 
-function AppHeader(props) {
+import AppHeaderScore from "./score/AppHeaderScore";
+import AppHeaderStats from "./stats/AppHeaderStats";
+import classes from "./AppHeader.module.css";
+
+export default function AppHeader({ type, satisfaction }) {
   return (
     <>
-      <div className={className(props)}>
-          <AppIcon height="36px" />
-          <MdMenu size="24px" />
-          {props.satisfaction && <AppHeaderScore />}
+      <div
+        className={classnames(classes.AppHeader, {
+          [classes.AppHeaderBuild]: type === "build",
+        })}
+      >
+        <AppIcon height="36px" />
+        {/* <MdMenu size="24px" /> */}
+        {satisfaction && <AppHeaderScore />}
       </div>
       <AppHeaderStats />
     </>
-  )
+  );
 }
-
-const className = props => {
-  const arr = [classes.AppHeader]
-  props.type === "build" && arr.push(classes.AppHeaderBuild)
-  return arr.join(' ')
-}
-
-export default AppHeader;

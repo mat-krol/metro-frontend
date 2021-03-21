@@ -42,7 +42,8 @@
 }
 
 .OptionItem:enabled:hover .OptionItemIcon {
-  background: #2e319220;
+  color: #4549cf;
+  border-color: #4549cf;
 }
 
 .OptionItem:disabled {

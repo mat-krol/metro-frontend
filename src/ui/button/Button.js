@@ -1,19 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-import ButtonContent from './content/ButtonContent';
+import ButtonContent from "./content/ButtonContent";
 
-function Button(props) {
-  const { onClick, to, ...rest } = props;
+export default function Button({ onClick, to, ...rest }) {
   if (to) {
     return (
       <Link to={to} onClick={onClick}>
         <ButtonContent {...rest} />
       </Link>
-    )
+    );
   } else {
-    return <ButtonContent {...rest} onClick={onClick} />
+    return <ButtonContent {...rest} onClick={onClick} />;
   }
 }
-
-export default Button

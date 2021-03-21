@@ -21,8 +21,8 @@
 
 .ChoiceItem:enabled:hover,
 .ChoiceItem:active {
-  background: #599ae4;
-  background: #2e319220;
+  color: #4549cf;
+  border-color: #4549cf;
   text-decoration: none;
 }
 

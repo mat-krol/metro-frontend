@@ -1,23 +1,18 @@
-import React from 'react';
+import React from "react";
+import classnames from "classnames";
 
-import classes from './AppModuleSection.module.css';
+import classes from "./AppModuleSection.module.css";
 
-function AppModuleSection(props) {
+export default function AppModuleSection({ background, scrollable, children }) {
   return (
-    <div className={className(props)}>
-      {props.children}
+    <div
+      className={classnames(classes.AppModuleSection, {
+        [classes.AppModuleSectionLab]: background === "lab",
+        [classes.AppModuleSectionWhite]: background === "white",
+        [classes.AppModuleSectionScrollable]: scrollable,
+      })}
+    >
+      {children}
     </div>
-  )
+  );
 }
-
-
-const className = props => {
-  const arr = [classes.AppModuleSection]
-  props.background === "lab" && arr.push(classes.AppModuleSectionLab);
-  props.background === "white" && arr.push(classes.AppModuleSectionWhite);
-  props.scrollable && arr.push(classes.AppModuleSectionScrollable);
-  return arr.join(' ')
-}
-
-
-export default AppModuleSection

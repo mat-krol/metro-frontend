@@ -1,8 +1,8 @@
-.Button {
+.button {
   display: block;
   margin: 1rem auto;
-  padding: 10px 20px;
   min-width: 150px;
+  height: 48px;
   padding: 8px;
   background: white;
   color: #2e3192;
@@ -12,29 +12,38 @@
   font-weight: 700;
   transition: background-color ease 0.3s, color ease 0.3s;
   cursor: pointer;
+
+  &:enabled:hover,
+  &:active {
+    text-decoration: none;
+    color: #4549cf;
+    border-color: #4549cf;
+  }
+
+  &:focus {
+    outline: 0 !important;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: #eee;
+    border: 2px solid #bbb;
+    color: #bbb;
+    opacity: 0.5;
+  }
 }
 
-.ButtonInline {
+.inline {
   margin: 1rem 4px;
   margin: 4px;
 }
 
-*:focus {
-  outline: 0 !important;
-}
-
-.Button:enabled:hover,
-.Button:active {
-  background: #2e319220;
-  text-decoration: none;
-}
-
-.ButtonAnimated {
+.animated {
   opacity: 0;
   animation: fillIn 0.5s linear 6s 1 forwards;
 }
 
-.ButtonTeal {
+.teal {
   background: #108f69;
   border: 0;
 }
@@ -46,12 +55,4 @@
   100% {
     opacity: 1;
   }
-}
-
-.Button:disabled {
-  cursor: not-allowed;
-  background: #eee;
-  border: 2px solid #bbb;
-  color: #bbb;
-  opacity: 0.5;
 }

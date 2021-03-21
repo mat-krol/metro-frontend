@@ -1,29 +1,29 @@
-import React from 'react'
-import classes from './ButtonContent.module.css'
+import React from "react";
+import classnames from "classnames";
 
-function ButtonContent(props) {
+import styles from "./ButtonContent.module.scss";
+
+export default function ButtonContent({
+  text,
+  onClick,
+  disabled,
+  style,
+  animated,
+  inline,
+  color,
+}) {
   return (
     <button
-      className={className(props)}
-      onClick={props.onClick}
-      disabled={props.disabled}
-      style={props.style}
+      className={classnames(styles.button, {
+        [styles.animated]: animated,
+        [styles.inline]: inline,
+        [styles.teal]: color === "teal",
+      })}
+      onClick={onClick}
+      disabled={disabled}
+      style={style}
     >
-      {props.text}
+      {text}
     </button>
-  )
+  );
 }
-
-const className = props => {
-  const arr = [classes.Button]
-  props.animated && arr.push(classes.ButtonAnimated);
-  props.inline && arr.push(classes.ButtonInline);
-  props.color === "teal" && arr.push(classes.ButtonTeal);
-  return arr.join(' ')
-}
-
-// const makeOnClickHandler = props => {
-//   if (props.onClick) return props.onClick()
-// }
-
-export default ButtonContent
