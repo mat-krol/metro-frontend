@@ -1,13 +1,20 @@
-import React from 'react'
-import _ from 'lodash';
-import classes from './Option.module.css';
+import React from "react";
+import _ from "lodash";
+import styles from "./Option.module.css";
 
-import OptionItem from './item/OptionItem';
+import OptionItem from "./item/OptionItem";
 
 function Option(props) {
   return (
-    <div className={classes.Option} style={{ display: "flex", flexDirection: props.horizontal ? "row" : "column", justifyContent: "center" }}>
-      {_.map(props.list, item => (
+    <div
+      className={styles.Option}
+      style={{
+        display: "flex",
+        flexDirection: props.horizontal ? "row" : "column",
+        justifyContent: "center",
+      }}
+    >
+      {_.map(props.list, (item) => (
         <OptionItem
           key={item.text || item.key}
           disabled={item.disabled}
@@ -20,7 +27,7 @@ function Option(props) {
         />
       ))}
     </div>
-  )
+  );
 }
 
-export default Option
+export default Option;

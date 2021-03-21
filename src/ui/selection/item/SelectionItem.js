@@ -1,16 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-import classes from './SelectionItem.module.css'
+import styles from "./SelectionItem.module.css";
 
 function SelectionItem(props) {
-  const Icon = props.icon
+  const Icon = props.icon;
   return (
     <Link to={props.to} onClick={props.onClick}>
-      <button
-        className={classes.SelectionItem}
-        disabled={props.disabled}
-      >
+      <button className={styles.SelectionItem} disabled={props.disabled}>
         {/* {props.src && <img src={props.src} alt={props.text} style={{ height: "40px" }} />} */}
         {/* {props.src && props.text && <div style={{ width: "16px" }} />} */}
         {props.icon && <Icon style={{ fontSize: "24px" }} />}
@@ -18,7 +15,7 @@ function SelectionItem(props) {
         {props.text && <span>{props.text}</span>}
       </button>
     </Link>
-  )
+  );
 }
 
-export default SelectionItem
+export default SelectionItem;

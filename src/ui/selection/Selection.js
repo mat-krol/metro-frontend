@@ -1,12 +1,12 @@
 import React from "react";
 
 import SelectionItem from "./item/SelectionItem";
-import classes from "./Selection.module.css";
+import styles from "./Selection.module.css";
 
 export default function Selection({ horizontal, list }) {
   return (
     <div
-      className={classes.Selection}
+      className={styles.Selection}
       style={{
         display: "flex",
         flexDirection: horizontal ? "row" : "column",

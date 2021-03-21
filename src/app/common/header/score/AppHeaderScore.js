@@ -9,23 +9,23 @@ import {
 
 import * as selectors from "redux/selectors";
 
-import classes from "./AppHeaderScore.module.css";
+import styles from "./AppHeaderScore.module.css";
 
 export default function AppHeaderScore() {
   const satisfaction = useSelector(selectors.getRoundSatisfaction);
 
   return (
     <div
-      className={classnames(classes.AppHeaderScore, {
-        [classes.AppHeaderScore10]: satisfaction < 1,
-        [classes.AppHeaderScore15]: satisfaction >= 1 && satisfaction < 2,
-        [classes.AppHeaderScore20]: satisfaction >= 2 && satisfaction < 3,
-        [classes.AppHeaderScore25]: satisfaction >= 3 && satisfaction < 4,
-        [classes.AppHeaderScore30]: satisfaction >= 4 && satisfaction < 6,
-        [classes.AppHeaderScore35]: satisfaction >= 6 && satisfaction < 7,
-        [classes.AppHeaderScore40]: satisfaction >= 7 && satisfaction < 8,
-        [classes.AppHeaderScore45]: satisfaction >= 8 && satisfaction < 9,
-        [classes.AppHeaderScore50]: satisfaction >= 9,
+      className={classnames(styles.AppHeaderScore, {
+        [styles.AppHeaderScore10]: satisfaction < 1,
+        [styles.AppHeaderScore15]: satisfaction >= 1 && satisfaction < 2,
+        [styles.AppHeaderScore20]: satisfaction >= 2 && satisfaction < 3,
+        [styles.AppHeaderScore25]: satisfaction >= 3 && satisfaction < 4,
+        [styles.AppHeaderScore30]: satisfaction >= 4 && satisfaction < 6,
+        [styles.AppHeaderScore35]: satisfaction >= 6 && satisfaction < 7,
+        [styles.AppHeaderScore40]: satisfaction >= 7 && satisfaction < 8,
+        [styles.AppHeaderScore45]: satisfaction >= 8 && satisfaction < 9,
+        [styles.AppHeaderScore50]: satisfaction >= 9,
       })}
     >
       {satisfaction < 2 && <MdSentimentDissatisfied />}

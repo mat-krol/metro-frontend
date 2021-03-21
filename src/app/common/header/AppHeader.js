@@ -6,14 +6,14 @@ import AppIcon from "../icon/AppIcon";
 
 import AppHeaderScore from "./score/AppHeaderScore";
 import AppHeaderStats from "./stats/AppHeaderStats";
-import classes from "./AppHeader.module.css";
+import styles from "./AppHeader.module.css";
 
 export default function AppHeader({ type, satisfaction }) {
   return (
     <>
       <div
-        className={classnames(classes.AppHeader, {
-          [classes.AppHeaderBuild]: type === "build",
+        className={classnames(styles.AppHeader, {
+          [styles.AppHeaderBuild]: type === "build",
         })}
       >
         <AppIcon height="36px" />
